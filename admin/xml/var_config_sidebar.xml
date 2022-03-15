@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sidebar>
+	<item
+		id="nav_dashboard"
+		url="dashboard.php"
+		icon="icon icon-home">
+			Dashboard
+	</item>
+
+	<!--2 product-->
+	<group
+	page_id="5"
+	title="Product Management"
+	id="nav_product"
+	url="../product_manage.php"
+	icon="fa fa-cog">		
+		<item
+			id="nav_category"
+			url="category_manage.php"
+			icon="fa fa-circle">
+				Product Category
+		</item> 
+		<!-- <item
+			id="nav_subcategory"
+			url="subcategory_manage.php"
+			icon="fa fa-circle">
+				Product SubCategory
+		</item> -->
+		<item
+			id="nav_product"
+			url="product_manage.php"
+			icon="fa fa-circle">
+				Product List
+		</item>	 
+		<item
+			id="nav_product_inq"
+			url="product_inquiry_manage.php"
+			icon="fa fa-circle">
+				Product Inquiry
+		</item>
+		<!-- <item
+			id="nav_product_inq"
+			url="product_review_manage.php"
+			icon="fa fa-circle">
+				Product Review
+		</item>
+		<item
+			id="nav_product_inq"
+			url="brosary_inquiry_manage.php"
+			icon="fa fa-circle">
+				 Brochure Inquiry
+		</item> -->
+	</group>
+		<!--product end-->
+
+	<!--3 about us-->
+	<item
+		id="nav_about_us"
+		url="about_us.php"
+		icon="fa fa-info">
+			About Us
+	</item>
+	<!--about us end-->
+
+	<!--4 contact us info-->
+	<group
+	page_id="5"
+	title="Contact Us"
+	id="nav_product"
+	url="../product_manage.php"
+	icon="fa fa-send">
+		<item
+			id="nav_contacts"
+			url="contact_us_info.php"
+			icon="fa fa-circle">
+				Contact Us Info
+		</item>
+		<item
+			id="nav_contact_info"
+			url="contact_us_manage.php"
+			icon="fa fa-circle">
+				Contact Us Messeges
+		</item> 
+		<item
+			id="nav_contact_info"
+			url="subscribe_manage.php"
+			icon="fa fa-circle">
+				Subscribe Messeges
+		</item> 
+	</group>
+	<!--contact us info end-->
+
+	<!--5 banner start-->
+	<item
+		id="nav_banner"
+		url="banner_manage.php"
+		icon="fa fa-image">
+			Banner
+	</item>
+	<!-- banner end--> 
+
+	<!--6 testimonial start-->
+	<item
+		id="nav_testimonial"
+		url="testimony_manage.php"
+		icon="fa fa-quote-right">
+			Testimonial
+	</item> 
+	<!--testimonial end-->
+	 
+	<!--8 newsletter start-->
+	<!-- <item
+		id="nav_newsletter"
+		url="newsletter_manage.php"
+		icon="fa fa-newspaper-o">
+			Newsletter
+	</item>  -->
+	<!-- newsletter end-->
+
+	<!--9 quality certificate start-->
+	
+	<!-- quality certificate end-->
+
+	<!--10 gallery start-->
+	<item
+		id="nav_gallery"
+		url="gallery_manage.php"
+		icon="fa fa-image">
+			Gallery
+	</item> 
+	<item
+		url="certificate_manage.php"
+		icon="fa fa-certificate">
+			Certificate
+	</item>
+	<!-- <item
+		id="nav_gallery"
+		url="application_manage.php"
+		icon="fab fa-app-store-ios">
+			Application
+	</item>  -->
+	<!-- career start !-->
+	
+
+	<!-- <group
+	page_id="5"
+	title="Career"
+	id="nav_product"
+	url="../product_manage.php"
+	icon="fa fa-send">
+		
+		<item
+			id="nav_contact_info"
+			url="resume_manage.php"
+			icon="fa fa-circle">
+				Career Message
+		</item> 
+		
+	</group>
+ -->
+	<!-- career ENd  end-->
+	<!-- gallery end-->
+		<!-- <item
+			id="nav_client"
+			url="client_slider_manage.php"
+			icon="fa fa-user">
+				Client Slider
+		</item>  -->
+	<!--11 our team gallery start-->
+	<item
+		id="nav_our_team"
+		url="our_team_manage.php"
+		icon="fa fa-users">
+			Our Team
+	</item> 
+	<!-- our team gallery end-->
+
+	<!--12 news start-->
+	<!-- <item
+		id="nav_news"
+		url="news_manage.php"
+		icon="fa fa-user">
+			News
+	</item>  -->
+	<!-- news end-->
+	<!--13 front popup image start-->
+	<!-- <item
+		id="nav_popup_image"
+		url="front_popup_image_manage.php"
+		icon="fa fa-user">
+			Front Popup Image
+	</item> --> 
+	<!-- front popup image end-->
+
+	<!--14 export country start-->
+	<!-- <item
+		id="nav_export_country"
+		url="export_country_manage.php"
+		icon="fa fa-user">
+			Export Country
+	</item> --> 
+	<!-- export country end-->
+
+	<!--15 services start-->
+	<!-- <group
+		page_id="5"
+		title="Services"
+		id="nav_service"
+		url="../services_manage.php"
+		icon="fa fa-wrench">
+		<item
+			id="nav_services"
+			url="services_manage.php"
+			icon="fa fa-circle">
+				Manage Services
+		</item> 
+
+		<item
+			id="nav_services_cat"
+			url="service_category_manage.php"
+			icon="fa fa-circle">
+				Service Category
+		</item> 
+	</group> -->
+	<!--services end-->
+
+	<!-- blog start -->
+	<!-- <item
+		id="nav_blog"
+		url="blog_manage.php"
+		icon="fa fa-pencil-square-o">
+			Blog
+	</item>  -->
+
+	<!-- blog end -->
+
+	<!--16 database backup start-->
+	<!-- <group
+		page_id="5"
+		title="Utility"
+		id="nav_service"
+		url="../database_backup.php"
+		icon="fa fa-cog">
+		<item
+			id="nav_db_backup"
+			url="database_backup.php"
+			icon="fa fa-circle">
+				Database Backup
+		</item> 
+
+		<item
+			id="nav_blockip"
+			url="security_manage.php"
+			icon="fa fa-circle">
+				Blocked Ip
+		</item> 
+		<item
+			id="nav_google_analytic"
+			url="google_analytic.php"
+			icon="fa fa-circle">
+				Google Analytic
+		</item> 
+		<item
+			id="nav_mail_champ"
+			url="coming_soon.php"
+			icon="fa fa-circle">
+				Mail Champ Integration
+		</item> 
+	</group> -->
+	
+	<!-- 
+		<item url="pages_manage.php"
+			icon="">
+				pages
+		</item> -->
+		
+
+
+	<!--database backup end-->
+
+	<!-- <group
+		page_id="5"
+		title="Conatct Us Info"
+		id="nav_message"
+		url="../contact_us_info.php"
+		icon="fa fa-send">
+		<item
+			id="nav_message"
+			url="contact_us_info.php"
+			icon="fa fa-send">
+				Manage Contact Information
+		</item> 
+	</group> -->
+	
+	<!-- <group
+		page_id="5"
+		title="Conatct Messages"
+		id="nav_message"
+		url="../contact_us_manage.php"
+		icon="fa fa-send">
+		<item
+			id="nav_message"
+			url="contact_us_manage.php"
+			icon="fa fa-send">
+				Manage Contact Messeges
+		</item> 
+	</group> -->
+	<!-- <group
+		page_id="5"
+		title="Product Inquiry"
+		id="nav_message"
+		url="../product_inquiry_manage.php"
+		icon="fa fa-send">
+		<item
+			id="nav_message"
+			url="product_inquiry_manage.php"
+			icon="fa fa-send">
+				Manage Product Inquiry
+		</item> 
+	</group> -->
+	<!-- <group
+		page_id="5"
+		title="Newsletter"
+		id="nav_message"
+		url="../newsletter_manage.php"
+		icon="fa fa-user">
+		<item
+			id="nav_message"
+			url="newsletter_manage.php"
+			icon="fa fa-user">
+				Manage Newsletter
+		</item> 
+	</group> -->
+	
+	<!-- <group
+		page_id="5"
+		title="Banner"
+		id="nav_banner"
+		url="../banner_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_banner"
+			url="banner_manage.php"
+			icon="fa fa-image">
+				Manage Banner
+		</item> 
+	</group>
+	 -->
+	<!-- <group
+		page_id="5"
+		title="Services"
+		id="nav_service"
+		url="../services_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_services"
+			url="services_manage.php"
+			icon="fa fa-image">
+				Manage Services
+		</item> 
+
+		<item
+			id="nav_services"
+			url="service_category_manage.php"
+			icon="fa fa-image">
+				Service Category
+		</item> 
+	</group> -->
+	
+
+	<!-- <group
+		page_id="5"
+		title="Testimonial Management"
+		id="nav_service"
+		url="../testimony_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_services"
+			url="testimony_manage.php"
+			icon="fa fa-image">
+				Manage Testimony
+		</item> 
+	</group> -->
+
+	<!-- <group
+		page_id="5"
+		title="Scheme Management"
+		id="nav_service"
+		url="../scheme_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_services"
+			url="scheme_manage.php"
+			icon="fa fa-image">
+				Manage Scheme
+		</item> 
+	</group> -->
+
+	<!-- <group
+		page_id="5"
+		title="Product Management"
+		id="nav_product"
+		url="../product_manage.php"
+		icon="fa fa-book">
+		
+		<item
+			id="nav_category"
+			url="category_manage.php"
+			icon="fa fa-book">
+				Manage Category
+		</item> 
+		<item
+			id="nav_subcategory"
+			url="sub_category_manage.php"
+			icon="fa fa-book">
+				Manage SubCategory
+		</item>
+		<item
+			id="nav_product"
+			url="product_manage.php"
+			icon="fa fa-book">
+				Manage Product
+		</item>
+		
+		
+		<item
+			id="nav_product"
+			url="veterinary_manage.php"
+			icon="fa fa-book">
+				Manage Veterinary Product
+		</item>
+	</group> -->
+	
+	<!-- <group
+		page_id="5"
+		title="Report"
+		id="nav_report"
+		url="../newsletter_report.php"
+		icon="fa fa-book">
+		<item
+			id="nav_report"
+			url="newsletter_report.php"
+			icon="fa fa-book">
+				Newsletter Report
+		</item> 
+		<item
+			id="nav_report"
+			url="contact_us_report.php"
+			icon="fa fa-book">
+				Contact Report
+		</item> 
+	</group>
+ -->
+</sidebar>

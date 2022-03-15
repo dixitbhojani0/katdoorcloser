@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tiles>
+	
+		<!-- <item
+			title="Contact Us Info"
+			count_table="contact_us_info"
+			count_condition="isDelete=0"
+			id="dashboard_contact_us_info"		
+			url="contact_us_info.php"
+			color="blue"
+			icon="fa fa-phone">
+		</item>	 -->
+		
+		<item
+			title="Contact Inquiry"
+			count_table="contact_us"
+			count_condition="isDelete=0"
+			id="dashboard_contact_us"		
+			url="contact_us_manage.php"
+			color="blue"
+			icon="fa fa-phone">
+		</item>
+
+		<!-- <item
+			title="Banner"
+			count_table="banner"
+			count_condition="isDelete=0"
+			id="dashboard_banner"		
+			url="banner_manage.php"
+			color="blue"
+			icon="fa fa-image">
+		</item>
+
+		
+		<item
+			title="Category"
+			count_table="category"
+			count_condition="isDelete=0"
+			id="dashboard_category"		
+			url="category_manage.php"
+			color="blue"
+			icon="fa fa-book">
+		</item>
+
+		<item
+			title="Testimonial"
+			count_table="testimony"
+			count_condition="isDelete=0"
+			id="dashboard_category"		
+			url="testimony_manage.php"
+			color="blue"
+			icon="fa fa-book">
+		</item>
+		
+		<item
+			title="Services"
+			count_table="services"
+			count_condition="isDelete=0"
+			id="dashboard_services"		
+			url="services_manage.php"
+			color="blue"
+			icon="fa fa-gear">
+		</item>
+
+		<item
+			title="Product"
+			count_table="product"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="product_manage.php"
+			color="blue"
+			icon="fa fa-book">
+		</item>
+
+		<item
+			title="Scheme"
+			count_table="scheme"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="scheme_manage.php"
+			color="blue"
+			icon="fa fa-book">
+		</item>
+ -->
+		<item
+			title="Product Inquiry"
+			count_table="product_inquiry"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="product_inquiry_manage.php"
+			color="blue"
+			icon="fa fa-book">
+		</item>
+
+		<!-- <item
+			title="Gallery"
+			count_table="gallery"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="gallery_manage.php"
+			color="blue"
+			icon="fa fa-image">
+		</item>
+
+		<item
+			title="Veterinary Product"
+			count_table="veterinary"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="veterinary_manage.php"
+			color="blue"
+			icon="fa fa-image">
+		</item>
+
+		<item
+			title="Quality Certification"
+			count_table="certificate"
+			count_condition="isDelete=0"
+			id="dashboard_product"		
+			url="certificate_manage.php"
+			color="blue"
+			icon="fa fa-image">
+		</item> -->
+		
+		
+</tiles>
