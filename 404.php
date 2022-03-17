@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>404</title>
+  <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
   <style type="text/css">
     
     @charset "UTF-8";
@@ -415,7 +418,7 @@
 
 
     .light {
-          width: 200px;
+          /*width: 200px;*/
         height: 0px;
         border-bottom: 900px solid rgb(44 255 255 / 24%);
         border-left: 50px solid transparent;
@@ -440,9 +443,20 @@
       overflow: hidden;
       max-height: 100vh;
     }
-    @media (max-width: 1400px) { 
+    @media (min-width: 1401px) { 
       .lamp {
-        zoom: .5;
+        zoom: .7;
+      }
+      .error__content {
+        /*top: 35%;*/
+      }
+      .message__title {
+        font-size: 3.5rem;
+      }
+    }
+    @media (min-width: 1400px) { 
+      .lamp {
+        zoom: .7;
       }
       .error__content {
         top: 55%;
@@ -451,17 +465,27 @@
         font-size: 3.5rem;
       }
     }
-    @media (max-width: 900px) {
-
-      .message__title {
-        font-size: 34px;
-
+    @media (min-width: 1200px) { 
+      .lamp {
+        zoom: .58;
       }
       .error__content {
         top: 55%;
       }
+      .message__title {
+        font-size: 3.0rem;
       }
-    @media (max-width: 950px) {
+    }
+    @media (min-width: 992px) { 
+      .lamp {
+        zoom: .5 !important;
+      }
+      .error__content {
+        top: 50% !important;
+      }
+      .message__title {
+        font-size: 34px !important;
+      }
       .lamp__wrap {
         max-height: 100vh;
         overflow: hidden;
@@ -486,23 +510,45 @@
         padding-bottom: 0;
       }
     }
-    @media (max-width: 750px) {
+    @media (max-width: 767px) and (min-width: 568px) { 
+      .lamp {
+        zoom: .6 !important;
+      }
+      .error__content {
+        top: 50% !important;
+      }
+      .message__title {
+        font-size: 36px !important;
+        padding-bottom: 20px !important;
+      }
       body, html, {
-        max-height: 100vh;
+        max-height: 100vh !important;
       }
        .error__content {
-        position: static;
-        margin: 0 auto;
-        transform: none;
-        padding-top: 300px;
+        position: static !important;
+        margin: 0 auto !important;
+        transform: none !important;
+        padding-top: 180px !important;
       }
       .error {
-        padding-top: 0;
-        padding-bottom: 100px;
-        height: 100vh;
+        padding-top: 0 !important;
+        padding-bottom: 100px !important;
+        height: 100vh !important;
       }
+      .message__text {
+        font-size: 16px !important;
+        line-height: 2 !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
       }
-    @media (max-width: 650px) {
+    }
+    @media (min-width: 568px) { 
+      .lamp {
+        zoom: .6;
+      }
+      .error__content {
+        top: 50%;
+      }
       .message__title {
         font-size: 36px;
         padding-bottom: 20px;
@@ -513,13 +559,25 @@
         padding-right: 20px;
         padding-left: 20px;
       }
+    }
+    @media (min-width: 320px) { 
       .lamp {
-        zoom: .6;
+        zoom: .8;
       }
       .error__content {
-        padding-top: 180px;
+        top: 43%;
       }
+      .message__title {
+        font-size: 36px;
+        padding-bottom: 20px;
       }
+      .message__text {
+        font-size: 16px;
+        line-height: 2;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
     @media (max-width: 480px) {
 
       .message__title {
@@ -537,46 +595,50 @@
   </style>
 </head>
 <body>
-  <a href="index.php" target="_blank">
-    <header class="top-header">
-    </header>
+<!--   <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-md-10 col-lg-12 col-xl-12"> -->
+          <a href="index.php">
+            <header class="top-header">
+            </header>
 
-    <!--dust particel-->
-    <div>
-      <div class="starsec"></div>
-      <div class="starthird"></div>
-      <div class="starfourth"></div>
-      <div class="starfifth"></div>
+            <!--dust particel-->
+            <div>
+              <div class="starsec"></div>
+              <div class="starthird"></div>
+              <div class="starfourth"></div>
+              <div class="starfifth"></div>
+            </div>
+            <!--Dust particle end--->
+
+            <div class="lamp__wrap">
+              <div class="lamp">
+                <div class="cable"></div>
+                <div class="cover"></div>
+                <div class="in-cover">
+                  <div class="bulb"></div>
+                </div>
+                <div class="light"></div>
+              </div>
+            </div>
+            <!-- END Lamp -->
+            <section class="error">
+              <!-- Content -->
+              <div class="error__content">
+                <div class="error__message message">
+                  <h1 class="message__title">Page Not Found</h1>
+                  <p class="message__text">We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again, or take a look at our.</p>
+                </div>
+                <div class="error__nav e-nav">
+                  <a href="index.php" class="e-nav__link"></a>
+                </div>
+              </div>
+              <!-- END Content -->
+            </section>
+          </a>
+<!--       </div>
     </div>
-    <!--Dust particle end--->
-
-
-    <div class="lamp__wrap">
-      <div class="lamp">
-        <div class="cable"></div>
-        <div class="cover"></div>
-        <div class="in-cover">
-          <div class="bulb"></div>
-        </div>
-        <div class="light"></div>
-      </div>
-    </div>
-    <!-- END Lamp -->
-    <section class="error">
-      <!-- Content -->
-      <div class="error__content">
-        <div class="error__message message">
-          <h1 class="message__title">Page Not Found</h1>
-          <p class="message__text">We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again, or take a look at our.</p>
-        </div>
-        <div class="error__nav e-nav">
-          <a href="index.php" class="e-nav__link"></a>
-        </div>
-      </div>
-      <!-- END Content -->
-
-    </section>
-
-  </a>
+  </div> -->
+  <!-- <script src="js/bootstrap.min.js"></script> -->
 </body>
 </html>

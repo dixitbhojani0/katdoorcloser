@@ -1212,9 +1212,17 @@ img{
     left: 0px;
     top: 0px;	
 }
-
+.main-header .header-upper .logo-outer {
+	width: 100px;
+	border-radius: 15%;
+}
+.main-header .header-upper .logo-outer img{
+	border-radius: 15%;
+}
 .fixed-header .header-upper .logo-outer{
-	padding:0px 0px;
+	/*padding:0px 0px;*/
+	padding-top: 8px;
+	width: 80px;
 }
 
 .fixed-header .main-menu .navigation > li{
