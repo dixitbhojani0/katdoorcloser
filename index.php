@@ -1,334 +1,706 @@
 <?php
- ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Flowtop</title>
-	<!-- include_css start -->
-	<?php
-	    include('include_css.php');
+require("include/header.php"); ?>
 
-	?>
-	<style type="text/css">
-		/*.banner_h{
-			height: 600px!important;
-			overflow:auto;
-		}*/
-	</style>
 
-	<!-- include_css end -->
-	<?php
-	/*------condition-------*/
-        $where ="isDelete=0 AND isActive=1";
-        $where_p ="isDelete=0 AND display_order>0 AND isActive=1 ";
-	/*------banner get Data-------*/
+<div class="page-wrapper">
 
-    $banner_r = $db->rp_getData("banner","*",$where,"display_order ASC",0);
-	$id = @$_GET['id'];
-	/*------condition-------*/
-	/*------product get Data-------*/	
+	<!-- Preloader -->
+	<div class="preloader"></div>
 
-	$product_a =$db->rp_getData("product","*",$where_p,"display_order ASC",0,6); 
-	
-	$testimony_r=$db->rp_getData("testimony","*", $where,"",0);
-	/*------about_us get Data-------*/
-	$about_us_r=$db->rp_getData("about_us","*",$where,0);
-    $about_us_d = mysqli_fetch_assoc($about_us_r);
+	<!-- Main Slider -->
+	<section class="main-slider">
+		<div class="slider-box">
 
-	?>
-	<style type="text/css">
-		.banner_h
-		{
-			background-size: 100% auto;
-		}
-		@media (max-width: 991px) {
-			.banner_h
-			{
-				background-size: 100% 375px;
-			}
-		}
-	</style>
-</head>
+			<!-- Banner Carousel -->
+			<div class="banner-carousel owl-theme owl-carousel">
 
-<body style="">
-	<!-- include_header start -->
-	<?php
-		include('include_header.php');
-	?>
-	<!-- include_header end -->
-	<!--banner-slider-->
-	<section class="w3l-banner-slider-main">
-		<div class="banner-content">
-			<div id="owl-demo2" class="owl-carousel owl-theme" data-ride="carousel">
-				
-				<?php
-					while ($banner_d = mysqli_fetch_assoc($banner_r)) 
-                	{ 
-            	?>
-				<div class="item banner_h " style="background-image: url(<?= SITEURL.BANNER.$banner_d['image_path'] ?>);background-repeat: no-repeat;">
-					<div class="" >
-						<div class="top-bannerhny-left">
-							<div class="banner-innf" style="padding-top: 5%;">
-								<h6 class="hny-sub" style="color: #eee!important"><?= $banner_d['title'] ?></h6>
-								<?= html_entity_decode($banner_d['description']) ?>
-								<div class="button-6" style="background: #fff;">
-									<div class="eff-6"></div>
-									<a href="<?=SITEURL?>about-us">Read More </a>
+				<!-- Slide -->
+				<div class="slide">
+					<div class="image-layer" style="background-image:url(images/main-slider/1.jpg)"></div>
+					<div class="auto-container">
+						<div class="content">
+							<h2>We make dream <br> home a reality</h2>
+							<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
+							<div class="btns-box">
+								<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="slide">
+					<div class="image-layer" style="background-image:url(images/main-slider/2.jpg)"></div>
+					<div class="auto-container">
+						<div class="content">
+							<h2>Designs Benefitting <br> Your Persona</h2>
+							<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
+							<div class="btns-box">
+								<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="slide">
+					<div class="image-layer" style="background-image:url(images/main-slider/3.jpg)"></div>
+					<div class="auto-container">
+						<div class="content">
+							<h2>Solution for <br> Modern Kitchen</h2>
+							<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
+							<div class="btns-box">
+								<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Banner Section -->
+
+	<!-- Services Section -->
+	<section class="services-section">
+		<div class="auto-container">
+			<!-- Title Box -->
+			<div class="title-box">
+				<h2>Awesome place & what improves <br> explore radiance.</h2>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- Service Block -->
+				<div class="service-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="residental-interior.html"><img src="images/resource/service-1.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h3><a href="residental-interior.html">Residential Interiors</a></h3>
+							<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies.</div>
+							<a href="residental-interior.html" class="read-more">Read more</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="office-interior.html"><img src="images/resource/service-2.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h3><a href="office-interior.html">Office Designs</a></h3>
+							<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies. Seam lessly visualize quality intellectual.</div>
+							<a href="office-interior.html" class="read-more">Read more</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="commercial-interior.html"><img src="images/resource/service-3.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<h3><a href="commercial-interior.html">Commercial Interiors</a></h3>
+							<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies. Seam lessly visualize quality intellectual.</div>
+							<a href="commercial-interior.html" class="read-more">Read more</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Services Section -->
+
+	<!-- Services Section Two -->
+	<section class="services-section-two">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title">
+				<h2>Our Services</h2>
+				<div class="text">Osed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam qui ratione voluptatem sequi nesciunt.</div>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-desk-1"></span>
+							</div>
+							<h3><a href="office-interior.html">Office Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-house-1"></span>
+							</div>
+							<h3><a href="office-interior.html">House Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-shop"></span>
+							</div>
+							<h3><a href="office-interior.html">Restaurant Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-hospital"></span>
+							</div>
+							<h3><a href="office-interior.html">Hospital Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-apartment-1"></span>
+							</div>
+							<h3><a href="office-interior.html">Appartment Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block -->
+				<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box">
+								<span class="icon flaticon-hotel"></span>
+							</div>
+							<h3><a href="office-interior.html">Hospitality Interior</a></h3>
+							<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
+							<a href="office-interior.html" class="read-more">Read More</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Services Section Two -->
+
+	<!-- Project Section -->
+	<section class="project-section">
+		<div class="auto-container">
+			<!-- Title Box -->
+			<div class="title-box">
+				<h2>Our Latest Projects</h2>
+			</div>
+		</div>
+
+		<div class="outer-container">
+
+			<!--Isotope Galery-->
+			<div class="sortable-masonry">
+
+				<!--Filter-->
+				<div class="filters clearfix">
+
+					<ul class="filter-tabs filter-btns text-center clearfix">
+						<li class="active filter" data-role="button" data-filter=".all">All Projects</li>
+						<li class="filter" data-role="button" data-filter=".residential">Residential</li>
+						<li class="filter" data-role="button" data-filter=".commercial">Commercial</li>
+						<li class="filter" data-role="button" data-filter=".hospital">Hospitality</li>
+						<li class="filter" data-role="button" data-filter=".office">Office</li>
+					</ul>
+
+				</div>
+
+				<div class="items-container row clearfix">
+
+					<!-- Gallery Item -->
+					<div class="gallery-item large-block masonry-item all hospital commercial">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/1.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/1.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<?php
-					}
-				?>
-
-			</div>
-		</div>
-	</section>
-	<!-- //banner-slider-->
-	<section class="w3l-bottom-grids-6">
-		<div class="bottom-grids-info py-5">
-			<div class="container py-lg-5">
-				<div class="row bottomnhy-grids">
-					<div class="col-lg-6 col-md-12 about-gd mt-lg-0 mt-6">
-						<div class="about-gd-inn">
-							<span class="fa fa-globe icon-fea1" aria-hidden="true"></span>
-							<h5><a href="<?=SITEURL?>about-us">Our Vision</a></h5>
-							<p><?= $db->rp_limitChar(html_entity_decode($about_us_d['our_vision']),"175")?><a href="<?=SITEURL?>about-us" class="read-more" >Read more</a></p>
+							</figure>
 						</div>
 					</div>
-					<div class="col-lg-6 col-md-12 about-gd mt-lg-0 mt-6">
-						<div class="about-gd-inn">
-							<span class="fa fa-file-text-o icon-fea1" aria-hidden="true"></span>
-							<h5><a href="<?=SITEURL?>about-us">Our Mission</a></h5>
-							<p><?=  $db->rp_limitChar(html_entity_decode($about_us_d['our_mission']),"175") ?><a href="<?=SITEURL?>about-us" class="read-more" >Read more</a>	</p>
 
+					<!-- Gallery Item -->
+					<div class="gallery-item small-block masonry-item all hospital commercial">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/2.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/2.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="w3l-companies-hny-6">
-		<!--/gallery-->
-		<div class="cusrtomer-layout py-5">
-			<div class="container py-lg-5">
-				<div class="title-content mb-lg-5 mb-4">
-					<span class="sub-title">Our Range Of</span>
-					<h3 class="hny-title">Products</h3>
-					<p>Go Through Wide Range of Porducts</p>
-				</div>
-				<!-- <div class="row gallery-grids"> -->
-				<div id="owl-demo4" class="owl-carousel owl-theme">
-					<?php
-					if(!empty($product_a)) {
-                        while ($product_d_a = mysqli_fetch_assoc($product_a)) 
-                        {
-                        ?>    
-                    <div class="item">
-	                    <div class="col-lg-12 col-md-12	 content-left-sec gal-slide-grid">
-							<div class="gal-slide-img">
-								<a href="<?=SITEURL?>product-details/<?=$product_d_a['id']?>"><img src="<?=SITEURL.PRODUCT.$product_d_a['image_path']?>" class="img img-fluid" alt="" style="border-radius:5%!important;" ></a>
-							</div>
-							<div class="pro-name">
-	                            <a href="<?=SITEURL?>product-details/<?=$product_d_a['id']?>">
-	                                <h4><?= $product_d_a['name']?></h4>
-	                            </a>
-	                        </div>
+
+					<!-- Gallery Item -->
+					<div class="gallery-item small-block masonry-item all residential office commercial">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/3.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/3.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
 						</div>
 					</div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
+
+					<!-- Gallery Item -->
+					<div class="gallery-item small-block masonry-item all commercial">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/4.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/4.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
+						</div>
+					</div>
+
+					<!-- Gallery Item -->
+					<div class="gallery-item large-block masonry-item all hospital office residential">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/7.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/7.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
+						</div>
+					</div>
+
+					<!-- Gallery Item -->
+					<div class="gallery-item small-block masonry-item all residential">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/5.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/5.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
+						</div>
+					</div>
+
+					<!-- Gallery Item -->
+					<div class="gallery-item small-block masonry-item all hospital office">
+						<div class="inner-box">
+							<figure class="image-box">
+								<img src="images/gallery/6.jpg" alt="">
+								<!--Overlay Box-->
+								<div class="overlay-box">
+									<div class="overlay-inner">
+										<div class="content">
+											<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
+											<a href="images/gallery/6.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+											<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+										</div>
+									</div>
+								</div>
+							</figure>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- More Projects -->
+			<div class="more-projects">
+				<a href="projects-classic.html" class="projects">View All Projects</a>
+			</div>
+
+		</div>
+	</section>
+	<!-- End Project Section -->
+
+	<!-- Fluid Section One -->
+	<section class="fluid-section-one">
+		<div class="outer-container clearfix">
+
+			<!--Content Column-->
+			<div class="content-column">
+				<div class="content-box">
+					<h2>Home design made easy</h2>
+					<div class="text">To give you a home that lasts, we bring you only the best in everything — quality raw materials, state-of-the-art manufacturing, rigorous quality checks, professional installations and transparent prices.</div>
+					<ul class="list-style-one">
+						<li>Whole Home Interior</li>
+						<li>Modular Kitchen and Wardrobe</li>
+						<li>Furniture, Decore and more</li>
+						<li>Post-surgery, including cosmetic, joint replacement, or heart surgery</li>
+						<li>Chronic conditions, such as diabetes, COPD, or cancer</li>
+						<li>On Site Expertiset</li>
+					</ul>
+					<div class="bold-text">Design your home, right here at Stella Orr'e <br> <a href="contact.html">Talk to a designer</a></div>
 				</div>
 			</div>
-		</div>
-		<!--//gallery-->
 
-	</section>
-	<section class="w3l-content-with-photo-6">
-		<div class="contente-photo-hny-info py-5">
-			<div class="container py-lg-5">
-				
-				<div class="content-photo-content">
-					<div class="content-photo-content-left">
-						<span class="sub-title">Short Video</span>
-						<h3 class="hny-title">Find Your Perfect Vacation</h3>
+			<!--Image Column-->
+			<div class="image-column" style="background-image: url(images/resource/video-img.jpg)">
+				<div class="inner-column">
+					<div class="image">
+						<img src="images/resource/video-img.jpg" alt="">
 					</div>
-
-					<div class="content-photo-content-right">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio voluptatem
-							tenetur
-							consequatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio
-							voluptatem tenetur
-							consequatur adipisicing elit.</p>
-					</div>
-				</div>
-				<div class="content-photo">
-					<!--popup-->
-					<a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
-						<span class="video-play-icon">
-							<span class="fa fa-play"></span>
-						</span>
+					<a href="https://www.youtube.com/watch?v=SXZXtD60t2g" class="overlay-link lightbox-image">
+						<div class="icon-box">
+							<span class="icon flaticon-play-button"></span>
+							<i class="ripple"></i>
+						</div>
 					</a>
-
-					<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-					<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-
-						<iframe src="https://player.vimeo.com/video/92605278" frameborder="0"
-							allow="autoplay; fullscreen" allowfullscreen></iframe>
-					</div>
-					<!--//popup-->
 				</div>
 			</div>
-		</div>
-		</div>
-	</section>
-	<section class="w3l-newsletter">
-		<!-- /form-25-section -->
-		<div class="form-25-mian py-5">
-			<div class="container py-lg-5">
-				<div class="forms-25-info">
-					<span class="sub-title-1">Lets Stay In Touch</span>
-					<h3 class="hny-title two">Download our E-Catalouge</h3>
-					<p>Stay Connected</p>
+			<!--End Image Column-->
 
-					<form action="" method="post" id="subscribe-form" name="subscribe-form" class="signin-form mt-4 mb-2">
-						<div class="forms-gds">
-							<input type="email" name="email" id="email" placeholder="Email" required />
-							<button type="submit" name="submit" id="submit" class="btn">Submit</button>
-						</div>
-						<!-- <p class="action-link">Subscribe to our free weekly newsletter for new update releases (no
-							spam)</p> -->
-					</form>
-				</div>
-			</div>
 		</div>
 	</section>
-	<!-- //form-25-section -->
-	<section class="w3l-companies-hny-6">
-		<!-- /grids -->
-		<div class="cusrtomer-layout py-5">
-			<div class="container pt-lg-5">
-				<div class="title-content mb-lg-5 mb-4">
-					<span class="sub-title">Testimonials</span>
-					<h3 class="hny-title">Feedback from our Customers</h3>
-				</div>
-				<!-- /grids -->
-				<div id="owl-demo1" class="owl-carousel owl-theme">
-					<?php
-                        while($testimony_d = mysqli_fetch_assoc($testimony_r)) 
-                        { 
-                    ?>
-					<div class="item">
-						<div class="testimonial-content">
-							<div class="testimonial">
-								<blockquote>
-									<div class="icon-quote"><span class="fa fa-quote-left" aria-hidden="true"></span>
-									</div>
-									<p><?=html_entity_decode($testimony_d["message"])?></p>
-								</blockquote>
-								<div class="testi-des">
-									<div class="test-img"><img src="<?=SITEURL.TESTIMONY.$testimony_d['image_path']?>" class="img-fluid" alt="/">
-									</div>
-									<div class="peopl">
-										<h3><?= $testimony_d["name"] ?></h3>
-										<p class="indentity"><?= $testimony_d["designation"] ?></p>
-									</div>
+
+	<!-- Testimonial Section -->
+	<section class="testimonial-section">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title-two centered">
+				<h2>What our customers says</h2>
+				<div class="title-text">Thousands of people done interior</div>
+			</div>
+
+			<div class="testimonial-carousel owl-carousel owl-theme">
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="content">
+							<div class="image-outer">
+								<div class="image">
+									<img src="images/resource/author-1.jpg" alt="" />
 								</div>
 							</div>
+							<h3>Michale John</h3>
+							<div class="title">I got luxuary inteior from Stella Orr'e</div>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
 						</div>
 					</div>
-					<?php
-						}
-					?>
 				</div>
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="content">
+							<div class="image-outer">
+								<div class="image">
+									<img src="images/resource/author-2.jpg" alt="" />
+								</div>
+							</div>
+							<h3>Michale John</h3>
+							<div class="title">I got luxuary inteior from Stella Orr'e</div>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="content">
+							<div class="image-outer">
+								<div class="image">
+									<img src="images/resource/author-1.jpg" alt="" />
+								</div>
+							</div>
+							<h3>Michale John</h3>
+							<div class="title">I got luxuary inteior from Stella Orr'e</div>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="content">
+							<div class="image-outer">
+								<div class="image">
+									<img src="images/resource/author-2.jpg" alt="" />
+								</div>
+							</div>
+							<h3>Michale John</h3>
+							<div class="title">I got luxuary inteior from Stella Orr'e</div>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<!-- /grids -->
-
-
 		</div>
-		</div>
-		<!-- //grids -->
 	</section>
+	<!-- End Testimonial Section -->
 
-	<!-- include_footer start -->
+	<!-- Featured Section -->
+	<section class="featured-section" style="background-image: url(images/background/2.jpg)">
+		<div class="auto-container">
+			<!-- Title Box -->
+			<div class="title-box">
+				<h2>Our Work Process</h2>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- Feature Block -->
+				<div class="feature-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="icon-outer">
+							<div class="icon-box">
+								<span class="icon flaticon-hand-shake"></span>
+							</div>
+							<div class="feature-number">1</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="residental-interior.html">Meet Customers</a></h3>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Feature Block -->
+				<div class="feature-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
+						<div class="icon-outer">
+							<div class="icon-box">
+								<span class="icon flaticon-answer"></span>
+							</div>
+							<div class="feature-number">2</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="residental-interior.html">Design Discussion</a></h3>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Feature Block -->
+				<div class="feature-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
+						<div class="icon-outer">
+							<div class="icon-box">
+								<span class="icon flaticon-sketch"></span>
+							</div>
+							<div class="feature-number">3</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="residental-interior.html">Drafting Design</a></h3>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Feature Block -->
+				<div class="feature-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
+						<div class="icon-outer">
+							<div class="icon-box">
+								<span class="icon flaticon-house-1"></span>
+							</div>
+							<div class="feature-number">4</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="residental-interior.html">Implimentation</a></h3>
+							<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Featured Section -->
+
+	<!-- News Section -->
+	<section class="news-section">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title">
+				<h2>Need a design fix? Read our magazine</h2>
+				<div class="text">Stay updated with latest trends, inspiration, expert tips, DIYs and more</div>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<ul class="post-meta">
+								<li>By <span>Michale</span></li>
+								<li>Modular Kitchen</li>
+							</ul>
+							<h3><a href="blog-detail.html">15 Vastu ideas for the main door emphasizes on every par ...</a></h3>
+							<a href="blog-detail.html" class="read-more">Read more <span class="icon flaticon-right-arrow-1"></span></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="250ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<ul class="post-meta">
+								<li>By <span>Michale</span></li>
+								<li>Interior, awesome</li>
+							</ul>
+							<h3><a href="blog-detail.html">Storage ideas for the bedroom by interior designers ...</a></h3>
+							<a href="blog-detail.html" class="read-more">Read more <span class="icon flaticon-right-arrow-1"></span></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Block -->
+				<div class="news-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms">
+						<div class="image">
+							<a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<ul class="post-meta">
+								<li>By <span>Michale</span></li>
+								<li>Interior, awesome</li>
+							</ul>
+							<h3><a href="blog-detail.html">Kids bedroom design ideas by interior designers in NY</a></h3>
+							<a href="blog-detail.html" class="read-more">Read more <span class="icon flaticon-right-arrow-1"></span></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End News Section -->
+
+	<!-- Call To Action Section -->
+	<section class="call-to-action-section" style="background-image: url(images/background/1.jpg)">
+		<div class="auto-container">
+			<h2>Think Interior. Think Stella Orr'e</h2>
+			<div class="text">Interiors for all styles and budgets, Choose from thousands of <br> designs. Heart your favorites to shortlist.</div>
+			<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
+		</div>
+	</section>
+	<!-- End Call To Action Section -->
+
+	<!--Main Footer-->
 	<?php
-	include('include_footer.php');
+			require("include/footer.php")
 	?>
-	<!-- include_footer end -->
-	<script type="text/javascript">
-      /*------subscribe-form validation start-------*/
-      /*------subscribe-form validation end-------*/
-      /*------subscribe-form submit ajax start-------*/
-      $("#subscribe-form").on("submit", function(e) {
-        e.preventDefault();
-         //alert('test');
-        var request_method = $(this).attr("method"); //get form GET/POST method
-        var form_data = $("#subscribe-form").serialize();
-        var email=$('#email').val();
 
-        let error = false;
-        if(email == '') {
-            error = true;
-            //$("#warning-email").text('Please enter your email');
-        }
-        // console.log(error)
-        if(error == false) {
-          $.ajax(
-          {
-            url:"<?=SITEURL?>ajax_insert_subscribe.php",
-            type:"POST",
-            data:$("#subscribe-form").serialize(),
-            
-            beforeSend:function()
-            {
-            },
-            success:function(result)
-            {
-              let jsonData = $.parseJSON(result);  
-              // console.log(jsonData)
-              if(jsonData.ack==1)
-              {
-              toastr.success("We Will Contact You Soon...");
-              //alert(result.file_path);
-              //console.log(result.file_path)
-              ForceDownload(jsonData.file_path, jsonData.file_name);
-              $("#subscribe-form")[0].reset();
-              $("#warning-email").text('');
-              //$('#myModal').modal('hide')
-              }
-              else
-              {
-              toastr.warning("Something Went wrong...");
-              // jQuery(".fail-show").show().text("Something went wrong");
-              // jQuery(".sucess-show").hide();
-              }
-            }
-          });
-        }
-      })
-    function ForceDownload(download_url = "", file_name = "") {
-	    var anchor = document.createElement("a");
-	    anchor.href = download_url;
-	    anchor.target = "_blank";
-	    anchor.download = file_name;
-	    anchor.click();
-	}
-	jQuery(".cat1").click(function () {
-    jQuery(".cat1").hide();
-	});
-      /*------subscribe-form submit ajax end-------*/
-    </script>
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+
+
+<!--Scroll to top-->
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/script.js"></script>
 </body>
+
+<!-- stella-orre/  30 Nov 2019 03:45:45 GMT -->
 
 </html>

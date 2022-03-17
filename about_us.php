@@ -1,198 +1,357 @@
-<!DOCTYPE html>
-<html lang="zxx">
+<?php
+require("include/header.php"); ?>
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Flowtop-About-Us</title>
-	<!-- include_css start -->
-	<?php
-	    include('include_css.php');
-	?>
-	<!-- include_css end -->
-	<?php
-      /*------condition-------*/
-      $where="isDelete=0 AND isActive=1";
-      /*------about_us get Data-------*/
-      $about_us_r=$db->rp_getData("about_us","*",$where,0);
-      $about_us_d = !empty($about_us_r) ? mysqli_fetch_assoc($about_us_r) : '';
-
-      /*------our team get Data-------*/
-      $our_team_r=$db->rp_getData("our_team","*",$where,"",0,4);
-    ?>
-
-</head>
-
-<body>
-	<!-- include_header start -->
-	<?php
-		include('include_header.php');
-	?>
-	<!-- include_header end -->
-	<!-- feature with photo1 -->
-	<section class="w3l-feature-with-photo-1">
-		<div class="feature-with-photo-hny py-5">
-			<div class="container py-lg-5">
-				<div class="title-content mb-lg-5 mb-4">
-					<span class="sub-title">The Story</span>
-					<h3 class="hny-title"> About Us</h3>
-				</div>
-				<div class="feature-with-photo-content">
-					<div class="ab-in-flow row mb-lg-5 mb-3">
-						<div class="col-lg-6 ab-left">
-							<img src="<?= SITEURL.SHORT_IMAGE.$about_us_d['short_image_path']; ?>" class="img-fluid" alt="">
-						</div>
-						<div class="col-lg-6 ab-right pl-lg-4">
-							<h3 class="hny-title">
-								<?= html_entity_decode($about_us_d['short_title'])?>
-							</h3>
-							<p class="my-4"><?= html_entity_decode($about_us_d['short_description']) ?></p>
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(images/background/5.jpg)">
+    	<div class="auto-container">
+        	<h2>About us</h2>
+            <ul class="page-breadcrumb">
+            	<li><a href="index-2.html">home</a></li>
+                <li>About us</li>
+            </ul>
+        </div>
+    </section>
+    <!--End Page Title-->
+	
+	<!-- Story Section -->
+	<section class="story-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				<!-- Content Column -->
+				<div class="content-column col-lg-8 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<h2>Our Story In Interior Industry</h2>
+						<div class="bold-text">Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line</div>
+						<div class="text">
+							<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+							<p>At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
 						</div>
 					</div>
-
-					<div class="row">
-						<div class="col-md-12" style="padding-top: 5%;">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="grid">
-										<h4><a href="#" style="margin: 30%;">Our Vesion</a></h4>
-										<p><?= html_entity_decode($about_us_d['our_vision']) ?></p>
+				</div>
+				
+				<!-- Image Column -->
+				<div class="image-column col-lg-4 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<div class="image">
+							<img src="images/resource/story.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End Story Section -->
+	
+	<!-- Interior Section -->
+	<section class="interior-section style-three">
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="row clearfix">
+					
+					<!-- Image Column -->
+					<div class="image-column col-lg-4 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<div class="image">
+								<img src="images/resource/interior.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+					
+					<!-- Content Column -->
+					<div class="content-column col-lg-8 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<h2>Why Choose Us for Interior Work</h2>
+							<div class="text">To give you a home that lasts, we bring you only the best in everything — quality raw materials, state-of-the-art manufacturing, rigorous quality checks, professional installations and transparent prices.</div>
+							<div class="row clearfix">
+							
+								<!-- Interior Block -->
+								<div class="interior-block col-lg-4 col-md-4 col-sm-12">
+									<div class="block-inner">
+										<div class="icon-box">
+											<span class="icon flaticon-award-1"></span>
+										</div>
+										<h3>Superior Quality</h3>
 									</div>
 								</div>
-								<div class="col-md-6">	
-									<div class="grid">
-										<h4><a href="#" style="margin: 30%;">Our Mission</a></h4>
-										<p><?= html_entity_decode($about_us_d['our_mission']) ?></p>
+								
+								<!-- Interior Block -->
+								<div class="interior-block col-lg-4 col-md-4 col-sm-12">
+									<div class="block-inner">
+										<div class="icon-box">
+											<span class="icon flaticon-answer"></span>
+										</div>
+										<h3>Professional Team</h3>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //feature with photo1 -->
-	<section class="w3l-content-4">
-		<!-- /content-6-section -->
-		<div class="content-4-main py-5">
-			<div class="container py-lg-5">
-				<div class="content-info-in row">
-					<div class="content-left col-lg-6 text-lg-right pr-lg-3">
-						<h3 class="hny-title"><?= html_entity_decode($about_us_d['long_title'])?></h3>
-						<p><?= html_entity_decode($about_us_d['big_description'])?></p>
-						<img src="<?= SITEURL.BIG_IMAGE.$about_us_d['big_image_path']; ?>" class="img-fluid mt-3" alt="">
-					</div>
-					<div class="content-right col-lg-6 pl-lg-4">
-						<div class="row content4-right-grids mb-lg-5 mb-4">
-							<div class="col-md-2 content4-right-icon">
-								<div class="content4-icon">
-									<span class="fa fa-thumbs-o-up"></span>
+								
+								<!-- Interior Block -->
+								<div class="interior-block col-lg-4 col-md-4 col-sm-12">
+									<div class="block-inner">
+										<div class="icon-box">
+											<span class="icon flaticon-hand"></span>
+										</div>
+										<h3>Unmatched Warranty</h3>
+									</div>
 								</div>
+								
 							</div>
-							<div class="col-md-10 content4-right-info">
-								<h6><a href="#">Better Buying Process</a></h6>
-								<p>We spend as much time as you need with you to plan and cost the perfect bathroom to meet your needs and wants.The process we offer has been developed over 20 years and puts you at the centre. With our offer of unlimited in-store consultations, design and quote alterations, to get the measurements just right we are confident of a far better outcome for you and your family than anyone else can offer.</p>
-							</div>
-
+							
+							<div class="bold-text">Get in touch with us to design your dream home</div>
+							<div class="column-text">Talk to our design expert and get your designs</div>
 						</div>
-						<div class="row content4-right-grids mb-lg-5 mb-4">
-							<div class="col-md-2 content4-right-icon">
-								<div class="content4-icon">
-									<span class="fa fa-tags"></span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Interior Section -->
+	
+	<!-- Counter Section -->
+	<section class="counter-section style-two">
+		<div class="auto-container">
+		
+			<!-- Fact Counter -->
+			<div class="fact-counter">
+				<div class="row clearfix">
+
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="2500" data-stop="8">0</span> Year
 								</div>
+								<h4 class="counter-title">Material Warranty</h4>
 							</div>
-							<div class="col-md-10 content4-right-info">
-								<h6><a href="#">Complete Know How</a></h6>
-								<p>Bathroom equipment can be complicated with not everything being compatible and we’re here to make sure you get all the important parts you need to make the bathroom that you’ve chosen work the way you want it to.</p>
-							</div>
-
 						</div>
-						<div class="row content4-right-grids mb-lg-5 mb-4">
-							<div class="col-md-2 content4-right-icon">
-								<div class="content4-icon">
-									<span class="fa fa-suitcase"></span>
+					</div>
+
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box alternate">
+									<span class="count-text" data-speed="3000" data-stop="2500">0</span>+
 								</div>
+								<h4 class="counter-title">Homes Completed</h4>
 							</div>
-							<div class="col-md-10 content4-right-info">
-								<h6><a href="#">We Always Have Amazing Deals</a></h6>
-								<p>Due to our unique and long standing relationship with one of the industries major manufacturers we are able to offer more quality seconds, end of line and ex-display products than any other bathroom outlet in the country.</p>
-							</div>
+						</div>
+					</div>
 
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="3000" data-stop="200">0</span>+
+								</div>
+								<h4 class="counter-title">Interior Designer</h4>
+							</div>
+						</div>
+					</div>
+					
+					<!--Column-->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="2500" data-stop="45">0</span> Days
+								</div>
+								<h4 class="counter-title">Project Delivery</h4>
+							</div>
 						</div>
 					</div>
 
 				</div>
-
+			</div>
+			
+		</div>
+	</section>
+	<!-- End Counter Section -->
+	
+	<!-- Team Section -->
+	<section class="team-section style-two">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title light centered">
+				<h2>Our Team</h2>
+				<div class="text">Our caregivers are trained specifically to provide in-home care.</div>
+			</div>
+			
+			<div class="clearfix">
+				
+				<!-- Team Block -->
+				<div class="team-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<img src="images/resource/team-1.jpg" alt="" />
+							<div class="overlay-box">
+								<ul class="social-icons">
+									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+									<li><a href="#"><i class="fab fa-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="team.html">Merry Desulva</a></h3>
+							<div class="designation">Interior Designer</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Team Block -->
+				<div class="team-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box ">
+						<div class="image">
+							<img src="images/resource/team-2.jpg" alt="" />
+							<div class="overlay-box">
+								<ul class="social-icons">
+									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+									<li><a href="#"><i class="fab fa-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="team.html">Roseen</a></h3>
+							<div class="designation">Consultant for Designs</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Team Block -->
+				<div class="team-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<img src="images/resource/team-3.jpg" alt="" />
+							<div class="overlay-box">
+								<ul class="social-icons">
+									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+									<li><a href="#"><i class="fab fa-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="team.html">Merry Desulva</a></h3>
+							<div class="designation">Interior Designer</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Team Block -->
+				<div class="team-block col-lg-3 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<img src="images/resource/team-4.jpg" alt="" />
+							<div class="overlay-box">
+								<ul class="social-icons">
+									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+									<li><a href="#"><i class="fab fa-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h3><a href="team.html">Roseen</a></h3>
+							<div class="designation">Consultant for Designs</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<!-- End Team Section -->
+	
+	<!-- Mission Section -->
+    <section class="mission-section style-two">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				<!-- Image Column -->
+				<div class="image-column col-xl-3 col-lg-4 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<div class="image">
+							<img src="images/resource/mission.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+				
+				<!-- Content Column -->
+				<div class="content-column col-xl-9 col-lg-8 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<h2>Our Company Mission</h2>
+						<div class="bold-text">we believe that interior design is more than great functionality and <br> beautiful aesthetics.</div>
+						<div class="text">WThe aesthetics and functional aspects are the primary elements of a smart interior design. We as the prominent Interior Design Consultant in Noida keep these elements at our highest priority. We provide the best suggestions for Interior Designing of a given space</div>
+						<h3>Our Interior designers help you for classic look…</h3>
+						<div class="row clearfix">
+							<div class="column col-lg-6 col-md-6 col-sm-12">
+								<ul class="list-style-two">
+									<li>-  Best Design Consultancy</li>
+									<li>-  Architect Designer</li>
+									<li>-  Turnkey Projects</li>
+								</ul>
+							</div>
+							<div class="column col-lg-6 col-md-6 col-sm-12">
+								<ul class="list-style-two">
+									<li>-  Residential Designs</li>
+									<li>-  Corporate Designs</li>
+									<li>-  Commercial Designs</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</section>
-	<!-- //w3l-faq-6-->
-	<section class="w3l-content-5">
-		<!-- /content-6-section -->
-		<div class="content-5-main">
-			<div class="container">
-				<div class="content-info-in row">
-					<div class="content-gd col-lg-6">
-						<h3 class="hny-title two">
-							Types of Must Have Bathroom Accessories</h3>
-					</div>
-					<div class="content-gd col-lg-6">
-						<p>One of the most used parts of the home is the bathroom. And with this, buying all necessities to make sure that it will provide users comfort, convenience and pleasure is necessary. Bathroom accessories do not only come in many designs and styles but also prices, brands and types. At Flowtop, you are assured that our bathroom products will never fail you in terms of options, designs, prices and style.</p>
-						<p>With the many accessories in the bathroom available on our website, you will definitely have plenty of ways to mix and match different bathroom fittings and accessories to address not only your necessities but bathroom pleasure and beauty too.</p>
-
-					</div>
-
-				</div>
-
-			</div>
+	<!-- End Mission Section -->
+	
+	<!-- Call To Action Section -->
+	<section class="call-to-action-section" style="background-image: url(images/background/6.jpg)">
+		<div class="auto-container">
+			<h2>Think Interior. Think Stella Orr'e</h2>
+			<div class="text">Interiors for all styles and budgets, Choose from thousands of <br> designs. Heart your favorites to shortlist.</div>
+			<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
 		</div>
 	</section>
-	<!-- //content-6-section -->
-	<!-- teams 33 block -->
-	<section class="w3l-teams26-main">
-		<div class="teams-26 py-5">
-			<div class="container py-lg-5">
-				<div class="title-content mb-lg-5 mb-4">
-					<span class="sub-title">Our</span>
-					<h3 class="hny-title">Great Team</h3>
-				</div>
-				<div class="row">
-				<?php
-				if(!empty($our_team_r)) {
-					while ($our_team_d = mysqli_fetch_assoc($our_team_r)) 
-                    { 
-				?>
-				<div class="col-lg-3 col-md-6">
-					<div class="our-team">
-						<div class="pic">
-							<img src="<?=SITEURL.TEAM.$our_team_d['image_path']?>" class="img-fluid" alt="">
-							<div class="social_media_team">
-								<p class="description"><?= html_entity_decode(@$our_team_d['description'])?>
-								</p>
-							</div>
-						</div>
-						<div class="team-prof">
-							<h3 class="post-title"><a href="#"><?= $our_team_d["name"] ?></a></h3>
-							<span class="post"><?= $our_team_d["designation"] ?></span>
-						</div>
-					</div>
-				</div>
-				<?php
-					}
-				}
-				?>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- include_footer start -->
+	<!-- End Call To Action Section -->
+	
+	<!--Main Footer-->
 	<?php
-	include('include_footer.php');
+			require("include/footer.php")
 	?>
-	<!-- include_footer end -->
+	
+</div>  
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+<!--Scroll to top-->
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/script.js"></script>
 </body>
 
+<!-- stella-orre/about.html  30 Nov 2019 03:46:11 GMT -->
 </html>
