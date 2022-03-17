@@ -4,7 +4,7 @@
 <!-- stella-orre/  30 Nov 2019 03:42:43 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Stella Orr'e - Interior and Home Renovation HTML Template | Home Page 01</title>
+<title>Chanakya Engineering Products | We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor sp</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -18,6 +18,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<meta name="language" content="English">
+<meta name="robots" content="all">
+<meta name="description" content="Chanakya Engineering Products in Rajkot ,We would like to introduce ourselves as a leading manufacturer of High Quality.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
+<meta name="twitter:image" content="images/logo.jpg">
+<meta name="twitter:description" content="Chanakya Engineering Products - 0">
+<meta name="twitter:title" content="Chanakya Engineering Products">
+<meta name="twitter:card" content="summary">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chanakya Engineering Products">
+<meta property="og:image" content="images/logo.jpg">
+<meta property="og:site_name" content="Chanakya Engineering Products">
+<meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
 </head>
 
 <body>
@@ -48,7 +62,7 @@
             <div class="auto-container clearfix">
                 <!--Info-->
                 <div class="logo-outer">
-                    <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+                    <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt="" title="" style="max-width: 100px;border-radius: 15%;"></a></div>
                 </div>
 
                 <!--Nav Box-->
@@ -64,23 +78,10 @@
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="index-2.html">Home</a>
-                                    <ul>
-                                        <li><a href="index-2.html">Home page 01</a></li>
-                                        <li><a href="index-3.html">Home page 02</a></li>
-                                        <li><a href="index-4.html">Home page 03</a></li>
-                                        <li><a href="index-5.html">Home page 04</a></li>
-                                        <li><a href="index-6.html">Home page 05</a></li>
-                                        <li class="dropdown"><a href="index-2.html">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header Style One</a></li>
-                                                <li><a href="index-3.html">Header Style Two</a></li>
-                                                <li><a href="index-4.html">Header Style Three</a></li>
-                                                <li><a href="index-5.html">Header Style Four</a></li>
-                                                <li><a href="index-6.html">Header Style Five</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="current dropdown"><a href="index.html">Home</a>
+                                    <!-- <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                    </ul> -->
                                 </li>
                                 <li class="dropdown"><a href="about_us.php">About us</a>
                                     <ul>
@@ -122,7 +123,7 @@
         <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
         
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="index.html"><img src="images/logo.jpg" alt="" title="" style="max-width: 100px;border-radius: 15%;"></a></div>
             <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             <!--Social Links-->
             <div class="social-links">
