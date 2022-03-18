@@ -44,9 +44,9 @@
                                         <li><a href="index.html">Home</a></li>
                                     </ul> -->
                                 </li>
-                                <li class="dropdown"><a href="about_us.php">About us</a>
+                                <li class="dropdown"><a href="about-us">About us</a>
                                     <ul>
-                                        <li><a href="about_us.php">Our Introduction</a></li>
+                                        <li><a href="about-us">Our Introduction</a></li>
                                         <li><a href="team.html">Our Team</a></li>
                                         <li><a href="testimonials.html">Testimonials</a></li>
                                     </ul>
@@ -65,9 +65,9 @@
                                         <li><a href="false-celling-design.html">False Celling Design</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="product_list.php">Gallery</a>
+                                <li class="dropdown"><a href="product-list">Gallery</a>
                                 </li>
-                                <li><a href="contact.php">Contact</a></li>
+                                <li><a href="contact-us">Contact</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -89,11 +89,11 @@
             <!--Social Links-->
             <div class="social-links">
                 <ul class="clearfix">
-                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                    <li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com"><span class="fab fa-whatsapp"></span></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&text="><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com%2F"><span class="fab fa-facebook-square"></span></a></li>
+                    <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&media=&description="><span class="fab fa-pinterest-p"></span></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.katdoorcloser.com%2F&title="><span class="fab fa-linkedin"></span></a></li>
                 </ul>
             </div>
         </nav>

@@ -13,13 +13,14 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
 								<div class="logo">
-                                	<a href="index-2.html"><img src="images/footer-logo.png" alt="" /></a>
+                                	<a href="index.php"><img src="images/logo.jpg" alt="" style="width: 230px;height: 130px;border-radius: 15%;" /></a>
                                 </div>
                                 <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com%2F" target="_blank"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&text=" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.katdoorcloser.com%2F&title=" target="_blank"><span class="fab fa-linkedin-in"></span></a></li>
+                                    <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&media=&description=" target="_blank"><span class="fab fa-pinterest-p"></span></a></li>
                                 </ul>
 							</div>
 						</div>
@@ -64,7 +65,7 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget newsletter-widget">
                             	<h2>Newsletter</h2>
-								<div class="text">Get Special offers & Discounts</div>
+								<div class="text">Stay updated with our latest products and services</div>
 								<!-- Newsletter Form -->
 								<div class="newsletter-form">
 									<form method="post" action="templateshub.net">
