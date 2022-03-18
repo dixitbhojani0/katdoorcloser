@@ -66,6 +66,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="product-list">Gallery</a>
+                                <li class="dropdown"><a href="awards-and-certificates">Awards & Certificates</a>
                                 </li>
                                 <li><a href="contact-us">Contact</a></li>
                             </ul>

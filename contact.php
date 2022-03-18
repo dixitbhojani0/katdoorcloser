@@ -1,266 +1,224 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Flowtop-Contact-Us</title>	
-	<!-- include_css start -->
-	<?php
-	    include('include_css.php');
-	?>
-	<!-- include_css end -->
-	<?php
-      /*------condition-------*/
-      $where="isDelete=0 AND isActive=1";
-      /*------contact_us_info get Data-------*/
-      $get_contact_r=$db->rp_getData("contact_us_info","*",$where,0);
-      $get_contact_d = !empty($get_contact_r) ? mysqli_fetch_assoc($get_contact_r) : '';
-    ?>
+	<title>Chanakya Engineering Products | We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor sp</title>
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
 
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="language" content="English">
+	<meta name="robots" content="all">
+	<meta name="description" content="Chanakya Engineering Products in Rajkot ,We would like to introduce ourselves as a leading manufacturer of High Quality.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
+	<meta name="twitter:image" content="images/logo.jpg">
+	<meta name="twitter:description" content="Chanakya Engineering Products - 0">
+	<meta name="twitter:title" content="Chanakya Engineering Products">
+	<meta name="twitter:card" content="summary">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Chanakya Engineering Products">
+	<meta property="og:image" content="images/logo.jpg">
+	<meta property="og:site_name" content="Chanakya Engineering Products">
+	<meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
 </head>
 
+
 <body>
-	<!-- include_header start -->
 	<?php
-		include('include_header.php');
-	?>
-	<!-- include_header end -->
-	<!-- /contact-grid1 -->
-	<section class="w3l-contact-section-main">
-		<div class="contact-sec-inner">
-		</div>
-		<!-- //contact-grid1 -->
+	
+	$servername = "localhost";
+	$username = "root";
+	$password ="";
+	$database ="flowtop_db";
 
-	</section>
-	<!-- /contact-form -->
-	<section class="w3l-contact-section-form">
-		<div class="contact-sec-inner py-5">
-			<div class="container py-lg-5">
-				<div class="contact-form-mainv">
-					<span class="sub-title">Contact Us</span>
-					<h3 class="hny-title">Keep In Touch With Us.</h3>
-					<p class="para-contact mb-lg-5 mb-4">Welcome to leave your contact info and we will be in touch
-						shortly
-					</p>
-					<div class="row">
-						<div class="col-md-8">
-							<form id="contact-form" name="contact-form" action="" method="post">
+	$conn = mysqli_connect($servername, $username, $password, $database);?>
 
-								<div class="row">
-									<div class="col-lg-6 form-group">	
-										<label for="name">Your Name</label>
-										<input type="text" name="name" id="name">
+	<div class="page-wrapper">
+		<!-- Preloader -->
+		<div class="preloader"></div>
+		<?php require("include/header.php"); ?>
+
+		<!-- End Main Header -->
+
+		<!--Page Title-->
+		<section class="page-title" style="background-image:url(images/background/5.jpg)">
+			<div class="auto-container">
+				<h2>Contact Us</h2>
+				<ul class="page-breadcrumb">
+					<li><a href="index.php">home</a></li>
+					<li>Contact Us</li>
+				</ul>
+			</div>
+		</section>
+		<!--End Page Title-->
+
+		<!-- Contact Form Section -->
+		<section class="contact-form-section" style="background-image:url(images/background/contact.png)">
+			<div class="auto-container">
+				<!-- Sec Title -->
+				<div class="sec-title">
+					<h2>Get In Touch</h2>
+					<div class="text">Do you have anything in your mind to let us know? Kindly don't delay to connect to us by means of our contact form.</div>
+				</div>
+
+				<div class="row clearfix">
+
+					<!-- Form Column -->
+					<div class="form-column col-lg-7 col-md-12 col-sm-12">
+						<div class="inner-column">
+
+							<!-- Contact Form -->
+							<div class="contact-form">
+
+								<!--Contact Form-->
+								<form method="POST" action="" id="contact-form">
+									<div class="row clearfix">
+										<div class="form-group col-lg-6 col-md-6 col-sm-12">
+											<input type="text" name="username" placeholder="Your name" required>
+										</div>
+
+										<div class="form-group col-lg-6 col-md-6 col-sm-12">
+											<input type="text" name="email" placeholder="Email address" required>
+										</div>
+
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<input type="text" name="subject" placeholder="Subject" required>
+										</div>
+
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<textarea name="message" placeholder="Message"></textarea>
+										</div>
+
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
+										</div>
 									</div>
-									<div class="col-lg-6 form-group">
-										<label for="email">Your Email ID</label>
-										<input type="text" name="email" id="email">
-									</div>
-									<div class="col-lg-6 form-group">
-										<label for="mobile_no">Your Mobile No.</label>
-										<input type="text" name="mobile_no" id="mobile_no">
-									</div>
-									<div class="col-lg-6 form-group">
-										<label for="subject">Subject</label>
-										<input type="text" name="subject" id="subject">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" placeholder="" required=""></textarea>
-								</div>
-								<div class="form-submit mt-4">
-									<button  type="submit" name="submit" id="submit" class="btn submit">Submit</button>
-								</div>
-							</form>
+								</form>
+							</div>
+							
+							<?php
+									$method = $_SERVER['REQUEST_METHOD'];
+									if ($method == "POST") {
+										$name = $_POST['username'];
+										$email = $_POST['email'];
+										$subject = $_POST['subject'];
+										$message = $_POST['message'];
+										$sql = "INSERT INTO `contact_us` (`id`, `name`, `email`, `contact_no`, `subject`, `message`,  `created_date`) VALUES (NULL, '$name', '$email', '', '$subject', '$message');";
+										// $result = mysqli_query($conn, $sql);
+										echo  $name;
+									}else{
+										
+									}
+							?>
+
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 plft85">
-				            <ul class="contact_info">
-				              	<li class="cnt_map_icon">
-				                	<p><?= html_entity_decode($get_contact_d["address"])?></p>
-				              	</li>
-				              	<li class="cnt_mail_icon">
-				                	<a href="mailto:<?= @$get_contact_d['email']?>">
-				                  		<p class="line_he2" style="padding: 19px 0px 0px 0px;"><?= @$get_contact_d["email"]?></p>
-				                	</a>
-				              	</li>
-				            	<li class="cnt_call_icon">
-				                	<a href="tel:<?= @$get_contact_d["phone"]?>">
-				                  		<p class="line_he2" style="padding: 20px 0px 0px 0px;"><?=@$get_contact_d["phone"]?></p>
-				                	</a>
-				                	<a href="tel:<?= @$get_contact_d["phone_2"]?>">
-				                  		<p class="line_he2"><?= @$get_contact_d["phone_2"]?></p>
-				                	</a>
-				                	<a href="tel:<?= @$get_contact_d["phone_3"]?>">
-				                  		<p class="line_he2"><?= @$get_contact_d["phone_3"]?></p>
-				                	</a>
-				            	</li>
-				            </ul>
-				        </div>
 					</div>
-					
+
+					<!-- Info Column -->
+					<div class="info-column col-lg-5 col-md-12 col-sm-12">
+						<div class="inner-column">
+
+							<!-- Contact Info List -->
+							<ul class="contact-info-list">
+								<li><strong>Address :</strong><br>256, Stella Orr'e,, New York 24</li>
+							</ul>
+							<!-- Contact Info List -->
+							<ul class="contact-info-list">
+								<li><strong>Phone : </strong><a href="tel:1800-456-7890">1800 456 7890</a></li>
+								<li><strong>Email : </strong><a href="mailto:info@stellaorre.com">info@stellaorre.com</a></li>
+							</ul>
+							<!-- Contact Info List -->
+							<ul class="contact-info-list">
+								<li><strong>Opening Hours :</strong><br>8:00 AM – 10:00 PM <br> Monday – Sunday</li>
+							</ul>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Contact Form Section -->
+
+		<!-- Map Section -->
+		<section class="map-section">
+			<div class="outer-container">
+				<div class="map-outer">
+					<div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Melbourne Australia" data-icon-path="images/icons/map-marker.png" data-content="(1800) 456 7890 <br> Mon-Sat: 7.00an - 9.00pm">
+					</div>
 				</div>
 			</div>
-			<div class="google-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14753.57768306649!2d70.04900242155813!3d22.414175800921804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39576b49eaaaaaab%3A0xbf178e53a199fc3e!2sFlowtop%20Bath%20Fittings!5e0!3m2!1sen!2sin!4v1613238478368!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</section>
+		<!-- End Map Section -->
+
+		<!--Main Footer-->
+		<?php require("include/footer.php") ?>
+
+	</div>
+	<!--End pagewrapper-->
+
+	<!--Scroll to top-->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!--Search Popup-->
+	<div id="search-popup" class="search-popup">
+		<div class="close-search theme-btn"><span class="flaticon-cancel"></span></div>
+		<div class="popup-inner">
+			<div class="overlay-layer"></div>
+			<div class="search-form">
+				<form method="post" action="templateshub.net">
+					<div class="form-group">
+						<fieldset>
+							<input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required>
+							<input type="submit" value="Search Now!" class="theme-btn">
+						</fieldset>
+					</div>
+				</form>
+
+				<br>
+				<h3>Recent Search Keywords</h3>
+				<ul class="recent-searches">
+					<li><a href="#">Home Interiors</a></li>
+					<li><a href="#">Offices Interiors</a></li>
+					<li><a href="#">Showroom Interiors</a></li>
+					<li><a href="#">Building Interiors</a></li>
+					<li><a href="#">Shops Interiors</a></li>
+				</ul>
+
 			</div>
+
 		</div>
-	</section>
-	<!-- //contact-form -->
+	</div>
 
-	<!-- include_footer start -->
-	<?php
-	include('include_footer.php');
-	?>
-	<!-- include_footer end -->
-	<script type="text/javascript">
-      /*------contact-form validation start-------*/
-      $(function() {
-        $.validator.addMethod("regex",function(value,element,regexp)
-        {
-            var re= new RegExp(regexp);
-            return this.optional(element) || re.test(value);
-        }),
-        $("form[name='contact-form']").validate({
-          rules: 
-          {
-            name:
-            {
-              required: true,
-              regex: "^[a-zA-Z]+$"
-            },
-            email:
-            {
-              required: true,
-              email: true
-            },
-            mobile_no:
-            {
-              required: true,
-              regex: "^[0-9]+$",
-              minlength : 10,
-              maxlength: 12 
-            },
-            subject:
-            {
-              required: true
-            },
-            message:
-            {
-              required: true
-            },
-          },
-          messages: 
-          {
-            name: 
-            {
-              required: "<span style='color:red; font-size:14px; font-weight:normal;'>Enter Your Name<span/>",
-              regex: "<b style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Name </b>" 
-            },
-      
-            email:
-            {
-              required:"<p style='color:red; font-size:14px; font-weight:normal;'>Enter Email Id</p>",
-              email:"<p style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Email Id</p>"
-
-            },
-            mobile_no:
-            {
-              required:"<p style='color:red; font-size:14px; font-weight:normal;'>Enter Mobile Number</p>",
-              regex: "<b style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Mobile Number </b>",
-              minlength : "<b style='color:red; font-size:14px; font-weight:normal;'>Mobile Number length at least 10-12 digit.. </b>",
-              maxlength : "<b style='color:red; font-size:14px; font-weight:normal;'>Mobile Number length at least 10-12 digit.. </b>"
-            },
-            subject: 
-            {
-              required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Subject</p>"
-            },
-            message: 
-            {
-              required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Message</p>"
-            }    
-          },
-          submitHandler: function(form) 
-          {
-            form.submit();
-          }
-        });
-      });
-      /*------contact-form validation end-------*/
-      /*------contact-form submit ajax start-------*/
-      $("#contact-form").on("submit", function(e) {
-        e.preventDefault();
-         //alert('test');
-        var request_method = $(this).attr("method"); //get form GET/POST method
-        var form_data = $("#contact-form").serialize();
-        var name=$('#name').val();
-        var email=$('#email').val();
-        var mobile_no=$('#mobile_no').val();
-        //var product=$('#product').val();
-        var subject=$('#subject').val();
-        //var pid=$('#pid').val();
-        var special_request=$('#special_request').val();
-
-        let error = false;
-        if(name == '') {
-            error = true;
-            //$("#warning-name").text('Please enter your name');
-        }
-        if(email == '') {
-            error = true;
-            //$("#warning-email").text('Please enter your email');
-        }
-        if(mobile_no == '') {
-            error = true;
-            //$("#warning-mobile_no").text('Please enter your mobile number');
-        }
-        if(special_request == '') {
-            error = true;
-            //$("#warning-product").text('Please select product');
-        }
-        if(subject == '') {
-            error = true;
-            //$("#warning-subject").text('Please select subject');
-        }
-        // console.log(error)
-        if(error == false) {
-          $.ajax(
-          {
-            url:"<?=SITEURL?>ajax_insert_contact.php",
-            type:"POST",
-            data:$("#contact-form").serialize(),
-            
-            beforeSend:function()
-            {
-            },
-            success:function(result)
-            {
-              let jsonData = JSON.parse(result);  
-              // console.log(jsonData)
-              if(jsonData.ack==1)
-              {
-              toastr.success("We Will Contact You Soon...");
-              $("#contact-form")[0].reset();
-              $("#warning-subject").text('');
-              $("#warning-name").text('');
-              $("#warning-email").text('');
-              $("#warning-mobile_no").text('');
-              $("#warning-special_request").text('');
-              //$('#myModal').modal('hide')
-              }
-              else
-              {
-              toastr.warning("Something Went wrong...");
-              // jQuery(".fail-show").show().text("Something went wrong");
-              // jQuery(".sucess-show").hide();
-              }
-            }
-          });
-        }
-      })
-      /*------contact-form submit ajax end-------*/
-    </script>
+	<!--Scroll to top-->
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.fancybox.js"></script>
+	<script src="js/isotope.js"></script>
+	<script src="js/owl.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/validate.js"></script>
+	<script src="js/appear.js"></script>
+	<script src="js/scrollbar.js"></script>
+	<script src="js/script.js"></script>
+	<!--Google Map APi Key-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
+	<script src="js/map-script.js"></script>
+	<!--End Google Map APi-->
 </body>
+
+<!-- stella-orre/contact.html  30 Nov 2019 03:46:47 GMT -->
 
 </html>

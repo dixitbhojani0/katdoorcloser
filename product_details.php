@@ -80,7 +80,7 @@
 	                            <ul class="tab-btns tab-buttons clearfix">
 	                                <li data-tab="#prod-details" class="tab-btn active-btn">Descripton</li>
 	                                <li data-tab="#prod-spec" class="tab-btn">Specification</li>
-	                                <li data-tab="#prod-reviews" class="tab-btn">Review (2)</li>
+	                                <li data-tab="#prod-reviews" class="tab-btn">Inquiry</li>
 	                            </ul>
 	                            
 	                            <!--Tabs Container-->
@@ -103,68 +103,10 @@
 	                                
 	                                <!--Tab-->
 	                                <div class="tab" id="prod-reviews">
-	                                    <h2 class="title">2 Reviews For win Your Friends</h2>
-	                                    <!--Reviews Container-->
-	                                    <div class="comments-area">
-	                                        <!--Comment Box-->
-	                                        <div class="comment-box">
-	                                            <div class="comment">
-	                                                <div class="author-thumb"><img src="images/resource/author-1.jpg" alt=""></div>
-	                                                <div class="comment-inner">
-	                                                    <div class="comment-info clearfix">Steven Rich â€“ Sep 17, 2016:</div>
-	                                                    <div class="rating">
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star light"></span>
-	                                                    </div>
-	                                                    <div class="text">How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.</div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <!--Comment Box-->
-	                                        <div class="comment-box reply-comment">
-	                                            <div class="comment">
-	                                                <div class="author-thumb"><img src="images/resource/author-2.jpg" alt=""></div>
-	                                                <div class="comment-inner">
-	                                                    <div class="comment-info clearfix">William Cobus â€“ Aug 21, 2016:</div>
-	                                                    <div class="rating">
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star"></span>
-	                                                        <span class="fa fa-star-half-empty"></span>
-	                                                    </div>
-	                                                    <div class="text">There anyone who loves or pursues or desires to obtain pain itself, because it is pain sed, because occasionally circumstances occur some great pleasure.</div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        
-	                                    </div>
-	                                    
 	                                    <!-- Comment Form -->
 	                                    <div class="shop-comment-form">	
-	                                        <h2>Add Your Review</h2>
-	                                        <div class="rating-box">
-	                                            <div class="text"> Your Rating:</div>
-	                                            <div class="rating">
-	                                                <a href="#"><span class="fa fa-star"></span></a>
-	                                            </div>
-	                                            <div class="rating">
-	                                                <a href="#"><span class="fa fa-star"></span><span class="fa fa-star"></span></a>
-	                                                <a href="#"></a>
-	                                            </div>
-	                                            <div class="rating">
-	                                                <a href="#"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></a>
-	                                            </div>
-	                                            <div class="rating">
-	                                                <a href="#"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></a>
-	                                            </div>
-	                                            <div class="rating">
-	                                                <a href="#"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></a>
-	                                            </div>
-	                                        </div>
+	                                        <h2>Inquiry Form</h2>
+	                                        
 	                                        <form method="post" action="templateshub.net">
 	                                            <div class="row clearfix">
 	                                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
