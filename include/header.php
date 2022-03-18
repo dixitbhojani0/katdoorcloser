@@ -66,6 +66,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="product_list.php">Gallery</a>
+                                <li class="dropdown"><a href="Awards & Certificates.php">Awards & Certificates</a>
                                 </li>
                                 <li><a href="contact.php">Contact</a></li>
                             </ul>
