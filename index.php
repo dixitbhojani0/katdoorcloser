@@ -738,7 +738,7 @@
 			<div class="auto-container">
 				<h2>Think Interior. Think Stella Orr'e</h2>
 				<div class="text">Interiors for all styles and budgets, Choose from thousands of <br> designs. Heart your favorites to shortlist.</div>
-				<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
+				<a href="contact-us" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
 			</div>
 		</section>
 		<!-- End Call To Action Section -->

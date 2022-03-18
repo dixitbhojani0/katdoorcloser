@@ -39,7 +39,7 @@
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="index.php">Home</a>
+                                <li class="current"><a href="index.php">Home</a>
                                     <!-- <ul>
                                         <li><a href="index.html">Home</a></li>
                                     </ul> -->
@@ -65,8 +65,8 @@
                                         <li><a href="false-celling-design.html">False Celling Design</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="product-list">Gallery</a>
-                                <li class="dropdown"><a href="awards-and-certificates">Awards & Certificates</a>
+                                <li class=""><a href="product-list">Products</a>
+                                <li class=""><a href="gallery">Gallery</a>
                                 </li>
                                 <li><a href="contact-us">Contact</a></li>
                             </ul>
@@ -90,11 +90,11 @@
             <!--Social Links-->
             <div class="social-links">
                 <ul class="clearfix">
-                    <li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com"><span class="fab fa-whatsapp"></span></a></li>
-                    <li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&text="><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com%2F"><span class="fab fa-facebook-square"></span></a></li>
-                    <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&media=&description="><span class="fab fa-pinterest-p"></span></a></li>
-                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.katdoorcloser.com%2F&title="><span class="fab fa-linkedin"></span></a></li>
+                    <li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&text=" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com%2F" target="_blank"><span class="fab fa-facebook-square"></span></a></li>
+                    <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.katdoorcloser.com%2F&media=&description=" target="_blank"><span class="fab fa-pinterest-p"></span></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.katdoorcloser.com%2F&title=" target="_blank"><span class="fab fa-linkedin"></span></a></li>
                 </ul>
             </div>
         </nav>

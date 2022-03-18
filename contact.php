@@ -1,3 +1,4 @@
+<?php include_once("include/define.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,8 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="<?=SITEURL?>admin/css/toastr.css" >
+	
 	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 	<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
@@ -33,14 +35,6 @@
 
 
 <body>
-	<?php
-	
-	$servername = "localhost";
-	$username = "root";
-	$password ="";
-	$database ="flowtop_db";
-
-	$conn = mysqli_connect($servername, $username, $password, $database);?>
 
 	<div class="page-wrapper">
 		<!-- Preloader -->
@@ -80,7 +74,7 @@
 							<div class="contact-form">
 
 								<!--Contact Form-->
-								<form method="POST" action="" id="contact-form">
+								<form method="POST" action="" id="contact-form" name="contact-form">
 									<div class="row clearfix">
 										<div class="form-group col-lg-6 col-md-6 col-sm-12">
 											<input type="text" name="username" placeholder="Your name" required>
@@ -88,6 +82,12 @@
 
 										<div class="form-group col-lg-6 col-md-6 col-sm-12">
 											<input type="text" name="email" placeholder="Email address" required>
+										</div>
+
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<input type="tel" name="mobile_no" placeholder="Your Mobile No." pattern="[0-9]{9}" required>
+											<label for="mobile_no" class="d-none" id="folio-invalid" style='color:red; font-size:12px; text-transform: uppercase; padding: 5px 0px 0px; line-height: 24px; font-weight: 500;'>Please Enter Valid Mobile Number.</label>
+											<label for="mobile_no" class="d-none" id="mobile-valid" style='color:red; font-size:12px; text-transform: uppercase; padding: 5px 0px 0px; line-height: 24px; font-weight: 500;'>Mobile Number length at least 10 digit..</label>
 										</div>
 
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -100,26 +100,11 @@
 
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
 											<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
+											<img src="images\icons\spinner.gif" id="loader" style="display: none;"/>
 										</div>
 									</div>
 								</form>
 							</div>
-							
-							<?php
-									$method = $_SERVER['REQUEST_METHOD'];
-									if ($method == "POST") {
-										$name = $_POST['username'];
-										$email = $_POST['email'];
-										$subject = $_POST['subject'];
-										$message = $_POST['message'];
-										$sql = "INSERT INTO `contact_us` (`id`, `name`, `email`, `contact_no`, `subject`, `message`,  `created_date`) VALUES (NULL, '$name', '$email', '', '$subject', '$message');";
-										// $result = mysqli_query($conn, $sql);
-										echo  $name;
-									}else{
-										
-									}
-							?>
-
 						</div>
 					</div>
 
@@ -213,10 +198,80 @@
 	<script src="js/appear.js"></script>
 	<script src="js/scrollbar.js"></script>
 	<script src="js/script.js"></script>
+	<script src="<?=SITEURL?>admin/js/toastr.js"></script>
 	<!--Google Map APi Key-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
 	<script src="js/map-script.js"></script>
 	<!--End Google Map APi-->
+	<script type="text/javascript">
+    
+	$("input[name='mobile_no']").on("keyup", function(){
+        var mobNum = $(this).val();
+        var filter = /^\d*(?:\.\d{1,2})?$/;
+
+      	if (filter.test(mobNum)) {
+            if(mobNum.length==10){
+                $("#mobile-valid").addClass("d-none");
+                $("#folio-invalid").addClass("d-none");
+            } else {
+                $("#folio-invalid").removeClass("d-none");
+                $("#mobile-valid").addClass("d-none");
+                return false;
+            }
+        }
+        else {
+			$("#folio-invalid").removeClass("d-none");
+			$("#mobile-valid").addClass("d-none");
+			return false;
+       	}
+       	return true;
+  	});
+	/*------contact-form submit ajax start-------*/
+    $("#contact-form").on("submit", function(e) {
+        e.preventDefault();
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = $("#contact-form").serialize();
+        var mobile_no=$('#mobile_no').val();
+        let error = false;
+        if($(".error").is(":hidden") == false || $("#folio-invalid").is(":hidden") == false || $("#mobile-valid").is(":hidden") == false) {
+            error = true;
+        }
+        console.log(error);
+        if(error == false) {
+          	$.ajax(
+		        {
+		            url:"<?=SITEURL?>ajax_insert_contact.php",
+		            type:"POST",
+		            data:$("#contact-form").serialize(),
+	            
+		            beforeSend: function(){
+				        $('#loader').show();
+				        $('.theme-btn').prop('disabled', true);
+				    },
+				    complete: function(){
+				        $('#loader').hide();
+				        $('.theme-btn').prop('disabled', false);
+				    },
+		            success:function(result)
+		            {
+						let jsonData = JSON.parse(result);  
+						// console.log(jsonData)
+						if(jsonData.ack==1)
+						{
+							toastr.success("Submitted successfully. We Will Contact You Soon...");
+							$("#contact-form")[0].reset();
+						}
+						else
+						{
+							toastr.warning("Something Went wrong...");
+						}
+		            }
+          		}
+          	);
+        }
+    })
+  	/*------contact-form submit ajax end-------*/
+	</script>
 </body>
 
 <!-- stella-orre/contact.html  30 Nov 2019 03:46:47 GMT -->
