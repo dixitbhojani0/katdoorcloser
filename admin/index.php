@@ -49,6 +49,8 @@
         <meta charset="utf-8" />
         <title>Login | <?php echo SITETITLE; ?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
+        <link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
         <meta content="" name="author" />
@@ -176,7 +178,7 @@
         </div>
         <!-- END LOGIN -->
         <!-- BEGIN COPYRIGHT -->
-        <div class="copyright"> 2021 &copy; <?php echo SITETITLE ?> by <?php echo SITEORIGIN ?></div>
+        <div class="copyright"> 2022 &copy; <?php echo SITETITLE ?> by <?php echo SITEORIGIN ?></div>
         <!-- END COPYRIGHT -->
         <!--[if lt IE 9]>
         <script src="../assets/global/plugins/respond.min.js"></script>

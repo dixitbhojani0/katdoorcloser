@@ -1,4 +1,4 @@
-<?php include_once("connect.php"); ?>
+<?php include_once("include/define.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,15 +35,6 @@
 
 
 <body>
-<?php
-	include('connect.php');
-
-      /*------condition-------*/
-      $where="isDelete=0 AND isActive=1";
-      /*------contact_us_info get Data-------*/
-      $get_contact_r=$db->rp_getData("contact_us_info","*",$where,0);
-      $get_contact_d = !empty($get_contact_r) ? mysqli_fetch_assoc($get_contact_r) : '';
-    ?>
 	<div class="page-wrapper">
 		<!-- Preloader -->
 		<div class="preloader"></div>
@@ -126,13 +117,12 @@
 							</ul>
 							<!-- Contact Info List -->
 							<ul class="contact-info-list">
-								<li><strong>Phone : </strong><a href="tel:<?= @$get_contact_d["phone"]?>"><?=@$get_contact_d["phone"]?></a></li>
-								<li><strong>Email : </strong><a href="mailto:<?= @$get_contact_d['email']?>"><?= @$get_contact_d["email"]?></a></li>
+								<li><strong>Phone : </strong><a href="tel:<?= html_entity_decode(@$get_contact_d["phone"]) ?>"><?=@$get_contact_d["phone"]?></a></li>
+								<li><strong>Email : </strong><a href="mailto:<?= html_entity_decode(@$get_contact_d['email']) ?>"><?= @$get_contact_d["email"]?></a></li>
 							</ul>
 							<!-- Contact Info List -->
 							<ul class="contact-info-list">
-								<li><strong>Opening Hours :</strong><br> Monday – Sunday<br>8:00 AM – 8:00 PM </li>
-								<li>Wednesday - Closed</li>
+								<li><strong>Opening Hours :</strong><?= html_entity_decode(@$get_contact_d['description'])?>
 							</ul>
 
 						</div>
@@ -148,7 +138,7 @@
 		<section class="map-section">
 			<div class="outer-container">
 				<div class="map-outer">
-					<div class="map-canvas" data-zoom="12" data-lat="22.265907418203362" data-lng="70.80246776829054" data-type="roadmap" data-hue="#ffc400" data-title="Melbourne Australia" data-icon-path="images/icons/map-marker.png" data-content="(1800) 456 7890 <br> Mon-Sat: 7.00an - 9.00pm">
+					<div class="map-canvas" data-zoom="12" data-lat="22.2623688" data-lng="70.8023327" data-type="roadmap" data-hue="#ffc400" data-title="Chanakya Engineering Products, Rajkot, Gujrat India" data-icon-path="images/icons/map-marker.png" data-content="<?=@$get_contact_d["phone"]?> <br> Monday-Sunday: 8.00AM - 8.00PM <br> Wednesday: Closed">
 					</div>
 				</div>
 			</div>

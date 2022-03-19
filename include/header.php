@@ -1,9 +1,18 @@
+<?php
+    include('connect.php');
+
+    /*------condition-------*/
+    $where="isDelete=0 AND isActive=1";
+    /*------contact_us_info get Data-------*/
+    $get_contact_r=$db->rp_getData("contact_us_info","*",$where,0);
+    $get_contact_d = !empty($get_contact_r) ? mysqli_fetch_assoc($get_contact_r) : '';
+?>
 <header class="main-header header-style-one">
     <!--Header Top-->
     <div class="header-top">
         <div class="auto-container clearfix">
             <div class="top-left clearfix">
-                <div class="text"><span class="icon flaticon-call-answer"></span> Need help? Call Us Now : <a href="tel:1800-456-7890" class="number">1800 456 7890</a></div>
+                <div class="text"><span class="icon flaticon-call-answer"></span> Need help? Call Us Now : <a href="tel:<?= @$get_contact_d['phone'] ?>" class="number"><?= @$get_contact_d['phone'] ?></a></div>
                 
             </div>
             <div class="top-right clearfix">
@@ -42,13 +51,22 @@
                                 <li class="current"><a href="<?= SITEURL ?>">Home</a></li>
                                 <li class="dropdown"><a href="<?= SITEURL ?>about-us">About us</a>
                                     <ul>
-                                        <li><a href="<?= SITEURL ?>about-us">Our Introduction</a></li>
                                         <li><a href="team.html">Our Team</a></li>
                                         <li><a href="testimonials.html">Testimonials</a></li>
                                     </ul>
                                 </li>
-                                <li class=""><a href="<?= SITEURL ?>product-list">Products</a>
-                                <li class=""><a href="<?= SITEURL ?>gallery">Gallery</a>
+                                <li class=""><a href="<?= SITEURL ?>product-list">Products</a></li>
+                                <li class=""><a href="<?= SITEURL ?>gallery">Gallery</a></li>
+                                <li class="dropdown"><a href="<?= SITEURL ?>about-us">Timings</a>
+                                    <ul>
+                                        <li>Mon:&ensp;&nbsp;&ensp;8:00 AM-8:00 PM</li>
+                                        <li>Tue:&emsp;&ensp;8:00 AM-8:00 PM</li>
+                                        <li>Wed:&emsp;&emsp;&ensp;&ensp;Closed&emsp;</li>
+                                        <li>Thur:&emsp;&nbsp;8:00 AM-8:00 PM</li>
+                                        <li>Fri:&emsp;&emsp;&nbsp;8:00 AM-8:00 PM</li>
+                                        <li>Sat:&ensp;&emsp;&nbsp;8:00 AM-8:00 PM</li>
+                                        <li>Sun:&ensp;&emsp;8:00 AM-8:00 PM</li>
+                                    </ul>
                                 </li>
                                 <li><a href="<?= SITEURL ?>contact-us">Contact</a></li>
                             </ul>

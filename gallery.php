@@ -45,8 +45,8 @@
      /*------gallery get Data-------*/
      $gallery_r=$db->rp_getData("gallery","*",$where,"",0,9);
      /*------certificate get Data-------*/
-     $certificate_r=$db->rp_getData("certificate","*",$where,"",0);
-     $certificate_d = mysqli_fetch_assoc($certificate_r);
+     // $certificate_r=$db->rp_getData("certificate","*",$where,"",0);
+     // $certificate_d = mysqli_fetch_assoc($certificate_r);
    ?>
 
 
@@ -68,27 +68,30 @@
             <div class="auto-container">
                 <div class="filter-list row clearfix">
                     <?php
+                    if(!empty($gallery_r))
                         while ($gallery_d = mysqli_fetch_assoc($gallery_r)) 
-                    { 
-                    ?>
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">   
-                                                <a href="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+                        { 
+                        ?>
+                            <!-- Gallery Item -->
+                            <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img src="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" alt="">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">   
+                                                    <h3><?= $gallery_d['title']; ?></h3>
+                                                    <small><?= html_entity_decode($gallery_d['description']); ?></small>
+                                                    <a href="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </figure>
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
-                        <?php
-                    }
+                            <?php
+                        }
                     ?>
                     
                 </div>

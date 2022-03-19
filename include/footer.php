@@ -60,10 +60,10 @@
                             <div class="footer-widget contact-widget">
 								<h2>Contact Info</h2>
 								<div class="widget-content">
-									<a href="tel:1800-574-9687" class="contact-number">(1800) 574 9687</a>
+									<a href="tel:<?= html_entity_decode(@$get_contact_d["phone"]) ?>" class="contact-number"><?= html_entity_decode(@$get_contact_d["phone"]) ?></a>
 									<ul>
-										<li>256, Stella Orr'e, New York 24</li>
-										<li>Email :<a href="mailto:info@stellaorre.com"> info@stellaorre.com</a></li>
+										<li><?= html_entity_decode(@$get_contact_d["address"])?></li>
+										<li>Email :<a href="<?= html_entity_decode(@$get_contact_d['email']) ?>"> <?= html_entity_decode(@$get_contact_d["email"])?></a></li>
 									</ul>
 								</div>
 							</div>

@@ -16,7 +16,7 @@
     <!-- BEGIN LOGO -->
     <div class="page-logo">
       <a href="dashboard.php">
-      <img src="<?= LOGO_IMAGE; ?>" height="50px" width="125px" alt="Logo Image" class="logo-default" /></a>
+      <img src="<?= LOGO_IMAGE; ?>" height="60px" width="125px" alt="Logo Image" class="logo-default" style="border-radius: 15%;" /></a>
       <!-- <div class="menu-toggler sidebar-toggler"> -->
         <span>
         </span>
