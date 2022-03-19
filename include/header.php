@@ -23,7 +23,7 @@
             <div class="auto-container clearfix">
                 <!--Info-->
                 <div class="logo-outer">
-                    <div class="logo"><a href="index.php"><img src="<?= SITEURL ?>images/logo.jpg" alt="" title=""></a></div>
+                    <div class="logo"><a href="<?= SITEURL ?>"><img src="<?= SITEURL ?>images/logo.jpg" alt="" title=""></a></div>
                 </div>
 
                 <!--Nav Box-->
@@ -39,30 +39,12 @@
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="<?= SITEURL ?>index.php">Home</a>
-                                    <!-- <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                    </ul> -->
-                                </li>
+                                <li class="current"><a href="<?= SITEURL ?>">Home</a></li>
                                 <li class="dropdown"><a href="<?= SITEURL ?>about-us">About us</a>
                                     <ul>
                                         <li><a href="<?= SITEURL ?>about-us">Our Introduction</a></li>
                                         <li><a href="team.html">Our Team</a></li>
                                         <li><a href="testimonials.html">Testimonials</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="services-dark.html">Services</a>
-                                    <ul>
-                                        <li><a href="services-dark.html">Services Layout 01</a></li>
-                                        <li><a href="services-light.html">Services Layout 02</a></li>
-                                        <li><a href="residental-interior.html">Residential Interior</a></li>
-                                        <li><a href="commercial-interior.html">Commercial Interior</a></li>
-                                        <li><a href="office-interior.html">Office Design</a></li>
-                                        <li><a href="hospitality-design.html">Hospitality Design</a></li>
-                                        <li><a href="modern-furniture.html">Modern Furniture</a></li>
-                                        <li><a href="modular-kitchen.html">Modular Kitchen</a></li>
-                                        <li><a href="wardrobe.html">Wardrobe</a></li>
-                                        <li><a href="false-celling-design.html">False Celling Design</a></li>
                                     </ul>
                                 </li>
                                 <li class=""><a href="<?= SITEURL ?>product-list">Products</a>
@@ -85,7 +67,7 @@
         <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
         
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.php"><img src="<?= SITEURL ?>images/logo.jpg" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="<?= SITEURL ?>"><img src="<?= SITEURL ?>images/logo.jpg" alt="" title=""></a></div>
             <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             <!--Social Links-->
             <div class="social-links">

@@ -36,7 +36,18 @@
 <body>
     <div class="preloader"></div>
 
-    <?php require("include/header.php"); ?>
+    <?php
+     require("include/header.php");
+     require("include/connect.php");
+     
+     /*------condition-------*/
+     $where="isDelete=0 AND isActive=1";
+     /*------gallery get Data-------*/
+     $gallery_r=$db->rp_getData("gallery","*",$where,"",0,9);
+     /*------certificate get Data-------*/
+     $certificate_r=$db->rp_getData("certificate","*",$where,"",0);
+     $certificate_d = mysqli_fetch_assoc($certificate_r);
+   ?>
 
 
     <div class="page-wrapper">
@@ -56,56 +67,30 @@
         <section class="portfolio-page-section">
             <div class="auto-container">
                 <div class="filter-list row clearfix">
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <img src="images/gallery/17.jpg" alt="">
-                                <!--Overlay Box-->
-                                <div class="overlay-box">
-                                    <div class="overlay-inner">
-                                        <div class="content">                                            <a href="images/gallery/17.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+                    <?php
+                        while ($gallery_d = mysqli_fetch_assoc($gallery_r)) 
+                    { 
+                    ?>
+                        <!-- Gallery Item -->
+                        <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <figure class="image-box">
+                                    <img src="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" alt="">
+                                    <!--Overlay Box-->
+                                    <div class="overlay-box">
+                                        <div class="overlay-inner">
+                                            <div class="content">   
+                                                <a href="<?= SITEURL.GALLERY.$gallery_d['image_path'];?>" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </figure>
+                                </figure>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <img src="images/gallery/18.jpg" alt="">
-                                <!--Overlay Box-->
-                                <div class="overlay-box">
-                                    <div class="overlay-inner">
-                                        <div class="content">
-                                            <a href="images/gallery/18.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item mix all wardrobe residential-interior interior col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <img src="images/gallery/19.jpg" alt="">
-                                <!--Overlay Box-->
-                                <div class="overlay-box">
-                                    <div class="overlay-inner">
-                                        <div class="content">
-                                            <a href="images/gallery/19.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
+                    
                 </div>
             </div>
         </section>

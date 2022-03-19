@@ -13,7 +13,7 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
 								<div class="logo">
-                                	<a href="<?= SITEURL ?>index.php"><img src="<?= SITEURL ?>images/logo.jpg" alt="" style="width: 230px;height: 130px;border-radius: 15%;" /></a>
+                                	<a href="<?= SITEURL ?>"><img src="<?= SITEURL ?>images/logo.jpg" alt="" style="width: 230px;height: 130px;border-radius: 15%;" /></a>
                                 </div>
                                 <ul class="social-icons">
                                     <li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
