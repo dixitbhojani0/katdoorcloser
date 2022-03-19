@@ -1,34 +1,36 @@
+<?php include("connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Chanakya Engineering Products | We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor sp</title>
+    <title>Images :Chanakya Engineering Products in Rajkot</title>
     <!-- Stylesheets -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="<?= SITEURL ?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?= SITEURL ?>css/style.css" rel="stylesheet">
+    <link href="<?= SITEURL ?>css/responsive.css" rel="stylesheet">
+    <link href="<?= SITEURL ?>admin/css/toastr.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="language" content="English">
+    <meta http-equiv="content-language" content="en">
     <meta name="robots" content="all">
-    <meta name="description" content="Chanakya Engineering Products in Rajkot ,We would like to introduce ourselves as a leading manufacturer of High Quality.">
+    <meta name="description" content="Image Gallery by Chanakya Engineering Products from Rajkot,India.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
-    <meta name="twitter:image" content="images/logo.jpg">
-    <meta name="twitter:description" content="Chanakya Engineering Products - 0">
-    <meta name="twitter:title" content="Chanakya Engineering Products">
+    <meta name="twitter:image" content="<?= SITEURL ?>images/logo.jpg">
+    <meta name="twitter:description" content="Gallery for Chanakya Engineering Products">
+    <meta name="twitter:title" content="Gallery : Chanakya Engineering Products">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chanakya Engineering Products">
-    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:title" content="Gallery for Chanakya Engineering Products">
+    <meta property="og:image" content="<?= SITEURL ?>images/logo.jpg">
     <meta property="og:site_name" content="Chanakya Engineering Products">
-    <meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
+    <meta property="og:description" content="Gallery :Chanakya Engineering Products,We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor spring, glass door patch fittings.  Our products adhere to International Standard. CHANAKYA ENGINEERING PRODUCTS. is located in RAJKOT GUJARAT .We have been manufacturing these products since 1992. We  have created a niche for ourselves in satisfying far end Clientele with at most care. CHANAKYA ENGINEERING PRODUCTS true to its name, stands for perfection in each and every product that leaves its factory premises because ‘quality is our first priority’.">
 </head>
 
 <body>
@@ -117,17 +119,6 @@
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
     <!--Scroll to top-->
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/mixitup.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/scrollbar.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>

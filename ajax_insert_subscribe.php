@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    include_once("connect.php");
     /*------condition-------*/
     $where="isDelete=0 AND isActive=1";
     /*------contact_us_info get Data-------*/
@@ -21,25 +21,24 @@
         $insert=$db->rp_insert("contact_us",$values,$rows,0);
         if($insert)
         {
-            $filename=SITEURL."images/broucher/broucher1.pdf";
-            //print_r($filename);exit();
-            
-            
+            $filename=SITEURL.BROUCHER."final-brochure.pdf";
+
             // mail send start //////////////////////////////////////////////////
             try {
                 //Server settings
                 $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     // Enable verbose debug output
                 $mail->isSMTP();                                           // Send using SMTP
-                $mail->Host       = 'mail.flowtop.in';                      // Set the SMTP server to send through
+                $mail->Host       = MAIL_HOST;                     // Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                  // Enable SMTP authentication
-                $mail->Username   = 'info@flowtop.in';                    // SMTP username 
-                $mail->Password   = "W.i.]$=K0btA";          // SMTPSecure password
+                $mail->Username = MAIL_USERNAME;               // SMTP username 
+                $mail->Password = MAIL_PASSWORD;                             // SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
                 $mail->Port       = 587;                                    // TCP port to connect to
 
                 //Recipients
-                $mail->setFrom("info@flowtop.in", "Flowtop");
-                $mail->addAddress("info@flowtop.in");               // Name is optional
+                $mail->From = MAIL_FROM;
+                $mail->FromName = MAIL_FROM_NAME;
+                $mail->addAddress(ADMIN_EMAIL);               // Name is optional
 
                 // Content
                 $mail->isHTML(true);                                  // Set email format to HTML
@@ -58,15 +57,14 @@
                     )
                 );
                 $mail->send();
-                //echo "string11";exit();      
             } 
             catch (Exception $e) {
-                // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
             ///////////// mail send end////////////////////////////////
             
             
-            $reply=array("ack"=>1,"developer_msg"=>" Detail insert successfully!!","ack_msg"=>"E-Catalouge Download Successfully......","file_path"=>$filename,"file_name"=>"E-Catalouge-FLOWTOP");
+            $reply=array("ack"=>1,"developer_msg"=>" Detail insert successfully!!","ack_msg"=>"E-Catalouge Download Successfully......","file_path"=>$filename,"file_name"=>"E-Catalouge-".SITENAME);
                 echo json_encode($reply);
         }
         else

@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    include_once("connect.php");
     /*------condition-------*/
     $where = "isDelete=0 AND isActive=1";
 
@@ -27,10 +27,10 @@
                 //Server settings
                 $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     // Enable verbose debug output
                 $mail->isSMTP();                                           // Send using SMTP
-                $mail->Host = 'smtp.gmail.com';                      // Set the SMTP server to send through
+                $mail->Host = MAIL_HOST;                      // Set the SMTP server to send through
                 $mail->SMTPAuth = true;                                  // Enable SMTP authentication
-                $mail->Username = 'dixitbhojani0@gmail.com';                    // SMTP username 
-                $mail->Password = "dixit@123";          // SMTP password
+                $mail->Username = MAIL_USERNAME;                    // SMTP username 
+                $mail->Password = MAIL_PASSWORD;          // SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
                 $mail->Port = 587;                                    // TCP port to connect to
 
@@ -44,7 +44,7 @@
                 $mail->Subject = SITENAME;
                 $mail->Body = 'Hi, '.$username.
                 '<br/>Thank you for getting in touch. We are working on your request hang tight! We will get back to you within 8 business hours (Monday - Friday 10 am to 7pm EST).<br/>Here are some important links that might direct you where you need to go:<br/>Phone No:'.$get_contact_d["phone"].
-                '<br/>Thanks again,<br/>'.SITENAME;
+                '<br/>Thanks again,<br/>'.MAIL_FROM_NAME;
                 $mail->AltBody = 'This is the computer generated email'; // This is the body in plain text for non-HTML mail clients
                 $mail->SMTPDebug  = 0; 
                 $mail->SMTPOptions = array(
