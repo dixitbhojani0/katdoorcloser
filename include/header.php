@@ -23,7 +23,7 @@
             <div class="auto-container clearfix">
                 <!--Info-->
                 <div class="logo-outer">
-                    <div class="logo"><a href="index.php"><img src="images/logo.jpg" alt="" title=""></a></div>
+                    <div class="logo"><a href="index"><img src="images/logo.jpg" alt="" title=""></a></div>
                 </div>
 
                 <!--Nav Box-->
@@ -39,30 +39,13 @@
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="index.php">Home</a>
-                                    <!-- <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                    </ul> -->
+                                <li class="current"><a href="index">Home</a>
                                 </li>
                                 <li class="dropdown"><a href="about-us">About us</a>
                                     <ul>
                                         <li><a href="about-us">Our Introduction</a></li>
                                         <li><a href="team.html">Our Team</a></li>
                                         <li><a href="testimonials.html">Testimonials</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="services-dark.html">Services</a>
-                                    <ul>
-                                        <li><a href="services-dark.html">Services Layout 01</a></li>
-                                        <li><a href="services-light.html">Services Layout 02</a></li>
-                                        <li><a href="residental-interior.html">Residential Interior</a></li>
-                                        <li><a href="commercial-interior.html">Commercial Interior</a></li>
-                                        <li><a href="office-interior.html">Office Design</a></li>
-                                        <li><a href="hospitality-design.html">Hospitality Design</a></li>
-                                        <li><a href="modern-furniture.html">Modern Furniture</a></li>
-                                        <li><a href="modular-kitchen.html">Modular Kitchen</a></li>
-                                        <li><a href="wardrobe.html">Wardrobe</a></li>
-                                        <li><a href="false-celling-design.html">False Celling Design</a></li>
                                     </ul>
                                 </li>
                                 <li class=""><a href="product-list">Products</a>
