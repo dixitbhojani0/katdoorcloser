@@ -4,6 +4,8 @@
     	<!--Widgets Section-->
         <div class="widgets-section">
         	<div class="row clearfix">
+				<?php
+				require("include/define.php")?>
             	
                 <!--big column-->
                 <div class="big-column col-lg-6 col-md-12 col-sm-12">

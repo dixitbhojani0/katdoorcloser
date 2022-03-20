@@ -45,7 +45,7 @@
             <div class="auto-container">
                 <h2>Products</h2>
                 <ul class="page-breadcrumb">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li>Products <small>(Go Through Wide Range of Porducts)</small></li>
                 </ul>
             </div>
@@ -83,9 +83,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/17.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -102,9 +102,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/18.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -121,9 +121,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/19.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -140,9 +140,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/20.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -159,9 +159,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/21.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -178,9 +178,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/22.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -197,9 +197,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/23.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -216,9 +216,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/24.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -235,9 +235,9 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="product_details.php">Modular Kitchen</a></h3>
+                                                <h3><a href="product-details">Modular Kitchen</a></h3>
                                                 <a href="images/gallery/25.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product_details.php" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
                                             </div>
                                         </div>
                                     </div>

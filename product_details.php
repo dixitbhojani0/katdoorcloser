@@ -45,7 +45,8 @@
 	    	<div class="auto-container">
 	        	<h2>Product Details</h2>
 	            <ul class="page-breadcrumb">
-	            	<li><a href="index.php">home</a></li>
+	            	<li><a href="index">home</a></li>
+	            	<li><a href="product-list">Product list</a></li>
 	                <li>Product Details</li>
 	            </ul>
 	        </div>

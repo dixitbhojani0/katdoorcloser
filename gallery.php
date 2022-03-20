@@ -56,7 +56,7 @@
             <div class="auto-container">
                 <h2>Find Our Gallery</h2>
                 <ul class="page-breadcrumb">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li>Gallery <small>(Short Journey of Our Success..)</small></li>
                 </ul>
             </div>

@@ -43,7 +43,7 @@
 	    	<div class="auto-container">
 	        	<h2>About us</h2>
 	            <ul class="page-breadcrumb">
-	            	<li><a href="index.php">Home</a></li>
+	            	<li><a href="index">Home</a></li>
 	                <li>About us</li>
 	            </ul>
 	        </div>
