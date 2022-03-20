@@ -32,33 +32,49 @@
   $params['id']=trim($db->clean($_REQUEST['id']));
   $params['short_title']=trim($db->clean($_REQUEST['short_title']));
   $params['long_title']=trim($db->clean($_REQUEST['long_title']));
-  // $params['target']=trim($db->clean($_REQUEST['target']));
-  //$params['url']=trim($db->clean($_REQUEST['url']));
   $params['short_description']=html_entity_decode(trim($db->clean($_REQUEST['short_description'])));
   $params['big_description']=html_entity_decode(trim($db->clean($_REQUEST['big_description'])));
-  //mysqli_real_escape_string
-  //stripslashes
-  //html_entity_decode(string)
-  // $params['promo_type']="0";
   $params['short_image_path']=trim($db->clean($_REQUEST['short_image_path']));
-  // $params['old_image_path']=trim($db->clean($_REQUEST['old_image_path']));
-  
-  	if($mode=='a')
+  $params['big_image_path']=trim($db->clean($_REQUEST['big_image_path']));
+  $params['vision_image_path']=trim($db->clean($_REQUEST['vision_image_path']));
+  $params['mission_image_path']=trim($db->clean($_REQUEST['mission_image_path']));
+  $params['counter_1_title']=trim($db->clean($_REQUEST['counter_1_title']));
+  $params['counter_2_title']=trim($db->clean($_REQUEST['counter_2_title']));
+  $params['counter_3_title']=trim($db->clean($_REQUEST['counter_3_title']));
+  $params['counter_4_title']=trim($db->clean($_REQUEST['counter_4_title']));
+  $params['counter_1_value']=trim($db->clean($_REQUEST['counter_1_value']));
+  $params['counter_2_value']=trim($db->clean($_REQUEST['counter_2_value']));
+  $params['counter_3_value']=trim($db->clean($_REQUEST['counter_3_value']));
+  $params['counter_4_value']=trim($db->clean($_REQUEST['counter_4_value'])); 
+  $params['our_service_1_title']=trim($db->clean($_REQUEST['our_service_1_title']));
+$params['our_service_2_title']=trim($db->clean($_REQUEST['our_service_2_title']));
+$params['our_service_3_title']=trim($db->clean($_REQUEST['our_service_3_title']));
+$params['our_service_4_title']=trim($db->clean($_REQUEST['our_service_4_title']));
+$params['our_service_5_title']=trim($db->clean($_REQUEST['our_service_5_title']));
+$params['our_service_6_title']=trim($db->clean($_REQUEST['our_service_6_title']));
+$params['our_service_1_desc']=trim($db->clean($_REQUEST['our_service_1_desc']));
+$params['our_service_2_desc']=trim($db->clean($_REQUEST['our_service_2_desc']));
+$params['our_service_3_desc']=trim($db->clean($_REQUEST['our_service_3_desc']));
+$params['our_service_4_desc']=trim($db->clean($_REQUEST['our_service_4_desc']));
+$params['our_service_5_desc']=trim($db->clean($_REQUEST['our_service_5_desc']));
+$params['our_service_6_desc']=trim($db->clean($_REQUEST['our_service_6_desc']));
+  	
+  if($mode=='a')
   	{ 
   		$detail['adate']=date("d-m-Y H-i-s a",strtotime($_REQUEST['adate']));
-  	    $reply=$banner_obj->insert($params,"",$_FILES,$_FILES);
+  	  $reply=$banner_obj->insert($params,"",$_FILES,$_FILES);
   		if($reply['ack']==1)
   		{
   			
   			$success_msg[]=$reply['ack_msg'];
-              $_SESSION['success_msg']= $success_msg;
-              $db->rp_location("about_us_manage.php");
+        $_SESSION['success_msg']= $success_msg;
+        // $db->rp_location("about_us_manage.php");
   		}
   		else
   		{
   			$error_msg[]=$reply['ack_msg'];
   			$_SESSION['error_msg']= $error_msg;
-  			$db->rp_location("about_us_manage.php");
+  			// $db->rp_location("about_us_manage.php");
   		}
   	}
   	else if($mode=='e')
@@ -67,14 +83,14 @@
   		if($reply['ack']==1)
   		{
   			$success_msg[]=$reply['ack_msg'];
-              $_SESSION['success_msg']= $success_msg;
-              $db->rp_location("about_us_manage.php");
+        $_SESSION['success_msg']= $success_msg;
+        // $db->rp_location("about_us_manage.php");
   		}
   		else
   		{
   			$error_msg[]=$reply['ack_msg'];
   			$_SESSION['error_msg']= $error_msg;
-  			$db->rp_location("about_us_manage.php");
+  			// $db->rp_location("about_us_manage.php");
   		}
   	}
   	else if($mode=='d')
@@ -85,35 +101,33 @@
   		if($reply['ack']==1)
   		{
   		    $success_msg[]=$reply['ack_msg'];
-              $_SESSION['success_msg']= $success_msg;
-              $db->rp_location("about_us_manage.php");
+          $_SESSION['success_msg']= $success_msg;
+          // $db->rp_location("about_us_manage.php");
   		}
   		else
   		{
-  		    $error_msg[]=$reply['ack_msg'];
+  	   $error_msg[]=$reply['ack_msg'];
   			$_SESSION['error_msg']= $error_msg;
-  			$db->rp_location("about_us_manage.php");
+  			// $db->rp_location("about_us_manage.php");
   		}
   	}
   	else if($mode=='ac')
   	{
-  	    $params['isActive']=$_REQUEST['status'];
+  	 $params['isActive']=$_REQUEST['status'];
   		$reply=$banner_obj->active(array("key"=>"id","value"=>$params['id'],"status"=>$params['isActive']));
   		if($reply['ack']==1)
   		{
   		    $success_msg[]=$reply['ack_msg'];
-              $_SESSION['success_msg']= $success_msg;
-              $db->rp_location("about_us_manage.php");
+          $_SESSION['success_msg']= $success_msg;
+          // $db->rp_location("about_us_manage.php");
   		}
   		else
   		{
   			$error_msg[]=$reply['ack_msg'];
   			$_SESSION['error_msg']= $error_msg;
-  			$db->rp_location("about_us_manage.php");
+  			// $db->rp_location("about_us_manage.php");
   		}
-  	}
-  
-     
+  	}   
   }
   
   if($mode=="e")
@@ -236,17 +250,6 @@
                           <label for="title">Long Title</label>
                           <input type="text" class="form-control" name="long_title" id="long_title" value="<?php echo $long_title; ?>" >
                         </div>
-                        <!-- <div class="form-group">
-                          <label for="url">URL</label>
-                          <input data-validation="url" type="text" class="form-control" name="url" id="url" data-validation-error-msg="Please enter Valid URL" value="<?php echo $url; ?>">
-                          </div> -->
-                        <!-- <div class="form-group">
-                          <label for="Target">Target</label>
-                          <select class="form-control" name="target">
-                          	<option value="_SELF" <?php if($target=="_SELF"){ ?> selected <?php } ?>>SELF</option>
-                              <option value="_BLANK" <?php if($target=="_BLANK"){ ?> selected <?php } ?>>NEW</option>
-                          </select>
-                          </div> -->
                         <div class="form-group">
                           <label for="description">Short Description</label>
                           <textarea class="form-control" name="short_description" id="short_description"><?php echo $short_description; ?></textarea>
@@ -254,6 +257,38 @@
                         <div class="form-group">
                           <label for="description">Big Description</label>
                           <textarea class="form-control" name="big_description" id="big_description"><?php echo $big_description; ?></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="counter_1_title">Counter 1 Title</label>
+                          <input type="text" class="form-control" name="counter_1_title" id="counter_1_title" value="<?php echo $counter_1_title; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="counter_2_title">Counter 2 Title</label>
+                          <input type="text" class="form-control" name="counter_2_title" id="counter_2_title" value="<?php echo $counter_2_title; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="counter_3_title">Counter 3 Title</label>
+                          <input type="text" class="form-control" name="counter_3_title" id="counter_3_title" value="<?php echo $counter_3_title; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="counter_4_title">Counter 4 Title</label>
+                          <input type="text" class="form-control" name="counter_4_title" id="counter_4_title" value="<?php echo $counter_4_title; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="title">Counter 1 Value</label>
+                          <input type="text" class="form-control" name="counter_1_value" id="counter_1_value" value="<?php echo $counter_1_value; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="title">Counter 2 Value</label>
+                          <input type="text" class="form-control" name="counter_2_value" id="counter_2_value" value="<?php echo $counter_2_value; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="title">Counter 3 Value</label>
+                          <input type="text" class="form-control" name="counter_3_value" id="counter_3_value" value="<?php echo $counter_3_value; ?>" >
+                        </div>
+                        <div class="form-group">
+                          <label for="title">Counter 4 Value</label>
+                          <input type="text" class="form-control" name="counter_4_value" id="counter_4_value" value="<?php echo $counter_4_value; ?>" >
                         </div>
                       </div>
                     </div>
@@ -274,6 +309,16 @@
                             <div class="col-sm-12">
                               <div class="form-group">
                                 <input data-image="<?php echo ($big_image_path!="" && file_exists(BIG_IMAGE_A.$big_image_path))?BIG_IMAGE_A.$big_image_path:"";?>" type="file" accept="image/*" name="big_image_path" id="big_image_path" data-old-image-dom="old_image_path_2"  data-old-image-path="<?php echo $big_image_path ?>" value="" >
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="form-group">
+                                <input data-image="<?php echo ($vision_image_path!="" && file_exists(VISION_IMAGE_A.$big_image_path))?VISION_IMAGE_A.$vision_image_path:"";?>" type="file" accept="image/*" name="vision_image_path" id="vision_image_path" data-old-image-dom="old_image_path_3"  data-old-image-path="<?php echo $vision_image_path ?>" value="" >
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="form-group">
+                                <input data-image="<?php echo ($mission_image_path!="" && file_exists(MISSION_IMAGE_A.$mission_image_path))?MISSION_IMAGE_A.$mission_image_path:"";?>" type="file" accept="image/*" name="mission_image_path" id="mission_image_path" data-old-image-dom="old_image_path_4"  data-old-image-path="<?php echo $mission_image_path ?>" value="" >
                               </div>
                             </div>
                           </div>
@@ -378,8 +423,62 @@
       	
       })
       
-      
-       $("form").submit( function( e ) {
+      var isImageThumbnailLoaded_3=false;
+      var isImageThumbnailValid_3=false;
+       
+      $(function(){    
+          aj.imageHolder($("input[name=vision_image_path]"),"","",
+          function(isImageThumbnailLoadedReply,isImageThumbnailValidReply){
+            isImageThumbnailLoaded_3=isImageThumbnailLoadedReply;
+            isImageThumbnailValid_3=isImageThumbnailValidReply;
+            toastr.success("Old Image Found!!");
+          },
+          function(file,img)
+          {
+             if(!file)
+             {
+                toastr.error("File may be corrupted or missing. Try again!!");
+             }
+          },
+          function(isImageThumbnailLoadedReply,isImageThumbnailValidReply,image_width,image_height){
+            isImageThumbnailLoaded_3=isImageThumbnailLoadedReply;
+            isImageThumbnailValid_3=isImageThumbnailValidReply;
+              toastr.success("Selected File Dimension: "+image_width+" X "+image_height);
+          },
+          function(data){
+            isImageThumbnailLoadedReply
+          }
+        );
+      })
+      var isImageThumbnailLoaded_4=false;
+      var isImageThumbnailValid_4=false;
+     
+      $(function(){   
+          aj.imageHolder($("input[name=mission_image_path]"),"","",
+          function(isImageThumbnailLoadedReply,isImageThumbnailValidReply){
+           isImageThumbnailLoaded_4=isImageThumbnailLoadedReply;
+           isImageThumbnailValid_4=isImageThumbnailValidReply;
+           toastr.success("Old Image Found!!");
+          },
+          function(file,img)
+          {
+             if(!file)
+             {
+                toastr.error("File may be corrupted or missing. Try again!!");
+             }
+          },
+          function(isImageThumbnailLoadedReply,isImageThumbnailValidReply,image_width,image_height){
+            isImageThumbnailLoaded_4=isImageThumbnailLoadedReply;
+            isImageThumbnailValid_4=isImageThumbnailValidReply;
+              toastr.success("Selected File Dimension: "+image_width+" X "+image_height);
+            },
+          function(data){
+            isImageThumbnailLoadedReply
+          }
+        );
+      })
+        
+        $("form").submit( function( e ) {
       		var isValid=true;
       		var form = this;
       		if(!isImageThumbnailValid)

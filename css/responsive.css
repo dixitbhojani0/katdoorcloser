@@ -58,7 +58,8 @@
 	.main-slider .social-icons,
 	.main-slider.style-two:after,
 	.main-slider.style-two:before,
-	.mission-section .content-column .bold-text br{
+	.mission-section .content-column .bold-text br,
+	.vision-section .content-column .bold-text br{
 		display:none;
 	}
 	
@@ -84,11 +85,13 @@
 		margin-left:160px;
 	}
 	
-	.mission-section .content-column .inner-column{
+	.mission-section .content-column .inner-column,
+	.vision-section .content-column .inner-column{
 		margin-left:0px;
 	}
 	
-	.mission-section .image-column .inner-column{
+	.mission-section .image-column .inner-column,
+	.vision-section .image-column .inner-column{
 		margin-right:0px;
 	}
 	
@@ -924,11 +927,13 @@
 	.mission-section .content-column h2,
 	.featured-section .title-box h2,
 	.project-section .title-box h2,
-	.services-section .title-box h2{
+	.services-section .title-box h2,
+	.vision-section .content-column h2{
 		font-size:28px;
 	}
 	
-	.mission-section .content-column .bold-text{
+	.mission-section .content-column .bold-text,
+	.vision-section .content-column .bold-text{
 		font-size:18px;
 	}
 	

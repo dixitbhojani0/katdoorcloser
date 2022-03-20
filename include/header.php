@@ -49,11 +49,7 @@
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
                                 <li class="current"><a href="<?= SITEURL ?>">Home</a></li>
-                                <li class="dropdown"><a href="<?= SITEURL ?>about-us">About us</a>
-                                    <ul>
-                                        <li><a href="team.html">Our Team</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                    </ul>
+                                <li class=""><a href="<?= SITEURL ?>about-us">About us</a>
                                 </li>
                                 <li class=""><a href="<?= SITEURL ?>product-list">Products</a></li>
                                 <li class=""><a href="<?= SITEURL ?>gallery">Gallery</a></li>

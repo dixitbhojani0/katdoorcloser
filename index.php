@@ -1,4 +1,41 @@
-<?php include("connect.php"); ?>
+<?php include("connect.php"); 
+
+	/*------condition-------*/
+    $where ="isDelete=0 AND isActive=1";
+    $where_p ="isDelete=0 AND display_order>0 AND isActive=1 ";
+	/*------banner get Data-------*/
+    $banner_r = $db->rp_getData("banner","*",$where,"display_order ASC",0);
+    
+    $product_a =$db->rp_getData("product","*",$where_p,"display_order ASC",0,6); 
+    $category_r = $db->rp_getData("category", "*", $where);
+    $category_id_array = $value = array();
+    if(!empty($category_r)) {
+    	$category_data = mysqli_fetch_all($category_r);
+    	foreach ($category_r as $key => $value) {
+			$category_id_array[$value['id']] = $value['name']; 	
+			$category_data_array[] = $value;
+    	}
+    }
+    $category_a = $db->rp_getData("category", "*", $where);
+
+	$about_us_r=$db->rp_getData("about_us","*",$where,0);
+	if(!empty($about_us_r)) {
+		$about_us_d = mysqli_fetch_assoc($about_us_r);
+	}
+
+	/*------our team get Data-------*/
+	$our_team_r=$db->rp_getData("our_team","*",$where,"",0,4);
+	/*------our service get Data-------*/
+	$services = array(
+		array(@$about_us_d['our_service_1_title'] => @$about_us_d['our_service_1_desc']),
+		array(@$about_us_d['our_service_2_title'] => @$about_us_d['our_service_2_desc']),
+		array(@$about_us_d['our_service_3_title'] => @$about_us_d['our_service_3_desc']),
+		array(@$about_us_d['our_service_4_title'] => @$about_us_d['our_service_4_desc']),
+		array(@$about_us_d['our_service_5_title'] => @$about_us_d['our_service_5_desc']),
+		array(@$about_us_d['our_service_6_title'] => @$about_us_d['our_service_6_desc']),
+	); 
+	$testimony_r=$db->rp_getData("testimony","*", $where,"",0);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,210 +87,60 @@
 				<div class="banner-carousel owl-theme owl-carousel">
 
 					<!-- Slide -->
-					<div class="slide">
-						<div class="image-layer" style="background-image:url(images/main-slider/1.jpg)"></div>
-						<div class="auto-container">
-							<div class="content">
-								<h2>We make dream <br> home a reality</h2>
-								<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
-								<div class="btns-box">
-									<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+					<?php
+					if(!empty($banner_r)) {
+						while ($banner_d = mysqli_fetch_assoc($banner_r)) { ?>
+							<div class="slide">
+								<div class="image-layer" style="background-image:url(<?= SITEURL.BANNER.@$banner_d['image_path'] ?>)"></div>
+								<div class="auto-container">
+									<div class="content">
+										<h2><?= @$banner_d['title'] ?></h2>
+										<div class="text"><?= html_entity_decode(@$banner_d['description']) ?></div>
+										<div class="btns-box">
+											<?php if(!empty(@$banner_d['url'])) { ?>
+												<a href="<?php echo $banner_d['url']; ?>" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+											<?php } else { ?>
+												<a href="<?=SITEURL?>about-us" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
+											<?php }
+											?>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-
-					<!-- Slide -->
-					<div class="slide">
-						<div class="image-layer" style="background-image:url(images/main-slider/2.jpg)"></div>
-						<div class="auto-container">
-							<div class="content">
-								<h2>Designs Benefitting <br> Your Persona</h2>
-								<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
-								<div class="btns-box">
-									<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Slide -->
-					<div class="slide">
-						<div class="image-layer" style="background-image:url(images/main-slider/3.jpg)"></div>
-						<div class="auto-container">
-							<div class="content">
-								<h2>Solution for <br> Modern Kitchen</h2>
-								<div class="text">Since 1989, We inspired fragments of your life stories with the finest kitchens, wardrobes, bedroom sets and living & dining.</div>
-								<div class="btns-box">
-									<a href="#" class="theme-btn btn-style-one"><span class="txt">Know more</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
+	                	<?php } 
+					}
+            		?>
 				</div>
-
 			</div>
 		</section>
 		<!-- End Banner Section -->
 
-		<!-- Services Section -->
-		<section class="services-section">
+		<!-- Mission Section -->
+	    <section class="mission-section">
 			<div class="auto-container">
-				<!-- Title Box -->
-				<div class="title-box">
-					<h2>Awesome place & what improves <br> explore radiance.</h2>
-				</div>
-
 				<div class="row clearfix">
-
-					<!-- Service Block -->
-					<div class="service-block col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+					
+					<!-- Image Column -->
+					<div class="image-column col-xl-3 col-lg-4 col-md-12 col-sm-12">
+						<div class="inner-column">
 							<div class="image">
-								<a href="residental-interior.html"><img src="images/resource/service-1.jpg" alt="" /></a>
-							</div>
-							<div class="lower-content">
-								<h3><a href="residental-interior.html">Residential Interiors</a></h3>
-								<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies.</div>
-								<a href="residental-interior.html" class="read-more">Read more</a>
+								<img src="<?php echo MISSION_IMAGE.@$about_us_d['mission_image_path']; ?>" alt="" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Service Block -->
-					<div class="service-block col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="image">
-								<a href="office-interior.html"><img src="images/resource/service-2.jpg" alt="" /></a>
-							</div>
-							<div class="lower-content">
-								<h3><a href="office-interior.html">Office Designs</a></h3>
-								<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies. Seam lessly visualize quality intellectual.</div>
-								<a href="office-interior.html" class="read-more">Read more</a>
-							</div>
+					
+					<!-- Content Column -->
+					<div class="content-column col-xl-9 col-lg-8 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<h2>Our Company Mission</h2>
+							<div class="text"><?= html_entity_decode(@$about_us_d['our_mission']) ?></div>
 						</div>
 					</div>
-
-					<!-- Service Block -->
-					<div class="service-block col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="image">
-								<a href="commercial-interior.html"><img src="images/resource/service-3.jpg" alt="" /></a>
-							</div>
-							<div class="lower-content">
-								<h3><a href="commercial-interior.html">Commercial Interiors</a></h3>
-								<div class="text">Proactively envisioned multimedia based exper tise and cross-media growth strategies. Seam lessly visualize quality intellectual.</div>
-								<a href="commercial-interior.html" class="read-more">Read more</a>
-							</div>
-						</div>
-					</div>
+					
 				</div>
-
 			</div>
 		</section>
-		<!-- End Services Section -->
-
-		<!-- Services Section Two -->
-		<section class="services-section-two">
-			<div class="auto-container">
-				<!-- Sec Title -->
-				<div class="sec-title">
-					<h2>Our Services</h2>
-					<div class="text">Osed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam qui ratione voluptatem sequi nesciunt.</div>
-				</div>
-
-				<div class="row clearfix">
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-desk-1"></span>
-								</div>
-								<h3><a href="office-interior.html">Office Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-house-1"></span>
-								</div>
-								<h3><a href="office-interior.html">House Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-shop"></span>
-								</div>
-								<h3><a href="office-interior.html">Restaurant Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-hospital"></span>
-								</div>
-								<h3><a href="office-interior.html">Hospital Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-apartment-1"></span>
-								</div>
-								<h3><a href="office-interior.html">Appartment Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block -->
-					<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
-							<div class="content">
-								<div class="icon-box">
-									<span class="icon flaticon-hotel"></span>
-								</div>
-								<h3><a href="office-interior.html">Hospitality Interior</a></h3>
-								<div class="text">Lorem Ipsum is simply my text of the printing and Ipsum is the Ipsum is simply.</div>
-								<a href="office-interior.html" class="read-more">Read More</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</section>
-		<!-- End Services Section Two -->
+		<!-- End Mission Section -->
 
 		<!-- Project Section -->
 		<section class="project-section">
@@ -274,10 +161,13 @@
 
 						<ul class="filter-tabs filter-btns text-center clearfix">
 							<li class="active filter" data-role="button" data-filter=".all">All Projects</li>
-							<li class="filter" data-role="button" data-filter=".residential">Residential</li>
-							<li class="filter" data-role="button" data-filter=".commercial">Commercial</li>
-							<li class="filter" data-role="button" data-filter=".hospital">Hospitality</li>
-							<li class="filter" data-role="button" data-filter=".office">Office</li>
+							<?php
+							if(!empty($category_a)) {
+		                        while ($category_d = mysqli_fetch_assoc($category_a)) { ?>
+		                        	<li class="filter" data-role="button" data-filter=".<?= str_replace(' ','_', strtolower(@$category_d['name'])) ?>"><?= @$category_d['name'] ?></li>
+		                        <?php }
+							}
+	                        ?>
 						</ul>
 
 					</div>
@@ -285,195 +175,76 @@
 					<div class="items-container row clearfix">
 
 						<!-- Gallery Item -->
-						<div class="gallery-item large-block masonry-item all hospital commercial">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/1.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/1.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+						<?php
+						if(!empty($product_a)) {
+							$count = 0;
+	                        while ($product_d = mysqli_fetch_assoc($product_a)) {
+	                        	$count++;
+	                        ?>
+	                        	<div class="gallery-item small-block masonry-item all <?php echo str_replace(' ','_', strtolower($category_id_array[$product_d['cid']])); ?>">
+									<div class="inner-box">
+										<figure class="image-box">
+											<img src="<?=SITEURL.PRODUCT.$product_d['image_path']?>" alt="">
+											<!--Overlay Box-->
+											<div class="overlay-box">
+												<div class="overlay-inner">
+													<div class="content">
+														<h3><a href="projects-fullwidth.html"><?= $product_d['name']?></a></h3>
+														<a href="<?=SITEURL.PRODUCT.$product_d['image_path']?>" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+														<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+													</div>
+												</div>
 											</div>
-										</div>
+										</figure>
 									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item small-block masonry-item all hospital commercial">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/2.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/2.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item small-block masonry-item all residential office commercial">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/3.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/3.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item small-block masonry-item all commercial">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/4.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/4.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item large-block masonry-item all hospital office residential">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/7.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/7.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item small-block masonry-item all residential">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/5.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/5.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
-						<!-- Gallery Item -->
-						<div class="gallery-item small-block masonry-item all hospital office">
-							<div class="inner-box">
-								<figure class="image-box">
-									<img src="images/gallery/6.jpg" alt="">
-									<!--Overlay Box-->
-									<div class="overlay-box">
-										<div class="overlay-inner">
-											<div class="content">
-												<h3><a href="projects-fullwidth.html">Modular Kitchen</a></h3>
-												<a href="images/gallery/6.jpg" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-												<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
-											</div>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-
+								</div>
+    	                    <?php }
+						}
+                        ?>
 					</div>
-
 				</div>
-
 				<!-- More Projects -->
 				<div class="more-projects">
-					<a href="projects-classic.html" class="projects">View All Projects</a>
+					<a href="product-list" class="projects">View All Projects</a>
 				</div>
 
 			</div>
 		</section>
 		<!-- End Project Section -->
 
-		<!-- Mission Section -->
-	    <section class="mission-section">
+		<!-- Services Section Two -->
+		<section class="services-section-two">
 			<div class="auto-container">
+				<!-- Sec Title -->
+				<div class="sec-title">
+					<h2>Our Services</h2>
+				</div>
+
 				<div class="row clearfix">
-					
-					<!-- Image Column -->
-					<div class="image-column col-xl-3 col-lg-4 col-md-12 col-sm-12">
-						<div class="inner-column">
-							<div class="image">
-								<img src="images/resource/mission.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-					
-					<!-- Content Column -->
-					<div class="content-column col-xl-9 col-lg-8 col-md-12 col-sm-12">
-						<div class="inner-column">
-							<h2>Our Company Mission</h2>
-							<div class="bold-text">we believe that interior design is more than great functionality and <br> beautiful aesthetics.</div>
-							<div class="text">WThe aesthetics and functional aspects are the primary elements of a smart interior design. We as the prominent Interior Design Consultant in Noida keep these elements at our highest priority. We provide the best suggestions for Interior Designing of a given space</div>
-							<h3>Our Interior designers help you for classic lookâ€¦</h3>
-							<div class="row clearfix">
-								<div class="column col-lg-6 col-md-6 col-sm-12">
-									<ul class="list-style-two">
-										<li>-  Best Design Consultancy</li>
-										<li>-  Architect Designer</li>
-										<li>-  Turnkey Projects</li>
-									</ul>
+
+					<!-- Service Block -->
+					<?php if(!empty($services)) {
+						foreach ($services as $key => $service) { 
+							foreach ($service as $key => $value) { ?>
+								<div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+									<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+										<div class="content">
+											<div class="icon-box">
+												<span class="icon flaticon-desk-1"></span>
+											</div>
+											<h3><a href="javascript:void(0);"><?= html_entity_decode(@$key) ?></a></h3>
+											<div class="text"><?= html_entity_decode(@$value) ?></div>
+										</div>
+									</div>
 								</div>
-								<div class="column col-lg-6 col-md-6 col-sm-12">
-									<ul class="list-style-two">
-										<li>-  Residential Designs</li>
-										<li>-  Corporate Designs</li>
-										<li>-  Commercial Designs</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					
+						<?php 
+							}
+						}
+					} ?>
 				</div>
 			</div>
 		</section>
-		<!-- End Mission Section -->
+		<!-- End Services Section Two -->
 
 		<!-- Team Section -->
 		<section class="team-section">
@@ -487,95 +258,37 @@
 				<div class="clearfix">
 					
 					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-1.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
+					<?php if(isset($our_team_r) && !empty($our_team_r)) {
+
+						while ($our_team_d = mysqli_fetch_assoc($our_team_r)) { ?>
+							<!-- Team Block -->
+							<div class="team-block col-lg-3 col-md-6 col-sm-12">
+								<div class="inner-box">
+									<div class="image">
+										<img src="<?=SITEURL.TEAM.$our_team_d['image_path']?>" alt="" />
+										<div class="overlay-box">
+											<ul class="social-icons">
+												<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+												<li><a href="#"><i class="fab fa-skype"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="lower-content">
+										<h3><a href="team.html"><?= @$our_team_d["name"] ?></a></h3>
+										<div class="designation"><?= @$our_team_d["designation"] ?></div>
+										<hr>
+										<p style="font-size: 12px;"><?= html_entity_decode(@$our_team_d["description"]) ?></p>
+									</div>
 								</div>
 							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Merry Desulva</a></h3>
-								<div class="designation">Interior Designer</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-2.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Roseen</a></h3>
-								<div class="designation">Consultant for Designs</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-3.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Merry Desulva</a></h3>
-								<div class="designation">Interior Designer</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-4.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Roseen</a></h3>
-								<div class="designation">Consultant for Designs</div>
-							</div>
-						</div>
-					</div>
-					
+						<?php }
+					} ?>
 				</div>
-				
 			</div>
 		</section>
 		<!-- End Team Section -->
-
 
 		<!-- Featured Section -->
 		<section class="featured-section" style="background-image: url(images/background/2.jpg)">
@@ -668,69 +381,26 @@
 
 				<div class="testimonial-carousel owl-carousel owl-theme">
 					<!-- Testimonial Block -->
-					<div class="testimonial-block">
-						<div class="inner-box">
-							<div class="content">
-								<div class="image-outer">
-									<div class="image">
-										<img src="images/resource/author-1.jpg" alt="" />
+					<?php
+					if (!empty($testimony_r)) {
+                        while($testimony_d = mysqli_fetch_assoc($testimony_r)) { ?>
+							<div class="testimonial-block">
+								<div class="inner-box">
+									<div class="content">
+										<div class="image-outer">
+											<div class="image">
+												<img src="<?=SITEURL.TESTIMONY.$testimony_d['image_path']?>" alt="" />
+											</div>
+										</div>
+										<h3><?= $testimony_d["name"] ?></h3>
+										<div class="title"><?= $testimony_d["designation"] ?></div>
+										<div class="text"><?=html_entity_decode($testimony_d["message"])?></div>
 									</div>
 								</div>
-								<h3>Michale John</h3>
-								<div class="title">I got luxuary inteior from Stella Orr'e</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
 							</div>
-						</div>
-					</div>
-
-					<!-- Testimonial Block -->
-					<div class="testimonial-block">
-						<div class="inner-box">
-							<div class="content">
-								<div class="image-outer">
-									<div class="image">
-										<img src="images/resource/author-2.jpg" alt="" />
-									</div>
-								</div>
-								<h3>Michale John</h3>
-								<div class="title">I got luxuary inteior from Stella Orr'e</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Testimonial Block -->
-					<div class="testimonial-block">
-						<div class="inner-box">
-							<div class="content">
-								<div class="image-outer">
-									<div class="image">
-										<img src="images/resource/author-1.jpg" alt="" />
-									</div>
-								</div>
-								<h3>Michale John</h3>
-								<div class="title">I got luxuary inteior from Stella Orr'e</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Testimonial Block -->
-					<div class="testimonial-block">
-						<div class="inner-box">
-							<div class="content">
-								<div class="image-outer">
-									<div class="image">
-										<img src="images/resource/author-2.jpg" alt="" />
-									</div>
-								</div>
-								<h3>Michale John</h3>
-								<div class="title">I got luxuary inteior from Stella Orr'e</div>
-								<div class="text">Osed quia consequuntur magni dolores eos qui rati one voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numqua.</div>
-							</div>
-						</div>
-					</div>
-
+                        <?php }
+					}
+                    ?>
 				</div>
 			</div>
 		</section>
@@ -739,8 +409,8 @@
 		<!-- Call To Action Section -->
 		<section class="call-to-action-section" style="background-image: url(images/background/1.jpg)">
 			<div class="auto-container">
-				<h2>Think Interior. Think Stella Orr'e</h2>
-				<div class="text">Interiors for all styles and budgets, Choose from thousands of <br> designs. Heart your favorites to shortlist.</div>
+				<h2>Get In Touch</h2>
+				<div class="text">Do you have anything in your mind to let us know? Kindly don't delay to connect to us by means of our contact form. </div>
 				<a href="contact-us" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
 			</div>
 		</section>

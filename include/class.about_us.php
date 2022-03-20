@@ -8,7 +8,7 @@
   	public $unique_column="name";
   	// Public Varibale
   	public $id='';public $short_title='';public $long_title='';public $short_description='';public $big_description='';public $short_image_path='';public $big_image_path='';public $our_vision='';public $our_mission='';
-  	public $valid_keys=array("id","short_title","long_title","short_description","big_description","short_image_path","big_image_path","our_vision","our_mission");
+  	public $valid_keys=array("id","short_title","long_title","short_description","big_description","short_image_path","big_image_path","our_vision","our_mission","vision_image_path","mission_image_path","counter_1_title","counter_2_title","counter_3_title","counter_4_title","counter_1_value","counter_2_value","counter_3_value","counter_4_value","our_service_1_title","our_service_2_title","our_service_3_title","our_service_4_title","our_service_5_title","our_service_6_title","our_service_1_desc","our_service_2_desc","our_service_3_desc","our_service_4_desc","our_service_5_desc","our_service_6_desc");
   	function __construct($id="") 
   	{
   		$db = new Functions();
@@ -48,9 +48,9 @@
           	$required_columns=$this->getRequiredColumns($required_columns);
   			$where=($where=="")?"1=1":$where;				
   			// Count Total Record Without any limit
-  			$total_count=$this->rp_getTotalRecord($this->ctable,$where);
+  			$total_count=$this->$db->rp_getTotalRecord($this->ctable,$where);
   			// Count Show Record With limit
-  			$show_count=$this->rp_getTotalRecord($this->ctable,$where,0,$this->getLimits($limit));
+  			$show_count=$this->$db->rp_getTotalRecord($this->ctable,$where,0,$this->getLimits($limit));
   			// Get Actual Records
   			$result_r=$this->db->rp_getData($this->ctable,$required_columns,$where,$orderby,0,$this->getLimits($limit));
   			if($result_r)
@@ -97,7 +97,7 @@
   				{
   					// print_r($file["big_image_path"]);exit;
   					if($file["short_image_path"]["name"]!=""){
-  					if (isset($file["short_image_path"]))
+  					  if (isset($file["short_image_path"]))
   							{								
   								$file_tmp  = $file['short_image_path']['tmp_name'];
   								$allowedExts = array("jpg","jpeg","png","gif","JPG","JPEG");
@@ -127,40 +127,106 @@
   								$detail['short_image_path']=$fileName;
   								unset($detail['old_image_path']);
   							}
-  						}
+  					}
   
-  							if($file["big_image_path"]["name"]!=""){
-  							if (isset($file["big_image_path"]))
-  							{								
-  								$file_tmp  = $file['big_image_path']['tmp_name'];
-  								$allowedExts = array("jpg","jpeg","png","gif","JPG","JPEG");
-  								$temp = explode(".", $file["big_image_path"]["name"]);
-  								$extension = end($temp);
-  
-  								if($file["big_image_path"]["error"]>0) {
-  									$error .= "Error opening the file. ";
-  								}
-  								if($file["big_image_path"]["type"]=="application/x-msdownload"){
-  									$error .= "Mime type not allowed. ";
-  								}
-  								if(!in_array($extension, $allowedExts)){
-  									$error .= "Extension not allowed. ";
-  								}
-  							
-  								$fileName2  = $this->db->clean($file["big_image_path"]["name"]);
-  								$fileSize  = round($file["big_image_path"]["size"]); // BYTES
-  								//echo $fileSize ;exit;
-  								$adate   = date('Y-m-d H:i:m');
-  
-  								$extension = end(explode(".", $fileName2));
-  							
-  								$fileName2 = 'big_img_'.substr(sha1(time()), 0, 3).".".$extension;
-  								$tempPath="../images/about_big_image/".$fileName2;
-  								move_uploaded_file($file_tmp,$tempPath);
-  								$detail['big_image_path']=$fileName2;
-  								unset($detail['old_image_path_2']);
-  							}
-  						}
+						if($file["big_image_path"]["name"]!=""){
+							if (isset($file["big_image_path"]))
+							{								
+								$file_tmp  = $file['big_image_path']['tmp_name'];
+								$allowedExts = array("jpg","jpeg","png","gif","JPG","JPEG");
+								$temp = explode(".", $file["big_image_path"]["name"]);
+								$extension = end($temp);
+
+								if($file["big_image_path"]["error"]>0) {
+									$error .= "Error opening the file. ";
+								}
+								if($file["big_image_path"]["type"]=="application/x-msdownload"){
+									$error .= "Mime type not allowed. ";
+								}
+								if(!in_array($extension, $allowedExts)){
+									$error .= "Extension not allowed. ";
+								}
+							
+								$fileName2  = $this->db->clean($file["big_image_path"]["name"]);
+								$fileSize  = round($file["big_image_path"]["size"]); // BYTES
+								//echo $fileSize ;exit;
+								$adate   = date('Y-m-d H:i:m');
+
+								$extension = end(explode(".", $fileName2));
+							
+								$fileName2 = 'big_img_'.substr(sha1(time()), 0, 3).".".$extension;
+								$tempPath="../images/about_big_image/".$fileName2;
+								move_uploaded_file($file_tmp,$tempPath);
+								$detail['big_image_path']=$fileName2;
+								unset($detail['old_image_path_2']);
+							}
+						}
+
+            if($file["vision_image_path"]["name"]!=""){
+              if (isset($file["vision_image_path"]))
+              {               
+                $file_tmp  = $file['vision_image_path']['tmp_name'];
+                $allowedExts = array("jpg","jpeg","png","gif","JPG","JPEG");
+                $temp = explode(".", $file["vision_image_path"]["name"]);
+                $extension = end($temp);
+
+                if($file["vision_image_path"]["error"]>0) {
+                  $error .= "Error opening the file. ";
+                }
+                if($file["vision_image_path"]["type"]=="application/x-msdownload"){
+                  $error .= "Mime type not allowed. ";
+                }
+                if(!in_array($extension, $allowedExts)){
+                  $error .= "Extension not allowed. ";
+                }
+              
+                $fileName2  = $this->db->clean($file["vision_image_path"]["name"]);
+                $fileSize  = round($file["vision_image_path"]["size"]); // BYTES
+                //echo $fileSize ;exit;
+                $adate   = date('Y-m-d H:i:m');
+
+                $extension = end(explode(".", $fileName2));
+              
+                $fileName2 = 'vision_img_'.substr(sha1(time()), 0, 3).".".$extension;
+                $tempPath="../images/about_vision_image/".$fileName2;
+                move_uploaded_file($file_tmp,$tempPath);
+                $detail['vision_image_path']=$fileName2;
+                unset($detail['old_image_path_3']);
+              }
+            }
+
+            if($file["mission_image_path"]["name"]!=""){
+              if (isset($file["mission_image_path"]))
+              {               
+                $file_tmp  = $file['mission_image_path']['tmp_name'];
+                $allowedExts = array("jpg","jpeg","png","gif","JPG","JPEG");
+                $temp = explode(".", $file["mission_image_path"]["name"]);
+                $extension = end($temp);
+
+                if($file["mission_image_path"]["error"]>0) {
+                  $error .= "Error opening the file. ";
+                }
+                if($file["mission_image_path"]["type"]=="application/x-msdownload"){
+                  $error .= "Mime type not allowed. ";
+                }
+                if(!in_array($extension, $allowedExts)){
+                  $error .= "Extension not allowed. ";
+                }
+              
+                $fileName2  = $this->db->clean($file["mission_image_path"]["name"]);
+                $fileSize  = round($file["mission_image_path"]["size"]); // BYTES
+                //echo $fileSize ;exit;
+                $adate   = date('Y-m-d H:i:m');
+
+                $extension = end(explode(".", $fileName2));
+              
+                $fileName2 = 'mission_img_'.substr(sha1(time()), 0, 3).".".$extension;
+                $tempPath="../images/about_mission_image/".$fileName2;
+                move_uploaded_file($file_tmp,$tempPath);
+                $detail['mission_image_path']=$fileName2;
+                unset($detail['old_image_path_3']);
+              }
+            }
   					// This is just for my F*ucking Mistake while creating database class :/
 
               if($detail['id']!="")
@@ -175,12 +241,12 @@
   						if($inserted_id!=0)
   						{
   						    
-  							$reply=array("ack"=>1,"developer_msg"=>"Contact Us detail updated successfully!!","ack_msg"=>"Contact Us  detail updated successfully!!");
+  							$reply=array("ack"=>1,"developer_msg"=>"About Us detail updated successfully!!","ack_msg"=>"About Us detail updated successfully!!");
   							return $reply;
   						}
   						else
   						{
-  							$reply=array("ack"=>0,"developer_msg"=>"Contact Us  deatil can't be insert!!","ack_msg"=>"Contact Us  deatil can't be insert!!");
+  							$reply=array("ack"=>0,"developer_msg"=>"About Us  deatil can't be insert!!","ack_msg"=>"About Us deatil can't be insert!!");
   							return $reply;
   						}
   					
@@ -201,7 +267,7 @@
   		else
   		{
   			$this->db->rp_location("access_denied.php?msg=insert");
-  			$reply=array("ack"=>0,"developer_msg"=>"Contact Us detail cannot be fetch!","ack_msg"=>"Contact Us detail cannot be fetch!");
+  			$reply=array("ack"=>0,"developer_msg"=>"About Us detail cannot be fetch!","ack_msg"=>"About Us detail cannot be fetch!");
   			return $reply;
   		}
   	}

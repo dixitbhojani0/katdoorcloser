@@ -8,7 +8,7 @@
   	public $unique_column="name";
   	// Public Varibale
   	public $id='';public $name='';public $brochure='';  public $cid='';public $sid='';public $slug='';public $packing='';public $description=''; public $advantage=''; public $image_path='';public $adate='';  public $product_code='';
-  	public $valid_keys=array("id","cid","sid","name","product_code","slug","packing","description","advantage","meta_descr","brochure","add_info","video_url","image_path","old_image_path","adate");
+  	public $valid_keys=array("id","cid","sid","name","product_code","slug","packing","description","advantage","meta_descr","add_info","video_url","image_path","old_image_path","adate","brochure");
   	function __construct($id="") 
   	{
   		$db = new Functions();
@@ -216,7 +216,7 @@
                 $tempPath="../images/broucher/".$fileName;
                 move_uploaded_file($file_tmp,$tempPath);
                 $detail['brochure']=$fileName;
-                unset($detail['old_brochure']);
+                unset($detail['brochure']);
               }
   
   						
@@ -270,8 +270,8 @@
   			
   			//$detail=$this->db->cleanArray($detail);
   			$validateKey=$this->validateKey($detail);
-  			/*print_r($validateKey);
-  			exit;*/
+  			// print_r($validateKey);
+  			// exit;
   			if($validateKey['ack']==1)
   			{
   				// check required column validation
@@ -353,19 +353,19 @@
                     $tempPath="../images/broucher/".$fileName;
                     move_uploaded_file($file_tmp,$tempPath);
                     $detail['brochure']=$fileName;
-                    unset($detail['old_brochure']);
+                    unset($detail['brochure']);
                   }
                   else
                   {
                     //$fileName=$detail['old_image_path'];
-                    $detail['brochure']=$detail['old_brochure'];
-                    unset($detail['old_brochure']);
+                    $detail['brochure']=$detail['brochure'];
+                    unset($detail['brochure']);
 
                     
                   }
   
   							  $where=$this->primary_column."=".$primary_key;
-  								$isUpdated=$this->db->rp_update($this->ctable,$detail,$where,0);
+                  $isUpdated=$this->db->rp_update($this->ctable,$detail,$where,0);
   							}
                 
   							if($isUpdated)

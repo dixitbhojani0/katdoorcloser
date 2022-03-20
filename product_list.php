@@ -45,7 +45,7 @@
             <div class="auto-container">
                 <h2>Products</h2>
                 <ul class="page-breadcrumb">
-                    <li><a href="index">Home</a></li>
+                    <li><a href="<?= SITEURL ?>">Home</a></li>
                     <li>Products <small>(Go Through Wide Range of Porducts)</small></li>
                 </ul>
             </div>

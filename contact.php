@@ -47,7 +47,7 @@
 			<div class="auto-container">
 				<h2>Contact Us</h2>
 				<ul class="page-breadcrumb">
-					<li><a href="index">home</a></li>
+					<li><a href="<?= SITEURL ?>">home</a></li>
 					<li>Contact Us</li>
 				</ul>
 			</div>

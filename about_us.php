@@ -1,4 +1,15 @@
-<?php include("connect.php"); ?>
+<?php include("connect.php"); 
+
+	/*------condition-------*/
+	$where="isDelete=0 AND isActive=1";
+	/*------about_us get Data-------*/
+	$about_us_r=$db->rp_getData("about_us","*",$where,0);
+	if(!empty($about_us_r)) {
+		$about_us_d = mysqli_fetch_assoc($about_us_r);
+	}
+	/*------our team get Data-------*/
+	$our_team_r=$db->rp_getData("our_team","*",$where,"",0,4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +54,7 @@
 	    	<div class="auto-container">
 	        	<h2>About us</h2>
 	            <ul class="page-breadcrumb">
-	            	<li><a href="index">Home</a></li>
+	            	<li><a href="<?= SITEURL ?>">Home</a></li>
 	                <li>About us</li>
 	            </ul>
 	        </div>
@@ -58,11 +69,10 @@
 					<!-- Content Column -->
 					<div class="content-column col-lg-8 col-md-12 col-sm-12">
 						<div class="inner-column">
-							<h2>Our Story In Interior Industry</h2>
-							<div class="bold-text">Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line</div>
+							<h2><?= html_entity_decode(@$about_us_d['short_title'])?></h2>
+							<!-- <div class="bold-text">Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line</div> -->
 							<div class="text">
-								<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-								<p>At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+								<p><?= html_entity_decode(@$about_us_d['short_description']) ?></p>
 							</div>
 						</div>
 					</div>
@@ -71,7 +81,7 @@
 					<div class="image-column col-lg-4 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<div class="image">
-								<img src="images/resource/story.jpg" alt="" />
+								<img src="<?= SITEURL.SHORT_IMAGE.$about_us_d['short_image_path']; ?>" alt="" />
 							</div>
 						</div>
 					</div>
@@ -91,7 +101,7 @@
 						<div class="image-column col-lg-4 col-md-12 col-sm-12">
 							<div class="inner-column">
 								<div class="image">
-									<img src="images/resource/interior.jpg" alt="" />
+									<img src="<?= SITEURL.BIG_IMAGE.$about_us_d['big_image_path']; ?>" alt="" />
 								</div>
 							</div>
 						</div>
@@ -99,8 +109,8 @@
 						<!-- Content Column -->
 						<div class="content-column col-lg-8 col-md-12 col-sm-12">
 							<div class="inner-column">
-								<h2>Why Choose Us for Interior Work</h2>
-								<div class="text">To give you a home that lasts, we bring you only the best in everything — quality raw materials, state-of-the-art manufacturing, rigorous quality checks, professional installations and transparent prices.</div>
+								<h2><?= html_entity_decode(@$about_us_d['long_title'])?></h2>
+								<div class="text"><?= html_entity_decode(@$about_us_d['big_description'])?></div>
 								<div class="row clearfix">
 								
 									<!-- Interior Block -->
@@ -136,7 +146,7 @@
 								</div>
 								
 								<div class="bold-text">Get in touch with us to design your dream home</div>
-								<div class="column-text">Talk to our design expert and get your designs</div>
+								<div class="column-text">Talk to our expert and get your products</div>
 							</div>
 						</div>
 						
@@ -159,9 +169,9 @@
 							<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 								<div class="content">
 									<div class="count-outer count-box">
-										<span class="count-text" data-speed="2500" data-stop="8">0</span> Year
+										<span class="count-text" data-speed="2500" data-stop="8"><?= html_entity_decode(@$about_us_d['counter_1_value'])?></span> Years
 									</div>
-									<h4 class="counter-title">Material Warranty</h4>
+									<h4 class="counter-title"><?= html_entity_decode(@$about_us_d['counter_1_title'])?></h4>
 								</div>
 							</div>
 						</div>
@@ -171,9 +181,9 @@
 							<div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
 								<div class="content">
 									<div class="count-outer count-box alternate">
-										<span class="count-text" data-speed="3000" data-stop="2500">0</span>+
+										<span class="count-text" data-speed="3000" data-stop="2500"><?= html_entity_decode(@$about_us_d['counter_2_value'])?></span>+
 									</div>
-									<h4 class="counter-title">Homes Completed</h4>
+									<h4 class="counter-title"><?= html_entity_decode(@$about_us_d['counter_2_title'])?></h4>
 								</div>
 							</div>
 						</div>
@@ -183,9 +193,9 @@
 							<div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
 								<div class="content">
 									<div class="count-outer count-box">
-										<span class="count-text" data-speed="3000" data-stop="200">0</span>+
+										<span class="count-text" data-speed="3000" data-stop="200"><?= html_entity_decode(@$about_us_d['counter_3_value'])?></span>+
 									</div>
-									<h4 class="counter-title">Interior Designer</h4>
+									<h4 class="counter-title"><?= html_entity_decode(@$about_us_d['counter_3_title'])?></h4>
 								</div>
 							</div>
 						</div>
@@ -195,9 +205,9 @@
 							<div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
 								<div class="content">
 									<div class="count-outer count-box">
-										<span class="count-text" data-speed="2500" data-stop="45">0</span> Days
+										<span class="count-text" data-speed="2500" data-stop="45"><?= html_entity_decode(@$about_us_d['counter_4_value'])?></span> Days
 									</div>
-									<h4 class="counter-title">Project Delivery</h4>
+									<h4 class="counter-title"><?= html_entity_decode(@$about_us_d['counter_4_title'])?></h4>
 								</div>
 							</div>
 						</div>
@@ -220,96 +230,62 @@
 				
 				<div class="clearfix">
 					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-1.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
+					<?php if(isset($our_team_r) && !empty($our_team_r)) {
+
+						while ($our_team_d = mysqli_fetch_assoc($our_team_r)) { ?>
+							<!-- Team Block -->
+							<div class="team-block col-lg-3 col-md-6 col-sm-12">
+								<div class="inner-box">
+									<div class="image">
+										<img src="<?=SITEURL.TEAM.$our_team_d['image_path']?>" alt="" />
+										<div class="overlay-box">
+											<ul class="social-icons">
+												<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+												<li><a href="#"><i class="fab fa-skype"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="lower-content">
+										<h3><a href="team.html"><?= @$our_team_d["name"] ?></a></h3>
+										<div class="designation"><?= @$our_team_d["designation"] ?></div>
+										<hr>
+										<p style="font-size: 12px;"><?= html_entity_decode(@$our_team_d["description"]) ?></p>
+									</div>
 								</div>
 							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Merry Desulva</a></h3>
-								<div class="designation">Interior Designer</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box ">
-							<div class="image">
-								<img src="images/resource/team-2.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Roseen</a></h3>
-								<div class="designation">Consultant for Designs</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-3.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Merry Desulva</a></h3>
-								<div class="designation">Interior Designer</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Team Block -->
-					<div class="team-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="image">
-								<img src="images/resource/team-4.jpg" alt="" />
-								<div class="overlay-box">
-									<ul class="social-icons">
-										<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-										<li><a href="#"><i class="fab fa-skype"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h3><a href="team.html">Roseen</a></h3>
-								<div class="designation">Consultant for Designs</div>
-							</div>
-						</div>
-					</div>
-					
+						<?php }
+					} ?>
 				</div>
-				
 			</div>
 		</section>
 		<!-- End Team Section -->
 		
+		<!-- Vision Section -->
+	    <section class="vision-section style-two" >
+			<div class="auto-container">
+				<div class="row clearfix">
+					<!-- Image Column -->
+					<div class="image-column col-xl-3 col-lg-4 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<div class="image">
+								<img src="<?php echo VISION_IMAGE.@$about_us_d['vision_image_path']; ?>" width="150" height="120" alt="vision_img" />
+							</div>
+						</div>
+					</div>
+					<!-- Content Vision -->
+					<div class="content-column col-xl-9 col-lg-8 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<h2>Our Company Vision</h2>
+							<div class="text"><?= html_entity_decode(@$about_us_d['our_vision']) ?></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Vision Section -->
+
 		<!-- Mission Section -->
 	    <section class="mission-section style-two">
 			<div class="auto-container">
@@ -319,7 +295,7 @@
 					<div class="image-column col-xl-3 col-lg-4 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<div class="image">
-								<img src="images/resource/mission.jpg" alt="" />
+			          			<img src="<?php echo MISSION_IMAGE.@$about_us_d['mission_image_path']; ?>" width="150" height="120" alt="mission_img" />
 							</div>
 						</div>
 					</div>
@@ -328,39 +304,20 @@
 					<div class="content-column col-xl-9 col-lg-8 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<h2>Our Company Mission</h2>
-							<div class="bold-text">we believe that interior design is more than great functionality and <br> beautiful aesthetics.</div>
-							<div class="text">WThe aesthetics and functional aspects are the primary elements of a smart interior design. We as the prominent Interior Design Consultant in Noida keep these elements at our highest priority. We provide the best suggestions for Interior Designing of a given space</div>
-							<h3>Our Interior designers help you for classic look…</h3>
-							<div class="row clearfix">
-								<div class="column col-lg-6 col-md-6 col-sm-12">
-									<ul class="list-style-two">
-										<li>-  Best Design Consultancy</li>
-										<li>-  Architect Designer</li>
-										<li>-  Turnkey Projects</li>
-									</ul>
-								</div>
-								<div class="column col-lg-6 col-md-6 col-sm-12">
-									<ul class="list-style-two">
-										<li>-  Residential Designs</li>
-										<li>-  Corporate Designs</li>
-										<li>-  Commercial Designs</li>
-									</ul>
-								</div>
-							</div>
+							<div class="text"><?= html_entity_decode(@$about_us_d['our_mission']) ?></div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</section>
 		<!-- End Mission Section -->
-		
+
 		<!-- Call To Action Section -->
 		<section class="call-to-action-section" style="background-image: url(images/background/6.jpg)">
 			<div class="auto-container">
-				<h2>Think Interior. Think Stella Orr'e</h2>
-				<div class="text">Interiors for all styles and budgets, Choose from thousands of <br> designs. Heart your favorites to shortlist.</div>
-				<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
+				<h2>Get In Touch</h2>
+				<div class="text">Do you have anything in your mind to let us know? Kindly don't delay to connect to us by means of our contact form. </div>
+				<a href="contact-us" class="theme-btn btn-style-two"><span class="txt">contact us</span></a>
 			</div>
 		</section>
 		<!-- End Call To Action Section -->

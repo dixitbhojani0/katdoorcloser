@@ -39,17 +39,12 @@
    $params['description']=$db->clean(htmlentities($_REQUEST['description']));
    $params['add_info']=$db->clean(htmlentities($_REQUEST['add_info']));
    $params['advantage']=$db->clean(htmlentities($_REQUEST['advantage']));
-   $params['brochure']=$db->clean(htmlentities($_REQUEST['brochure']));
-   $params['old_brochure']=$db->clean(htmlentities($_REQUEST['old_brochure']));
-
-   //$params['price']=$db->clean($_REQUEST['price']);
-   
-   //echo $params['old_brochure'];
-   //exit();
+   $params['brochure']=  $db->clean(htmlentities($_REQUEST['brochure']));
+   if(empty($params['brochure'])) {
+      unset($params['brochure']);
+   }
       if($mode=='a')
       {
-         //print_r($params);exit;
-        // $params['adate']=date("Y-m-d H:i:s");
           $reply=$product_obj->insert($params,"",$_FILES);
          if($reply['ack']==1)
          {

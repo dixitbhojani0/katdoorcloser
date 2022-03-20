@@ -45,13 +45,13 @@
    		{			
    			$success_msg[]=$reply['ack_msg'];
                $_SESSION['success_msg']= $success_msg;
-               $db->rp_location("banner_manage.php");
+               // $db->rp_location("banner_manage.php");
    		}
    		else
    		{
    			$error_msg[]=$reply['ack_msg'];
    			$_SESSION['error_msg']= $error_msg;
-   			$db->rp_location("banner_manage.php");
+   			// $db->rp_location("banner_manage.php");
    		}
    	}
    	else if($mode=='e')
@@ -61,13 +61,13 @@
    		{
    			$success_msg[]=$reply['ack_msg'];
                $_SESSION['success_msg']= $success_msg;
-               $db->rp_location("banner_manage.php");
+               // $db->rp_location("banner_manage.php");
    		}
    		else
    		{
    			$error_msg[]=$reply['ack_msg'];
    			$_SESSION['error_msg']= $error_msg;
-   			$db->rp_location("banner_manage.php");
+   			// $db->rp_location("banner_manage.php");
    		}
    	}
    	else if($mode=='d')
@@ -79,13 +79,13 @@
    		{
    		    $success_msg[]=$reply['ack_msg'];
                $_SESSION['success_msg']= $success_msg;
-               $db->rp_location("banner_manage.php");
+               // $db->rp_location("banner_manage.php");
    		}
    		else
    		{
    		    $error_msg[]=$reply['ack_msg'];
    			$_SESSION['error_msg']= $error_msg;
-   			$db->rp_location("banner_manage.php");
+   			// $db->rp_location("banner_manage.php");
    		}
    	}
    	else if($mode=='ac')
@@ -96,17 +96,15 @@
    		{
    		    $success_msg[]=$reply['ack_msg'];
                $_SESSION['success_msg']= $success_msg;
-               $db->rp_location("testimonial_manage.php");
+               // $db->rp_location("testimonial_manage.php");
    		}
    		else
    		{
    			$error_msg[]=$reply['ack_msg'];
    			$_SESSION['error_msg']= $error_msg;
-   			$db->rp_location("testimonial_manage.php");
+   			// $db->rp_location("testimonial_manage.php");
    		}
    	}
-   
-      
    }
    
    if($mode=="e")

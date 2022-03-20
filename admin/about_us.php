@@ -32,9 +32,31 @@ $params['short_description']=trim($db->clean(htmlentities($_REQUEST['short_descr
 $params['big_description']=trim($db->clean(htmlentities($_REQUEST['big_description'])));
 $params['our_vision']=trim($db->clean(htmlentities($_REQUEST['our_vision'])));
 $params['our_mission']=trim($db->clean(htmlentities($_REQUEST['our_mission'])));
-// $params['short_image_path']=trim($db->clean(htmlentities($_REQUEST['short_image_path'])));
-// $params['big_image_path']=trim($db->clean(htmlentities($_REQUEST['big_image_path'])));
+$params['short_image_path']=trim($db->clean(htmlentities($_REQUEST['short_image_path'])));
+$params['big_image_path']=trim($db->clean(htmlentities($_REQUEST['big_image_path'])));
+$params['mission_image_path']=trim($db->clean(htmlentities($_REQUEST['mission_image_path'])));
+$params['vision_image_path']=trim($db->clean(htmlentities($_REQUEST['vision_image_path'])));
+$params['counter_1_title']=trim($db->clean($_REQUEST['counter_1_title']));
+$params['counter_2_title']=trim($db->clean($_REQUEST['counter_2_title']));
+$params['counter_3_title']=trim($db->clean($_REQUEST['counter_3_title']));
+$params['counter_4_title']=trim($db->clean($_REQUEST['counter_4_title']));
+$params['counter_1_value']=trim($db->clean($_REQUEST['counter_1_value']));
+$params['counter_2_value']=trim($db->clean($_REQUEST['counter_2_value']));
+$params['counter_3_value']=trim($db->clean($_REQUEST['counter_3_value']));
+$params['counter_4_value']=trim($db->clean($_REQUEST['counter_4_value']));
 
+$params['our_service_1_title']=trim($db->clean($_REQUEST['our_service_1_title']));
+$params['our_service_2_title']=trim($db->clean($_REQUEST['our_service_2_title']));
+$params['our_service_3_title']=trim($db->clean($_REQUEST['our_service_3_title']));
+$params['our_service_4_title']=trim($db->clean($_REQUEST['our_service_4_title']));
+$params['our_service_5_title']=trim($db->clean($_REQUEST['our_service_5_title']));
+$params['our_service_6_title']=trim($db->clean($_REQUEST['our_service_6_title']));
+$params['our_service_1_desc']=trim($db->clean($_REQUEST['our_service_1_desc']));
+$params['our_service_2_desc']=trim($db->clean($_REQUEST['our_service_2_desc']));
+$params['our_service_3_desc']=trim($db->clean($_REQUEST['our_service_3_desc']));
+$params['our_service_4_desc']=trim($db->clean($_REQUEST['our_service_4_desc']));
+$params['our_service_5_desc']=trim($db->clean($_REQUEST['our_service_5_desc']));
+$params['our_service_6_desc']=trim($db->clean($_REQUEST['our_service_6_desc']));
 // print_r($params);exit;
 	if($mode=='a')
 	{
@@ -44,13 +66,13 @@ $params['our_mission']=trim($db->clean(htmlentities($_REQUEST['our_mission'])));
 		{
 			$success_msg[]=$reply['ack_msg'];
          $_SESSION['success_msg']= $success_msg;
-         $db->rp_location("about_us.php");
+         // $db->rp_location("about_us.php");
 		}
 		else
 		{
 			$error_msg[]=$reply['ack_msg'];
          $_SESSION['error_msg']= $error_msg;
-         $db->rp_location("about_us.php");
+         // $db->rp_location("about_us.php");
 		}
 	}
 }
@@ -186,6 +208,107 @@ if(true)
                                     <label for="our_mission">Our Mission</label>
                                     <p class="help-block"></p>
                                  </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_1_title; ?>" name="counter_1_title" id="counter_1_title" type="text">
+                                    <label for="counter_1_title">Counter 1 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_1_value; ?>" name="counter_1_value" id="counter_1_value" type="text">
+                                    <label for="counter_1_value">Counter 1 Value</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_2_title; ?>" name="counter_2_title" id="counter_2_title" type="text">
+                                    <label for="counter_2_title">Counter 2 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_2_value; ?>" name="counter_2_value" id="counter_2_value" type="text">
+                                    <label for="counter_2_value">Counter 2 Value</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_3_title; ?>" name="counter_3_title" id="counter_3_title" type="text">
+                                    <label for="counter_3_title">Counter 3 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_3_value; ?>" name="counter_3_value" id="counter_3_value" type="text">
+                                    <label for="counter_3_value">Counter 3 Value</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_4_title; ?>" name="counter_4_title" id="counter_4_title" type="text">
+                                    <label for="counter_4_title">Counter 4 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $counter_4_value; ?>" name="counter_4_value" id="counter_4_value" type="text">
+                                    <label for="counter_4_value">Counter 4 Value</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_1_title; ?>" name="our_service_1_title" id="our_service_1_title" type="text">
+                                    <label for="our_service_1_title">Our Service 1 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_1_desc; ?>" name="our_service_1_desc" id="our_service_1_desc" type="text">
+                                    <label for="our_service_1_desc">Our Service 1 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_2_title; ?>" name="our_service_2_title" id="our_service_2_title" type="text">
+                                    <label for="our_service_2_title">Our Service 2 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_2_desc; ?>" name="our_service_2_desc" id="our_service_2_desc" type="text">
+                                    <label for="our_service_2_desc">Our Service 2 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_3_title; ?>" name="our_service_3_title" id="our_service_3_title" type="text">
+                                    <label for="our_service_3_title">Our Service 3 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_3_desc; ?>" name="our_service_3_desc" id="our_service_3_desc" type="text">
+                                    <label for="our_service_3_desc">Our Service 3 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_4_title; ?>" name="our_service_4_title" id="our_service_4_title" type="text">
+                                    <label for="our_service_4_title">Our Service 4 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_4_desc; ?>" name="our_service_4_desc" id="our_service_4_desc" type="text">
+                                    <label for="our_service_4_desc">Our Service 4 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_5_title; ?>" name="our_service_5_title" id="our_service_5_title" type="text">
+                                    <label for="our_service_5_title">Our Service 5 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_5_desc; ?>" name="our_service_5_desc" id="our_service_5_desc" type="text">
+                                    <label for="our_service_5_desc">Our Service 5 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_6_title; ?>" name="our_service_6_title" id="our_service_6_title" type="text">
+                                    <label for="our_service_6_title">Our Service 6 Title</label>
+                                    <p class="help-block"></p>
+                                 </div>
+                                 <div class="form-group form-md-line-input form-md-floating-label">
+                                    <input class="form-control" value="<?php echo $our_service_6_desc; ?>" name="our_service_6_desc" id="our_service_6_desc" type="text">
+                                    <label for="our_service_6_desc">Our Service 6 Description</label>
+                                    <p class="help-block"></p>
+                                 </div>
                                  <div class="form-actions noborder">
                                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                                     <button type="submit" name="submit" class="btn blue">Submit</button>
@@ -214,6 +337,18 @@ if(true)
                                     <div class="form-group">
                                        <lable>Select Big Image</lable>
                                        <input data-image="<?php echo ($big_image_path!="" && file_exists(BIG_IMAGE_A.$big_image_path))?BIG_IMAGE_A.$big_image_path:"";?>" type="file" accept="image/*" name="big_image_path" id="big_image_path" data-old-image-dom="old_image_path_2"  data-old-image-path="<?php echo $big_image_path ?>" value="" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <lable>Select Vision Image</lable>
+                                       <input data-image="<?php echo ($vision_image_path!="" && file_exists(VISION_IMAGE_A.$vision_image_path))?VISION_IMAGE_A.$vision_image_path:"";?>" accept="image/*" type="file" name="vision_image_path" id="vision_image_path" data-old-image-dom="old_image_path_3" data-old-image-path="<?php echo $vision_image_path ?>" value="" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <lable>Select Mission Image</lable>
+                                       <input data-image="<?php echo ($mission_image_path!="" && file_exists(MISSION_IMAGE_A.$mission_image_path))?MISSION_IMAGE_A.$mission_image_path:"";?>" accept="image/*" type="file" name="mission_image_path" id="mission_image_path" data-old-image-dom="old_image_path_4" data-old-image-path="<?php echo $mission_image_path ?>" value="" >
                                     </div>
                                  </div>
                               </div>
@@ -312,6 +447,66 @@ if(true)
          	);
          	
          	
+         })
+         var isImageThumbnailLoaded_3=false;
+         var isImageThumbnailValid_3=false;
+         
+         $(function(){
+            
+            
+            aj.imageHolder($("input[name=vision_image_path]"),"","",
+            function(isImageThumbnailLoadedReply,isImageThumbnailValidReply){
+               isImageThumbnailLoaded_3=isImageThumbnailLoadedReply;
+               isImageThumbnailValid_3=isImageThumbnailValidReply;
+               toastr.success("Old Image Found!!");
+            },
+            function(file,img)
+            {
+               if(!file)
+               {
+                  toastr.error("File may be corrupted or missing. Try again!!");
+               }
+            },
+            function(isImageThumbnailLoadedReply,isImageThumbnailValidReply,image_width,image_height){
+               isImageThumbnailLoaded_3=isImageThumbnailLoadedReply;
+               isImageThumbnailValid_3=isImageThumbnailValidReply;
+                  toastr.success("Selected File Dimension: "+image_width+" X "+image_height);
+               },
+            function(data){
+               isImageThumbnailLoadedReply
+            }
+            );
+            
+            
+         })
+         var isImageThumbnailLoaded_4=false;
+         var isImageThumbnailValid_4=false;
+         
+         $(function(){
+            
+            
+            aj.imageHolder($("input[name=mission_image_path]"),"","",
+            function(isImageThumbnailLoadedReply,isImageThumbnailValidReply){
+               isImageThumbnailLoaded_4=isImageThumbnailLoadedReply;
+               isImageThumbnailValid_4=isImageThumbnailValidReply;
+               toastr.success("Old Image Found!!");
+            },
+            function(file,img)
+            {
+               if(!file)
+               {
+                  toastr.error("File may be corrupted or missing. Try again!!");
+               }
+            },
+            function(isImageThumbnailLoadedReply,isImageThumbnailValidReply,image_width,image_height){
+               isImageThumbnailLoaded_4=isImageThumbnailLoadedReply;
+               isImageThumbnailValid_4=isImageThumbnailValidReply;
+                  toastr.success("Selected File Dimension: "+image_width+" X "+image_height);
+               },
+            function(data){
+               isImageThumbnailLoadedReply
+            }
+            );
          })
          // $("form").submit( function( e ) {
          // 		var isValid=true;
