@@ -4,46 +4,37 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Chanakya Engineering Products | We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor sp</title>
+	<title>Contact Us | Chanakya Engineering Products</title>
 	<!-- Stylesheets -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?=SITEURL?>admin/css/toastr.css" >
+	<link href="<?= SITEURL ?>css/bootstrap.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/style.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/responsive.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>admin/css/toastr.css" rel="stylesheet">
 	
-	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="language" content="English">
 	<meta name="robots" content="all">
-	<meta name="description" content="Chanakya Engineering Products in Rajkot ,We would like to introduce ourselves as a leading manufacturer of High Quality.">
+	<meta name="description" content="Location of Chanakya Engineering Products on Map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
-	<meta name="twitter:image" content="images/logo.jpg">
-	<meta name="twitter:description" content="Chanakya Engineering Products - 0">
-	<meta name="twitter:title" content="Chanakya Engineering Products">
+	<meta name="twitter:image" content="<?= SITEURL ?>images/logo.jpg">
+	<meta name="twitter:description" content="Map View">
+	<meta name="twitter:title" content="Location  of Chanakya Engineering Products on Map">
 	<meta name="twitter:card" content="summary">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Chanakya Engineering Products">
-	<meta property="og:image" content="images/logo.jpg">
+	<meta property="og:image" content="<?= SITEURL ?>images/logo.jpg">
 	<meta property="og:site_name" content="Chanakya Engineering Products">
-	<meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
+	<meta property="og:description" content="Map View">
 </head>
 
 
 <body>
-<?php
-	include('connect.php');
-
-      /*------condition-------*/
-      $where="isDelete=0 AND isActive=1";
-      /*------contact_us_info get Data-------*/
-      $get_contact_r=$db->rp_getData("contact_us_info","*",$where,0);
-      $get_contact_d = !empty($get_contact_r) ? mysqli_fetch_assoc($get_contact_r) : '';
-    ?>
 	<div class="page-wrapper">
 		<!-- Preloader -->
 		<div class="preloader"></div>
@@ -126,13 +117,12 @@
 							</ul>
 							<!-- Contact Info List -->
 							<ul class="contact-info-list">
-								<li><strong>Phone : </strong><a href="tel:<?= @$get_contact_d["phone"]?>"><?=@$get_contact_d["phone"]?></a></li>
-								<li><strong>Email : </strong><a href="mailto:<?= @$get_contact_d['email']?>"><?= @$get_contact_d["email"]?></a></li>
+								<li><strong>Phone : </strong><a href="tel:<?= html_entity_decode(@$get_contact_d["phone"]) ?>"><?=@$get_contact_d["phone"]?></a></li>
+								<li><strong>Email : </strong><a href="mailto:<?= html_entity_decode(@$get_contact_d['email']) ?>"><?= @$get_contact_d["email"]?></a></li>
 							</ul>
 							<!-- Contact Info List -->
 							<ul class="contact-info-list">
-								<li><strong>Opening Hours :</strong><br> Monday – Sunday<br>8:00 AM – 8:00 PM </li>
-								<li>Wednesday - Closed</li>
+								<li><strong>Opening Hours :</strong><?= html_entity_decode(@$get_contact_d['description'])?>
 							</ul>
 
 						</div>
@@ -148,7 +138,7 @@
 		<section class="map-section">
 			<div class="outer-container">
 				<div class="map-outer">
-					<div class="map-canvas" data-zoom="12" data-lat="22.265907418203362" data-lng="70.80246776829054" data-type="roadmap" data-hue="#ffc400" data-title="Melbourne Australia" data-icon-path="images/icons/map-marker.png" data-content="(1800) 456 7890 <br> Mon-Sat: 7.00an - 9.00pm">
+					<div class="map-canvas" data-zoom="12" data-lat="22.2623688" data-lng="70.8023327" data-type="roadmap" data-hue="#ffc400" data-title="Chanakya Engineering Products, Rajkot, Gujrat India" data-icon-path="images/icons/map-marker.png" data-content="<?=@$get_contact_d["phone"]?> <br> Monday-Sunday: 8.00AM - 8.00PM <br> Wednesday: Closed">
 					</div>
 				</div>
 			</div>
@@ -195,19 +185,6 @@
 	</div>
 
 	<!--Scroll to top-->
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/isotope.js"></script>
-	<script src="js/owl.js"></script>
-	<script src="js/wow.js"></script>
-	<script src="js/validate.js"></script>
-	<script src="js/appear.js"></script>
-	<script src="js/scrollbar.js"></script>
-	<script src="js/script.js"></script>
-	<script src="<?=SITEURL?>admin/js/toastr.js"></script>
 	<!--Google Map APi Key-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
 	<script src="js/map-script.js"></script>
@@ -245,7 +222,6 @@
         if($(".error").is(":hidden") == false || $("#folio-invalid").is(":hidden") == false || $("#mobile-valid").is(":hidden") == false) {
             error = true;
         }
-        console.log(error);
         if(error == false) {
           	$.ajax(
 		        {
@@ -256,10 +232,12 @@
 		            beforeSend: function(){
 				        $('#loader').show();
 				        $('.theme-btn').prop('disabled', true);
+				        $('.theme-btn').hide();
 				    },
 				    complete: function(){
 				        $('#loader').hide();
 				        $('.theme-btn').prop('disabled', false);
+				        $('.theme-btn').show();
 				    },
 		            success:function(result)
 		            {
@@ -284,5 +262,4 @@
 </body>
 
 <!-- stella-orre/contact.html  30 Nov 2019 03:46:47 GMT -->
-
 </html>

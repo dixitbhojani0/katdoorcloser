@@ -8,7 +8,7 @@
   	public $unique_column="name";
   	// Public Varibale
   	public $id='';public $address='';public $phone='';public $email='';public $description='';
-  	public $valid_keys=array("id","address","phone","phone_2","phone_3","email","description");
+  	public $valid_keys=array("id","address","phone","email","description");
   	function __construct($id="") 
   	{
   		$db = new Functions();
@@ -41,12 +41,11 @@
   	}
   	function view($where="",$required_columns=array(),$orderby="",$limit="")
   	{
-  
-          if($this->rights['view_flag']==1)
+      if($this->rights['view_flag']==1)
   		{
              
   			$result=array();
-          	$required_columns=$this->getRequiredColumns($required_columns);
+      	$required_columns=$this->getRequiredColumns($required_columns);
   			$where=($where=="")?"1=1":$where;				
   			// Count Total Record Without any limit
   			$total_count=$this->db->rp_getTotalRecord($this->ctable,$where);
@@ -70,7 +69,6 @@
   			}
   			else
   			{
-  
   				$reply=array("ack"=>0,"developer_msg"=>"Contact Us detail can not be fetch!","ack_msg"=>"Contact Us detail can not be fetch!");
   				return $reply;
   			}
@@ -80,15 +78,11 @@
   			$this->db->rp_location("access_denied.php?msg=view");
   			$reply=array("ack"=>0,"developer_msg"=>"Contact Us detail cannot be fetch!","ack_msg"=>"Contact Us detail cannot be fetch!");
   			return $reply;
-  		}
-  		
-  	}
-  
-  
-  
+  		}	
+  	}  
+
   	function insert($detail=array(),$where="")
   	{
-      /*print_r($detail); exit;*/
   		if($this->rights['insert_flag']==1)
   		{
   			//$detail=$this->db->cleanArray($detail);
@@ -98,8 +92,6 @@
   				// check required column validation
   				if(!empty($detail))
   				{
-  					  // This is just for my F*ucking Mistake while creating database class :/
-  						//$inserted_id=$this->db->rp_update($this->ctable,$detail,$where,0);
               if($detail['id']!="")
               {
                 $inserted_id=$this->db->rp_update($this->ctable,$detail,$where,0);
@@ -108,11 +100,9 @@
                 
                  $extracted_array=$this->extractArray($detail);
                  $inserted_id=$this->db->rp_insert($this->ctable,$extracted_array['values'],$extracted_array['columns'],0);
-                // $inserted_id=$this->db->rp_insert($this->ctable,$detail,$detail,1);                
               }
   						if($inserted_id!=0)
-  						{
-  						    
+  						{		    
   							$reply=array("ack"=>1,"developer_msg"=>"Contact Us detail updated successfully!!","ack_msg"=>"Contact Us  detail updated successfully!!");
   							return $reply;
   						}
@@ -121,8 +111,6 @@
   							$reply=array("ack"=>0,"developer_msg"=>"Contact Us  deatil can't be insert!!","ack_msg"=>"Contact Us  deatil can't be insert!!");
   							return $reply;
   						}
-  					
-  					
   				}
   				else
   				{
@@ -143,9 +131,7 @@
   			return $reply;
   		}
   	}
-    
-   
-  	
+
   	function extractArray($array)
   	{
   		$columns=array();

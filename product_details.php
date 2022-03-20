@@ -1,34 +1,39 @@
+<?php include("connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<title>Chanakya Engineering Products | We would like to introduce ourselves as a leading manufacturer of High Quality door closer, floor sp</title>
+	<title>ECO in Rajkot, India from Chanakya Engineering Products</title>
 	<!-- Stylesheets -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/bootstrap.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/style.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/responsive.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>admin/css/toastr.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="language" content="English">
 	<meta name="robots" content="all">
-	<meta name="description" content="Chanakya Engineering Products in Rajkot ,We would like to introduce ourselves as a leading manufacturer of High Quality.">
+	<meta name="description" content="Products in Rajkot, India from Chanakya Engineering Products;">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
-	<meta name="twitter:image" content="images/logo.jpg">
+	<meta name="twitter:image" content="https://productimages.withfloats.com/actual/5ccec8c251bfd30001bd7911.jpg">
 	<meta name="twitter:description" content="Chanakya Engineering Products - 0">
-	<meta name="twitter:title" content="Chanakya Engineering Products">
+	<meta name="twitter:title" content="ECO in Rajkot ,India from Chanakya Engineering Products">
 	<meta name="twitter:card" content="summary">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Chanakya Engineering Products">
-	<meta property="og:image" content="images/logo.jpg">
+	<meta property="og:type" content="Products">
+	<meta property="og:title" content="ECO in Rajkot ,India from Chanakya Engineering Products">
+	<meta property="og:image" content="https://productimages.withfloats.com/actual/5ccec8c251bfd30001bd7911.jpg">
 	<meta property="og:site_name" content="Chanakya Engineering Products">
+	<meta property="og:url" content="http://www.katdoorcloser.com/products/eco/9">
 	<meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
+	<meta property="product:price:currency" content="INR">
+	<meta property="product:price:amount" content="1249">
 </head>
 
 <body>
@@ -64,7 +69,7 @@
 	                            	<div class="inner-column">
 	                                    <h4>MULTI-WAY ULTRA</h4>
 	                                    <div class="text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ untur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, </div>
-	                                    <div class="price">Price : <span>$24.5</span></div>
+	                                    <div class="price">Price : <span>INR 24.5</span></div>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -78,7 +83,7 @@
 	                        
 	                            <!--Tab Btns-->
 	                            <ul class="tab-btns tab-buttons clearfix">
-	                                <li data-tab="#prod-details" class="tab-btn active-btn">Descripton</li>
+	                                <li data-tab="#prod-details" class="tab-btn active-btn">Description</li>
 	                                <li data-tab="#prod-spec" class="tab-btn">Specification</li>
 	                                <li data-tab="#prod-reviews" class="tab-btn">Inquiry</li>
 	                            </ul>
@@ -107,46 +112,44 @@
 	                                    <div class="shop-comment-form">	
 	                                        <h2>Inquiry Form</h2>
 	                                        
-	                                        <form method="post" action="templateshub.net">
+	                                        <form method="post" name="inquiryForm" id="inquiryForm" action="">
 	                                            <div class="row clearfix">
 	                                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-	                                                    <label>First Name *</label>
-	                                                    <input type="text" name="username" placeholder="" required>
+	                                                    <label for="username">Name *</label>
+	                                                    <input class="form-control" type="text" name="username" id="username" placeholder="" required>
 	                                                </div>
 	                                                
 	                                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-	                                                    <label>Last Name*</label>
-	                                                    <input type="email" name="email" placeholder="" required>
+	                                                    <label for="email">Email address*</label>
+	                                                    <input type="email" class="form-control" name="email" id="email" placeholder="" required>
 	                                                </div>
-	                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-	                                                    <label>Email*</label>
-	                                                    <input type="text" name="number" placeholder="" required>
+	                                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+	                                                    <label for="mobile_no">Mobile Number*</label>
+	                                                    <input type="tel" class="form-control" name="mobile_no" id="mobile_no" placeholder="" required>
+	                                                </div>
+	                                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+	                                                    <label for="p_quantity">Quantity*</label>
+	                                                    <input type="number" class="form-control" min="0" name="p_quantity" id="p_quantity" placeholder="" required>
 	                                                </div>
 	                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-	                                                    <label>Your Comments*</label>
-	                                                    <textarea name="message" placeholder=""></textarea>
+	                                                    <label for="message">Message*</label>
+	                                                    <textarea class="form-control" name="message" id="message" placeholder=""></textarea>
 	                                                </div>
-	                                                
+	                                                <input type="hidden" name="pid" value="<?= isset($id) ? $id : 0 ?>">
 	                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-	                                                    <button class="theme-btn btn-style-four" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
-	                                                </div>
-	                                                
+	                                                    <button class="submit-btn btn-style-four" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
+	                                                    <img src="images\icons\spinner.gif" id="loader" style="display: none;"/>
+	                                                </div>          
 	                                            </div>
 	                                        </form>
-	                                            
 	                                    </div>
-	                                    
 	                                </div>
-	                                
 	                            </div>
 	                        </div>
-	                        
 	                    </div>
 	                    <!--End Product Info Tabs-->
-	                    
 	                </div>
 	            </div>
-	            
 	        </div>
 	    </section>
 	    <!--End Single Product Section-->
@@ -254,19 +257,124 @@
 
 	<!--Scroll to top-->
 	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
 	<!--Scroll to top-->
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/owl.js"></script>
-	<script src="js/wow.js"></script>
-	<script src="js/mixitup.js"></script>
-	<script src="js/appear.js"></script>
-	<script src="js/scrollbar.js"></script>
-	<script src="js/script.js"></script>
+	<script type="text/javascript">
+		/*------productform validation start-------*/
+        $(function() {
+            $.validator.addMethod("regex", function(value, element, regexp) {
+                var re = new RegExp(regexp);
+                return this.optional(element) || re.test(value);
+            }),
+            $("form[name='inquiryForm']").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        regex: "^[a-zA-Z]+$"
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    mobile_no: {
+                        required: true,
+                        regex: "^[0-9]+$",
+                        minlength: 10,
+                        maxlength: 12
+                    },
+                    p_quantity: {
+                        required: true
+                    },
+                    message: {
+                        required: true
+                    },
+                },
+                messages: {
+                    username: {
+                        required: "<span style='color:red; font-size:14px; font-weight:normal;'>Enter Your Name<span/>",
+                        regex: "<b style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Name </b>"
+                    },
+                    email: {
+                        required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Email Address</p>",
+                        email: "<p style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Email Address</p>"
+
+                    },
+                    mobile_no: {
+                        required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Phone Number</p>",
+                        regex: "<b style='color:red; font-size:14px; font-weight:normal;'>Please Enter Valid Mobile Number </b>",
+                        minlength: "<b style='color:red; font-size:14px; font-weight:normal;'>Mobile Number length at least 10-12 digit.. </b>",
+                        maxlength: "<b style='color:red; font-size:14px; font-weight:normal;'>Mobile Number length at least 10-12 digit.. </b>"
+                    },
+                    p_quantity: {
+                        required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Product Quantity</p>"
+                    },
+                    message: {
+                        required: "<p style='color:red; font-size:14px; font-weight:normal;'>Enter Message</p>"
+                    }
+                }
+                // submitHandler: function(form) {
+                //     form.submit();
+                // }
+            });
+        });
+        /*------productform validation end-------*/
+        /*------productform submit ajax start-------*/
+        $("#inquiryForm").on("submit", function(e) {
+            e.preventDefault();
+            var request_method = $(this).attr("method"); //get form GET/POST method
+            var form_data = $("#inquiryForm").serialize();
+            var name = $('#username').val();
+            var email = $('#email').val();
+            var mobile_no = $('#mobile_no').val();
+            var p_quantity = $('#p_quantity').val();
+            var pid = $('#pid').val();
+            var message = $('#message').val();
+
+            let error = false;
+            if (name == '') {
+                error = true;
+            }
+            if (email == '') {
+                error = true;
+            }
+            if (mobile_no == '') {
+                error = true;
+            }
+            if (p_quantity == '') {
+                error = true;
+            }
+            if (message == '') {
+                error = true;
+            }
+            if (error == false) {
+                $.ajax({
+                    url: "<?= SITEURL ?>ajax_product_inquiry.php",
+                    type: "POST",
+                    data: $("#inquiryForm").serialize(),
+
+                    beforeSend: function(){
+				        $('#loader').show();
+				        $('.submit-btn').prop('disabled', true);
+				        $('.submit-btn').hide();
+				    },
+				    complete: function(){
+				        $('#loader').hide();
+				        $('.submit-btn').prop('disabled', false);
+				        $('.submit-btn').show();
+				    },
+                    success: function(result) {
+                        let jsonData = JSON.parse(result);
+                        if (jsonData.ack == 1) {
+                            toastr.success("Your Query Submitted Successfully, We Will Review The Query and Contact You Soon...");
+                            $("#inquiryForm")[0].reset();
+                        } else {
+                            toastr.warning("Something Went wrong...");
+                        }
+                    }
+                });
+            }
+        })
+        /*------productform submit ajax end-------*/
+	</script>
 </body>
 
 </html>

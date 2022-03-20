@@ -14,5 +14,6 @@
 <!-- <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color"/> -->
 <link href="../assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/toastr.css">
-<link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+<link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
+<link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
 <!-- END THEME LAYOUT STYLES -->

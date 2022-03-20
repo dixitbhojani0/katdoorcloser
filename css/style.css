@@ -8470,3 +8470,18 @@ img{
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
 }
+
+.gallery-item .content p {
+	font-size: 11px;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.contact-widget ul li p {
+	position: relative;
+    color: #a8a8a8;
+    font-size: 15px;
+    line-height: 1.9em;
+    margin-bottom: 6px;
+}

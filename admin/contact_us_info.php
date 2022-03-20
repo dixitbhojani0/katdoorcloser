@@ -23,36 +23,35 @@
    if(isset($_REQUEST['submit'])){
    	// Variable Declaration
    	// GET SUBMITTED FORM VALUES
-   $params=array();
-   if(isset($_REQUEST['id']))
-   $params['id']=trim($db->clean($_REQUEST['id']));
-   $params['address']=trim($db->clean(htmlentities($_REQUEST['address'])));
-   $params['phone']=trim($db->clean($_REQUEST['phone']));
-   $params['phone_2']=trim($db->clean($_REQUEST['phone_2']));
-   $params['phone_3']=trim($db->clean($_REQUEST['phone_3']));
-   $params['email']=trim($db->clean($_REQUEST['email']));
-   $params['description']=trim($db->clean(htmlentities($_REQUEST['description'])));
-   
-   
+      $params=array();
+      
+      if(isset($_REQUEST['id'])) 
+         $params['id']=trim($db->clean($_REQUEST['id']));
+      
+      $params['address']=trim($db->clean(htmlentities($_REQUEST['address'])));
+      $params['phone']=trim($db->clean($_REQUEST['phone']));
+      $params['email']=trim($db->clean($_REQUEST['email']));
+      $params['description']=trim($db->clean(htmlentities($_REQUEST['description'])));
+
    	if($mode=='a')
-   	{
-	      //$params['created_date']=date("Y-m-d H:i:s");
-   		
+   	{	
+
    	   $reply=$contactus_obj->insert($params,"id='".$params['id']."'");
-   		if($reply['ack']==1)
+         if($reply['ack']==1)
    		{
    			$success_msg[]=$reply['ack_msg'];
-               $_SESSION['success_msg']= $success_msg;
-               $db->rp_location("contact_us_info.php");
+            $_SESSION['success_msg'] = $success_msg;
+            // $db->rp_location("contact_us_info.php");
    		}
    		else
    		{
    			$error_msg[]=$reply['ack_msg'];
-               $_SESSION['error_msg']= $error_msg;
-               $db->rp_location("contact_us_info.php");
+            $_SESSION['error_msg'] = $error_msg;
+            // $db->rp_location("contact_us_info.php");
    		}
    	}
    }
+   
    
    if(true)
    {   
@@ -107,36 +106,21 @@
                   <!-- END PAGE HEADER-->
                   <div class="row">
                      <div class="col-md-12">
-                        <?php 
-                           if(!empty($success_msg)){
-                           	?>			
-                        <div class="alert alert-success alert-dismissable"> <i class="fa fa-check"></i>
-                           <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                           <?php 
-                              foreach($success_msg as $s)
-                              {
-                              ?>
-                           <b>Success! </b><?php echo $s; ?>
-                           <?php }?>
-                        </div>
-                        <?php
-                           }
-                           if(!empty($error_msg)){
-                           ?>
-                        <div class="alert alert-danger alert-dismissable"> <i class="fa fa-ban"></i>
-                           <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                           <?php 
-                              foreach($error_msg as $e)
-                              {
-                              ?>
-                           <b>Error! </b><?php echo $e; ?>
-                           <?php 
-                              }
-                              ?>
-                        </div>
-                        <?php
-                           }
-                           ?>
+                        <?php if(!empty($_SESSION['success_msg'])){ ?>        
+                           <div class="alert alert-success alert-dismisable"> <i class="fa fa-check"></i>
+                              <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                              <?php foreach($success_msg as $s) { ?>
+                              <b>Success! </b><?php echo $s; ?>
+                              <?php } ?>
+                           </div>
+                        <?php } if(!empty($_SESSION['error_msg'])){ ?>
+                           <div class="alert alert-danger alert-dismissable"> <i class="fa fa-ban"></i>
+                              <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                              <?php foreach($error_msg as $e) {?>
+                              <b>Error! </b><?php echo $e; ?>
+                              <?php } ?>
+                           </div>
+                        <?php } ?>
                      </div>
                   </div>
                   <!-- END PAGE HEADER-->
@@ -164,16 +148,6 @@
                                  <div class="form-group form-md-line-input form-md-floating-label">
                                     <input class="form-control" value="<?php echo $phone; ?>" name="phone" id="phone" type="text">
                                     <label for="phone">Phone No. 1</label>
-                                    <p class="help-block"></p>
-                                 </div>
-                                 <div class="form-group form-md-line-input form-md-floating-label">
-                                    <input class="form-control" value="<?php echo $phone_2; ?>" name="phone_2" id="phone_2" type="text">
-                                    <label for="phone_2">Phone No. 2</label>
-                                    <p class="help-block"></p>
-                                 </div>
-                                 <div class="form-group form-md-line-input form-md-floating-label">
-                                    <input class="form-control" value="<?php echo $phone_3; ?>" name="phone_3" id="phone_3" type="text">
-                                    <label for="phone_3">Phone No. 3</label>
                                     <p class="help-block"></p>
                                  </div>
                                  <div class="form-group form-md-line-input form-md-floating-label">
@@ -223,7 +197,6 @@
          		CKEDITOR.replace('address');
          		CKEDITOR.replace('description');
          });
-        /* $("#phone").numeric();*/
          
          function check_form(){
          	var isValid=true;
@@ -236,13 +209,6 @@
          		aj.error('phone','Please enter contact number 1.','add_error');
          		isValid=false;
          	}
-            // if($("#phone_2").val()=="" || $("#phone_2").val().split(" ").join("")==""){
-            //    aj.error('phone_2','Please enter contact number 2.','add_error');
-            //    isValid=false;
-            // } if($("#phone_3").val()=="" || $("#phone_3").val().split(" ").join("")==""){
-            //    aj.error('phone_3','Please enter contact number 3.','add_error');
-            //    isValid=false;
-            // }
          	if($("#email").val()=="" || $("#email").val().split(" ").join("")==""){
          		aj.error('email','Please enter email address.','add_error');
          		isValid=false;
