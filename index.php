@@ -205,7 +205,7 @@
 				</div>
 				<!-- More Projects -->
 				<div class="more-projects">
-					<a href="product-list" class="projects">View All Projects</a>
+					<a href="<?= SITEURL ?>product-list" class="projects">View All Projects</a>
 				</div>
 
 			</div>
@@ -310,7 +310,7 @@
 								<div class="feature-number">1</div>
 							</div>
 							<div class="lower-content">
-								<h3><a href="residental-interior.html">Meet Customers</a></h3>
+								<h3><a href="javascript:void(0);">Meet Customers</a></h3>
 								<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
 							</div>
 						</div>
@@ -326,7 +326,7 @@
 								<div class="feature-number">2</div>
 							</div>
 							<div class="lower-content">
-								<h3><a href="residental-interior.html">Design Discussion</a></h3>
+								<h3><a href="javascript:void(0);">Design Discussion</a></h3>
 								<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
 							</div>
 						</div>
@@ -342,7 +342,7 @@
 								<div class="feature-number">3</div>
 							</div>
 							<div class="lower-content">
-								<h3><a href="residental-interior.html">Drafting Design</a></h3>
+								<h3><a href="javascript:void(0);">Drafting Design</a></h3>
 								<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
 							</div>
 						</div>
@@ -358,7 +358,7 @@
 								<div class="feature-number">4</div>
 							</div>
 							<div class="lower-content">
-								<h3><a href="residental-interior.html">Implimentation</a></h3>
+								<h3><a href="javascript:void(0);">Implimentation</a></h3>
 								<div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.</div>
 							</div>
 						</div>

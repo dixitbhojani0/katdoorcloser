@@ -2,20 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $id = $_GET['id'];
-    /*------condition-------*/
-    $where = "isDelete=0 AND isActive=1";
-    $where_a = "isDelete=0 AND isActive=1 AND id = '" . $id . "'  ";
+	if(!isset($_GET['id']) || empty($_GET['id'])) {
+		// 301 Moved Permanently
+		header("Location: ".SITEURL."404.php", true, 301);
+		exit();
+	} else {
 
-    $where_c = "isDelete=0 AND isActive=1 AND product_id='" . $id . "' ";
-    /*------product get Data-------*/
-    $product = $db->rp_getData("product", "*", $where_a, 0);
-    $product_d = mysqli_fetch_assoc($product);
+	    $id = @$_GET['id'];
+	    /*------condition-------*/
+	    $where = "isDelete=0 AND isActive=1";
+	    $where_a = "isDelete=0 AND isActive=1 AND id = '" . $id . "'  ";
+
+	    $where_c = "isDelete=0 AND isActive=1 AND product_id='" . $id . "' ";
+	    /*------product get Data-------*/
+	    $product = $db->rp_getData("product", "*", $where_a, 0);
+	    if(empty($product)) {
+	    	// 301 Moved Permanently
+			header("Location: ".SITEURL."404.php", true, 301);
+			exit();
+	    }
+	    $product_d = mysqli_fetch_assoc($product);
+	}
 
     ?>
 <head>
 	<meta charset="utf-8">
-	<title>ECO in Rajkot, India from Chanakya Engineering Products</title>
+	<title><?= @$product_d["name"] ?> in Rajkot, India from Chanakya Engineering Products</title>
 	<!-- Stylesheets -->
 	<link href="<?= SITEURL ?>css/bootstrap.css" rel="stylesheet">
 	<link href="<?= SITEURL ?>css/style.css" rel="stylesheet">
@@ -30,18 +42,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="language" content="English">
 	<meta name="robots" content="all">
-	<meta name="description" content="Products in Rajkot, India from Chanakya Engineering Products;">
+	<meta name="description" content="<?= @$product_d["name"] ?> in Rajkot, India from Chanakya Engineering Products;">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="free, contact, purchase, 98253 64088, reasonable rate">
-	<meta name="twitter:image" content="https://productimages.withfloats.com/actual/5ccec8c251bfd30001bd7911.jpg">
-	<meta name="twitter:description" content="Chanakya Engineering Products - 0">
-	<meta name="twitter:title" content="ECO in Rajkot ,India from Chanakya Engineering Products">
+	<meta name="twitter:image" content="<?= SITEURL . PRODUCT . @$product_d['image_path'] ?>">
+	<meta name="twitter:description" content="Chanakya Engineering Products - <?= @$product_d["name"] ?>">
+	<meta name="twitter:title" content="<?= @$product_d["name"] ?> in Rajkot ,India from Chanakya Engineering Products">
 	<meta name="twitter:card" content="summary">
 	<meta property="og:type" content="Products">
-	<meta property="og:title" content="ECO in Rajkot ,India from Chanakya Engineering Products">
-	<meta property="og:image" content="https://productimages.withfloats.com/actual/5ccec8c251bfd30001bd7911.jpg">
+	<meta property="og:title" content="<?= @$product_d["name"] ?> in Rajkot ,India from Chanakya Engineering Products">
+	<meta property="og:image" content="<?= SITEURL . PRODUCT . @$product_d['image_path'] ?>">
 	<meta property="og:site_name" content="Chanakya Engineering Products">
-	<meta property="og:url" content="http://www.katdoorcloser.com/products/eco/9">
+	<meta property="og:url" content="<?= SITEURL . 'product-details/' . @$product_d["id"] ?>">
 	<meta property="og:description" content="Chanakya Engineering Products - We would like to introduce ourselves as a leading manufacturer of High Quality d">
 	<meta property="product:price:currency" content="INR">
 	<meta property="product:price:amount" content="1249">
@@ -52,13 +64,13 @@
 	<?php require("include/header.php"); ?>
 	<div class="page-wrapper">
 		<!--Page Title-->
-		<section class="page-title" style="background-image:url(images/background/5.jpg)">
+		<section class="page-title" style="background-image:url(<?= SITEURL ?>images/background/5.jpg)">
 			<div class="auto-container">
 				<h2>Product Details</h2>
 				<ul class="page-breadcrumb">
 					<li><a href="<?= SITEURL ?>">home</a></li>
 					<li><a href="<?= SITEURL ?>product-list">Product list</a></li>
-					<li>Product Details</li>
+					<li><?= @$product_d["name"] ?></li>
 				</ul>
 			</div>
 		</section>
@@ -75,11 +87,11 @@
 						<div class="basic-details">
 							<div class="row clearfix">
 								<div class="image-column col-lg-6 col-md-12 col-sm-12">
-									<figure class="image-box"><a href="<?= SITEURL . PRODUCT . $product_d['image_path'] ?>" class="lightbox-image" title="Image Caption Here"><img src="<?= SITEURL . PRODUCT . $product_d['image_path'] ?>" alt=""></a></figure>
+									<figure class="image-box"><a href="<?= SITEURL . PRODUCT . @$product_d['image_path'] ?>" class="lightbox-image" title="Image Caption Here"><img src="<?= SITEURL . PRODUCT . @$product_d['image_path'] ?>" alt=""></a></figure>
 								</div>
 								<div class="info-column col-lg-6 col-md-12 col-sm-12">
 									<div class="inner-column">
-										<h4><?= $product_d["name"] ?></h4>
+										<h4><?= @$product_d["name"] ?></h4>
 										<div class="text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ untur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, </div>
 										</br>
 
@@ -116,7 +128,7 @@
 									<!--Tab / Active Tab-->
 									<div class="tab active-tab" id="prod-details">
 										<div class="content">
-											<p><?= html_entity_decode($product_d["meta_descr"]) ?></p>
+											<p><?= html_entity_decode(@$product_d["meta_descr"]) ?></p>
 										</div>
 									</div>
 

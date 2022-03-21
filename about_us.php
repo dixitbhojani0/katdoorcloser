@@ -240,10 +240,11 @@
 										<img src="<?=SITEURL.TEAM.$our_team_d['image_path']?>" alt="" />
 										<div class="overlay-box">
 											<ul class="social-icons">
-												<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-												<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-												<li><a href="#"><i class="fab fa-skype"></i></a></li>
+												<li><a href="<?= !empty($our_team_d["fb_link"]) ? html_entity_decode(@$our_team_d["fb_link"]) : 'javascript:void(0);' ?>"><i class="fab fa-facebook" target="_blank"></i></a></li>
+												<li><a href="<?= !empty(@$our_team_d["twitter_link"]) ? html_entity_decode(@$our_team_d["twitter_link"]) : 'javascript:void(0);' ?>" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+												<li><a href="<?= !empty(@$our_team_d["linkedin_link"]) ? html_entity_decode(@$our_team_d["linkedin_link"]) : 'javascript:void(0);' ?>" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+												<li><a href="<?= !empty(@$our_team_d["insta_link"]) ? html_entity_decode(@$our_team_d["insta_link"]) : 'javascript:void(0);' ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+												<li><a href="<?= !empty(@$our_team_d["google_link"]) ? html_entity_decode(@$our_team_d["google_link"]) : 'javascript:void(0);' ?>" target="_blank"><i class="fab fa-google"></i></a></li>
 											</ul>
 										</div>
 									</div>

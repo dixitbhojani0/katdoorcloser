@@ -43,7 +43,7 @@
                 $mail->isHTML(true);                                  // Set email format to HTML
                 $mail->Subject = SITENAME;
                 $mail->Body = 'Hi, '.$username.
-                '<br/>Thank you for getting in touch. We are working on your request hang tight! We will get back to you within 8 business hours (Monday - Friday 10 am to 7pm EST).<br/>Here are some important links that might direct you where you need to go:<br/>Phone No:'.$get_contact_d["phone"].
+                '<br/>Thank you for getting in touch. We are working on your request hang tight! We will get back to you within 8 business hours (Monday - Sunday 8:00 AM to 8:00 AM, Wednesday - closed).<br/>Here are some important links that might direct you where you need to go:<br/>Phone No:'.@$get_contact_d["phone"].
                 '<br/>Thanks again,<br/>'.MAIL_FROM_NAME;
                 $mail->AltBody = 'This is the computer generated email'; // This is the body in plain text for non-HTML mail clients
                 $mail->SMTPDebug  = 0; 
