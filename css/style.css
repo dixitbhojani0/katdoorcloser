@@ -2400,7 +2400,14 @@ img{
 	margin-right:10px;
 	display:inline-block;
 }
-
+.social-share ul li a{
+	position:relative;
+	width:100px;
+	height:100px;
+	font-size:30px;
+	margin: 10px;
+	
+}
 .main-footer .logo-widget .social-icons li a{
 	position:relative;
 	width:36px;

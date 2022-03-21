@@ -1,4 +1,27 @@
-<?php include("connect.php"); ?>
+<?php include("connect.php");
+
+
+/*------condition-------*/
+$where = "isDelete=0 AND isActive=1";
+$where_p = "isDelete=0 AND display_order>0 AND isActive=1 ";
+
+/*------For product-------*/
+$product_a = $db->rp_getData("product", "*", $where_p, "display_order ASC", 0, 6);
+$category_r = $db->rp_getData("category", "*", $where);
+$category_id_array = $value = array();
+if (!empty($category_r)) {
+    $category_data = mysqli_fetch_all($category_r);
+    foreach ($category_r as $key => $value) {
+        $category_id_array[$value['id']] = $value['name'];
+        $category_data_array[] = $value;
+    }
+}
+$category_a = $db->rp_getData("category", "*", $where);
+
+$about_us_r = $db->rp_getData("about_us", "*", $where, 0);
+if (!empty($about_us_r)) {
+    $about_us_d = mysqli_fetch_assoc($about_us_r);
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,214 +74,72 @@
             </div>
         </section>
         <!--End Page Title-->
-        
+
         <!-- Portfolio Page Section -->
         <section class="portfolio-page-section">
             <div class="auto-container">
                 <!--MixitUp Galery-->
                 <div class="mixitup-gallery">
-                    
+
                     <!--Filter-->
                     <div class="filters clearfix">
-                        
+
                         <ul class="filter-tabs filter-btns text-center clearfix">
-                            <li class="active filter" data-role="button" data-filter="all">All Works</li>
-                            <li class="filter" data-role="button" data-filter=".residential-interior">Residential Interior</li>
-                            <li class="filter" data-role="button" data-filter=".interior">Commercial Interior</li>
-                            <li class="filter" data-role="button" data-filter=".kitchen">Modular Kitchen</li>
-                            <li class="filter" data-role="button" data-filter=".wardrobe">Modern Wardrobe</li>
-                            <li class="filter" data-role="button" data-filter=".furniture">Modern Furniture</li>
+                            <li class="active filter" data-role="button" data-filter="all">All Products</li>
+                            <?php
+                            if (!empty($category_a)) {
+                                while ($category_d = mysqli_fetch_assoc($category_a)) { ?>
+                                    <li class="filter" data-role="button" data-filter=".<?= str_replace(' ', '_', strtolower(@$category_d['name'])) ?>"><?= @$category_d['name'] ?></li>
+                            <?php }
+                            }
+                            ?>
                         </ul>
-                        
+
                     </div>
-                    
+
                     <div class="filter-list row clearfix">
-                        
+
                         <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/17.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/17.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
+                        <?php
+                        if (!empty($product_a)) {
+                            $count = 0;
+                            while ($product_d = mysqli_fetch_assoc($product_a)) {
+                                $count++;
+                        ?>
+                                <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12 <?php echo str_replace(' ', '_', strtolower($category_id_array[$product_d['cid']])); ?>">
+                                    <div class="inner-box">
+                                        <figure class="image-box">
+                                            <img src="<?= SITEURL . PRODUCT . $product_d['image_path'] ?>" alt="">
+                                            <!--Overlay Box-->
+                                            <div class="overlay-box">
+                                                <div class="overlay-inner">
+                                                    <div class="content">
+                                                        <h3><a href="product-details/<?=$product_d['id']?>"><?= $product_d['name']?></a></h3>
+                                                        <a href="<?=SITEURL.PRODUCT.$product_d['image_path']?>" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
+                                                        <a href="product-details/<?=$product_d['id']?>" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </figure>
                                     </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/18.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/18.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe residential-interior interior col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/19.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/19.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe furniture kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/20.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/20.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all interior residential-interior col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/21.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/21.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all wardrobe furniture kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/22.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/22.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all interior furniture col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/23.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/23.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all furniture kitchen col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/24.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/24.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <!-- Gallery Item -->
-                        <div class="gallery-item mix all furniture col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img src="images/gallery/25.jpg" alt="">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <h3><a href="product-details">Modular Kitchen</a></h3>
-                                                <a href="images/gallery/25.jpg" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                <a href="product-details" class="link"><span class="icon flaticon-unlink"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
+                                </div>
+                        <?php }
+                        }
+                        ?>
                     </div>
-                    
                 </div>
             </div>
         </section>
         <!-- End Story Section -->
         <!--Main Footer-->
         <?php require("include/footer.php") ?>
-    </div>  
-<!--End pagewrapper-->
+    </div>
+    <!--End pagewrapper-->
 
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
     <!--Scroll to top-->
 </body>
+
 </html>
