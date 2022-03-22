@@ -189,9 +189,9 @@
 											<div class="overlay-box">
 												<div class="overlay-inner">
 													<div class="content">
-														<h3><a href="projects-fullwidth.html"><?= $product_d['name']?></a></h3>
+														<h3><a href="<?= SITEURL.'product-details/'.$product_d['id']?>"><?= $product_d['name']?></a></h3>
 														<a href="<?=SITEURL.PRODUCT.$product_d['image_path']?>" data-fancybox="gallery-1" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-														<a href="projects-fullwidth.html" class="link"><span class="icon flaticon-unlink"></span></a>
+														<a href="<?= SITEURL.'product-details/'.$product_d['id']?>" class="link"><span class="icon flaticon-unlink"></span></a>
 													</div>
 												</div>
 											</div>
@@ -276,7 +276,7 @@
 										</div>
 									</div>
 									<div class="lower-content">
-										<h3><a href="team.html"><?= @$our_team_d["name"] ?></a></h3>
+										<h3><a href="<?=SITEURL?>about-us"><?= @$our_team_d["name"] ?></a></h3>
 										<div class="designation"><?= @$our_team_d["designation"] ?></div>
 										<hr>
 										<p style="font-size: 12px;"><?= html_entity_decode(@$our_team_d["description"]) ?></p>

@@ -215,7 +215,7 @@
         var form_data = $("#contact-form").serialize();
         var mobile_no=$('#mobile_no').val();
         let error = false;
-        if($(".error").is(":hidden") == false || $("#folio-invalid").is(":hidden") == false || $("#mobile-valid").is(":hidden") == false) {
+        if(($(".error")[0] == "undefined") || $('#folio-invalid').hasClass('d-none') == false || $('#mobile-valid').hasClass('d-none') == false) {
             error = true;
         }
         if(error == false) {

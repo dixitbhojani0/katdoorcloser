@@ -7,8 +7,8 @@
   	public $primary_column="id";
   	public $unique_column="name";
   	// Public Varibale
-  	public $id='';public $name='';public $brochure='';  public $cid='';public $sid='';public $slug='';public $packing='';public $description=''; public $advantage=''; public $image_path='';public $adate='';  public $product_code='';
-  	public $valid_keys=array("id","cid","sid","name","product_code","slug","packing","description","advantage","meta_descr","add_info","video_url","image_path","old_image_path","adate","brochure");
+  	public $id='';public $name='';public $brochure='';  public $cid='';public $sid='';public $slug='';public $packing='';public $description=''; public $advantage=''; public $image_path='';public $adate='';  public $product_code='';public $price='';
+  	public $valid_keys=array("id","cid","sid","name","product_code","slug","packing","description","advantage","meta_descr","add_info","video_url","image_path","old_image_path","adate","brochure","price");
   	function __construct($id="") 
   	{
   		$db = new Functions();

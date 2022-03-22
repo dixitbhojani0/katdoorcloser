@@ -31,6 +31,7 @@
    $params['cid']=trim($db->clean($_REQUEST['cid']));
    $params['sid']=trim($db->clean($_REQUEST['sid']));
    $params['name']=trim($db->clean($_REQUEST['name']));
+   $params['price']=trim($db->clean($_REQUEST['price']));
    $params['video_url']=trim($db->clean($_REQUEST['video_url']));
    $params['slug']=$db->rp_createSlug($_REQUEST['name']);
    $params['image_path']=trim($db->clean($_REQUEST['image_path']));
@@ -273,6 +274,11 @@
                                     <div class="form-group">
                                        <label for="name">Product Name <code>*</code></label>
                                        <input class="form-control " value="<?php echo $name;  ?>" name="name" id="name" type="text"  data-validation="required,length"   data-validation-length="min3" data-validation-error-msg="Enter atleast 3 Characters." >
+                                       <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="name">Product Price <code>*</code></label>
+                                       <input class="form-control " value="<?php echo $price;  ?>" name="price" id="price" type="number" data-validation="required,length"   data-validation-length="min1" data-validation-error-msg="Enter atleast 1 Characters.">
                                        <span class="help-block"></span>
                                     </div>
                                     <div class="form-group">

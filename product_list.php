@@ -114,9 +114,9 @@ if (!empty($about_us_r)) {
                                             <div class="overlay-box">
                                                 <div class="overlay-inner">
                                                     <div class="content">
-                                                        <h3><a href="product-details/<?=$product_d['id']?>"><?= $product_d['name']?></a></h3>
+                                                        <h3><a href="<?= SITEURL.'product-details/'.$product_d['id']?>"><?= $product_d['name']?></a></h3>
                                                         <a href="<?=SITEURL.PRODUCT.$product_d['image_path']?>" data-fancybox="gallery-4" data-caption="" class="link"><span class="icon flaticon-magnifying-glass-1"></span></a>
-                                                        <a href="product-details/<?=$product_d['id']?>" class="link"><span class="icon flaticon-unlink"></span></a>
+                                                        <a href="<?= SITEURL.'product-details/'.$product_d['id']?>" class="link"><span class="icon flaticon-unlink"></span></a>
                                                     </div>
                                                 </div>
                                             </div>

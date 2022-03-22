@@ -81,8 +81,8 @@
 									<form method="post" name="newsletter-form" id="newsletter-form" action="">
 										<div class="form-group">
 											<input type="email" name="email" value="" placeholder="Enter your email address" id="sub-email" required>
-											<button type="submit" class="theme-btn btn-style-one"><span class="txt">Subscribe</span></button>
-											<img src="images\icons\preloader.svg" id="loader" style="display: none; padding-top: 10px;"/>
+											<button type="submit" class="theme-btn2 btn-style-one"><span class="txt">Subscribe</span></button>
+											<img src="<?= SITEURL ?>images\icons\preloader.svg" id="loader1" style="display: none; padding-top: 10px;"/>
 										</div>
 									</form>
 								</div>
@@ -94,8 +94,8 @@
 			</div>
 		</div>
 		<!--Scroll to top-->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-	<!--Scroll to top-->
+		<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+		<!--Scroll to top-->
 		
 		<!--Footer Bottom-->
         <div class="footer-bottom clearfix">
@@ -105,26 +105,6 @@
         </div>			
 	</div>
 </footer>
-
-<!-- scroll to top start-->
-<script>
-var mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
-<!-- scroll to top end-->
 
 <script src="<?= SITEURL ?>js/jquery.js"></script>
 <script src="<?= SITEURL ?>js/popper.min.js"></script>
@@ -157,14 +137,14 @@ function topFunction() {
 	            type:"POST",
 	            data:$("#newsletter-form").serialize(),
 	            beforeSend: function(){
-			        $('#loader').show();
-			        $('.theme-btn').prop('disabled', true);
-			        $('.theme-btn').hide();
+			        $('#loader1').show();
+			        $('.theme-btn2').prop('disabled', true);
+			        $('.theme-btn2').hide();
 			    },
 			    complete: function(){
-			        $('#loader').hide();
-			        $('.theme-btn').prop('disabled', false);
-			        $('.theme-btn').show();
+			        $('#loader1').hide();
+			        $('.theme-btn2').prop('disabled', false);
+			        $('.theme-btn2').show();
 			    },
 	            success:function(result)
 	            {
@@ -193,6 +173,25 @@ function topFunction() {
 	jQuery(".cat1").click(function () {
     jQuery(".cat1").hide();
 	});
+	$(function(){
+	    var current = location.pathname;
+	    $('#nav li a').each(function(){
+	        var $this = $(this);
+	        if($this.attr('href') == location.href){
+		        $this.parent().addClass('current');
+	        }
+	        // if the current path is like this link, make it active
+	        // if($this.attr('href').indexOf(current) !== -1){
+	        //     $this.addClass('active');
+	        // }
+	    })
+	    $('.navigation li a').each(function(){
+	        var $this = $(this);
+	        if($this.attr('href') == location.href){
+		        $this.parent().addClass('current');
+	        }
+	    })
+	})
     /*------subscribe-form submit ajax end-------*/
 </script>
 <script type="application/ld+json" k-partial="">

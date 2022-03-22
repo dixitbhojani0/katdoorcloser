@@ -93,6 +93,11 @@
 									<div class="inner-column">
 										<h4><?= @$product_d["name"] ?></h4>
 										<div class="text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ untur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, </div>
+                                        <?php if(isset($product_d['price']) && !empty($product_d['price'])) { ?>
+                                        	<div class="price">Price : <span>INR <?= $product_d['price'] ?></span></div>
+                                        <?php } else { ?>
+                                        	<div class="price">Price Not Available</div>
+                                        <?php } ?>
 										</br>
 
 										<div class="social-share"><h3>Share this product on social media</h3> </br>
@@ -164,7 +169,7 @@
 													<input type="hidden" name="pid" value="<?= isset($id) ? $id : 0 ?>">
 													<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
 														<button class="submit-btn btn-style-four" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
-														<img src="images\icons\spinner.gif" id="loader" style="display: none;" />
+														<img src="<?= SITEURL ?>images\icons\spinner.gif" id="loader2" style="display: none;" />
 													</div>
 												</div>
 											</form>
@@ -279,12 +284,12 @@
 					data: $("#inquiryForm").serialize(),
 
 					beforeSend: function() {
-						$('#loader').show();
+						$('#loader2').show();
 						$('.submit-btn').prop('disabled', true);
 						$('.submit-btn').hide();
 					},
 					complete: function() {
-						$('#loader').hide();
+						$('#loader2').hide();
 						$('.submit-btn').prop('disabled', false);
 						$('.submit-btn').show();
 					},

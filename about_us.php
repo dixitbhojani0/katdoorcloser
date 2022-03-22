@@ -249,7 +249,7 @@
 										</div>
 									</div>
 									<div class="lower-content">
-										<h3><a href="team.html"><?= @$our_team_d["name"] ?></a></h3>
+										<h3><a href="<?=SITEURL?>about-us"><?= @$our_team_d["name"] ?></a></h3>
 										<div class="designation"><?= @$our_team_d["designation"] ?></div>
 										<hr>
 										<p style="font-size: 12px;"><?= html_entity_decode(@$our_team_d["description"]) ?></p>

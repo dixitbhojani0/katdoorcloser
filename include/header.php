@@ -47,24 +47,24 @@
                         </div>
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                            <ul class="navigation clearfix">
-                                <li class="current"><a href="<?= SITEURL ?>">Home</a></li>
+                            <ul class="navigation clearfix" id="nav">
+                                <li class=""><a href="<?= SITEURL ?>">Home</a></li>
                                 <li class=""><a href="<?= SITEURL ?>about-us">About us</a>
                                 </li>
                                 <li class=""><a href="<?= SITEURL ?>product-list">Products</a></li>
                                 <li class=""><a href="<?= SITEURL ?>gallery">Gallery</a></li>
-                                <li class="dropdown"><a href="<?= SITEURL ?>about-us">Timings</a>
-                                    <ul>
-                                        <li>Mon:&ensp;&nbsp;&ensp;8:00 AM-8:00 PM</li>
-                                        <li>Tue:&emsp;&ensp;8:00 AM-8:00 PM</li>
-                                        <li>Wed:&emsp;&emsp;&ensp;&ensp;Closed&emsp;</li>
-                                        <li>Thur:&emsp;&nbsp;8:00 AM-8:00 PM</li>
-                                        <li>Fri:&emsp;&emsp;&nbsp;8:00 AM-8:00 PM</li>
-                                        <li>Sat:&ensp;&emsp;&nbsp;8:00 AM-8:00 PM</li>
-                                        <li>Sun:&ensp;&emsp;8:00 AM-8:00 PM</li>
+                                <li class="dropdown"><a href="javascript:void(0);">Timings</a>
+                                    <ul style="text-align: center;">
+                                        <li>Mon:8:00 AM-8:00 PM</li>
+                                        <li>Tue:8:00 AM-8:00 PM</li>
+                                        <li>Wed:Closed</li>
+                                        <li>Thur:8:00 AM-8:00 PM</li>
+                                        <li>Fri:8:00 AM-8:00 PM</li>
+                                        <li>Sat:8:00 AM-8:00 PM</li>
+                                        <li>Sun:8:00 AM-8:00 PM</li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= SITEURL ?>contact-us">Contact</a></li>
+                                <li class=""><a href="<?= SITEURL ?>contact-us">Contact</a></li>
                             </ul>
                         </div>
                     </nav>
