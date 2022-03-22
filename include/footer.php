@@ -93,6 +93,9 @@
 				</div>	
 			</div>
 		</div>
+		<!--Scroll to top-->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+	<!--Scroll to top-->
 		
 		<!--Footer Bottom-->
         <div class="footer-bottom clearfix">
@@ -102,6 +105,27 @@
         </div>			
 	</div>
 </footer>
+
+<!-- scroll to top start-->
+<script>
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<!-- scroll to top end-->
+
 <script src="<?= SITEURL ?>js/jquery.js"></script>
 <script src="<?= SITEURL ?>js/popper.min.js"></script>
 <script src="<?= SITEURL ?>js/jquery-ui.js"></script>

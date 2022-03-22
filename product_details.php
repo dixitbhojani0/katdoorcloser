@@ -185,9 +185,6 @@
 	</div>
 	<!--End pagewrapper-->
 
-	<!--Scroll to top-->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-	<!--Scroll to top-->
 	<script type="text/javascript">
 		/*------productform validation start-------*/
 		$(function() {

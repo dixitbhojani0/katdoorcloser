@@ -151,9 +151,6 @@
 	</div>
 	<!--End pagewrapper-->
 
-	<!--Scroll to top-->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
 	<!--Search Popup-->
 	<div id="search-popup" class="search-popup">
 		<div class="close-search theme-btn"><span class="flaticon-cancel"></span></div>
@@ -184,7 +181,6 @@
 		</div>
 	</div>
 
-	<!--Scroll to top-->
 	<!--Google Map APi Key-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
 	<script src="js/map-script.js"></script>
