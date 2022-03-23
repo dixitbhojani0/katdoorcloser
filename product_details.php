@@ -100,8 +100,8 @@
                                         <?php } ?>
 										</br>
 
-										<div class="social-share"><h3>Share this product on social media</h3> </br>
-											<ul class="social-icons" style="display: flex;">
+										<div class="social-share my-3 mx-5"><h3 style="margin-left: 2.5rem!important;">Share this product on social media</h3> </br>
+											<ul class="social-icons" style="display: flex; justify-content:center;">
 												<li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com/product-details/<?php echo $id?>" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
 												<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com/product-details/<?php echo $id?>" target="_blank"><span class="fab fa-facebook-f"></span></a></li>
 												<li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.katdoorcloser.com/product-details/<?php echo $id?>" target="_blank"><span class="fab fa-twitter"></span></a></li>

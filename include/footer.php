@@ -65,7 +65,7 @@
 									<a href="tel:<?= html_entity_decode(@$get_contact_d["phone"]) ?>" class="contact-number"><?= html_entity_decode(@$get_contact_d["phone"]) ?></a>
 									<ul>
 										<li><?= html_entity_decode(@$get_contact_d["address"])?></li>
-										<li>Email :<a href="<?= html_entity_decode(@$get_contact_d['email']) ?>"> <?= html_entity_decode(@$get_contact_d["email"])?></a></li>
+										<li>Email :<a href="mailto:<?= html_entity_decode(@$get_contact_d['email']) ?>"> <?= html_entity_decode(@$get_contact_d["email"])?></a></li>
 									</ul>
 								</div>
 							</div>
