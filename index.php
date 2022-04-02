@@ -6,7 +6,7 @@
 	/*------banner get Data-------*/
     $banner_r = $db->rp_getData("banner","*",$where,"display_order ASC",0);
     
-    $product_a =$db->rp_getData("product","*",$where_p,"display_order ASC",0,6); 
+    $product_a =$db->rp_getData("product","*",$where_p,"display_order ASC",0,10); 
     $category_r = $db->rp_getData("category", "*", $where);
     $category_id_array = $value = array();
     if(!empty($category_r)) {

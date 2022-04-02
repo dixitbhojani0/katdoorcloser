@@ -92,7 +92,7 @@
 								<div class="info-column col-lg-6 col-md-12 col-sm-12">
 									<div class="inner-column">
 										<h4><?= @$product_d["name"] ?></h4>
-										<div class="text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ untur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, </div>
+										<div class="text"><?= html_entity_decode(@$product_d["description"]) ?></div>
                                         <?php if(isset($product_d['price']) && !empty($product_d['price'])) { ?>
                                         	<div class="price">Price : <span>INR <?= $product_d['price'] ?></span></div>
                                         <?php } else { ?>

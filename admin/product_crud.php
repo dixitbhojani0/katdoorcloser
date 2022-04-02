@@ -21,32 +21,30 @@
    $id='';   $advantage=''; $cid='';$sid='';$name='';$slug='';$meta_descr="";$price="";$image_path="";$brochure="";$description="";$add_date="";$file_upload="";
    
    if(isset($_REQUEST['submit'])){
-      
-      
       // Variable Declaration
       // GET SUBMITTED FORM VALUES
-   $params=array();
-   if(isset($_REQUEST['id']))
-   $params['id']=trim($db->clean($_REQUEST['id']));
-   $params['cid']=trim($db->clean($_REQUEST['cid']));
-   $params['sid']=trim($db->clean($_REQUEST['sid']));
-   $params['name']=trim($db->clean($_REQUEST['name']));
-   $params['price']=trim($db->clean($_REQUEST['price']));
-   $params['video_url']=trim($db->clean($_REQUEST['video_url']));
-   $params['slug']=$db->rp_createSlug($_REQUEST['name']);
-   $params['image_path']=trim($db->clean($_REQUEST['image_path']));
-   $params['old_image_path']=trim($db->clean($_REQUEST['old_image_path']));
-   $params['meta_descr']=$db->clean($_REQUEST['meta_descr']);
-   $params['description']=$db->clean(htmlentities($_REQUEST['description']));
-   $params['add_info']=$db->clean(htmlentities($_REQUEST['add_info']));
-   $params['advantage']=$db->clean(htmlentities($_REQUEST['advantage']));
-   $params['brochure']=  $db->clean(htmlentities($_REQUEST['brochure']));
-   if(empty($params['brochure'])) {
-      unset($params['brochure']);
-   }
+      $params=array();
+      if(isset($_REQUEST['id']))
+      $params['id']=trim($db->clean($_REQUEST['id']));
+      $params['cid']=trim($db->clean($_REQUEST['cid']));
+      $params['sid']=trim($db->clean($_REQUEST['sid']));
+      $params['name']=trim($db->clean($_REQUEST['name']));
+      $params['price']=trim($db->clean($_REQUEST['price']));
+      $params['video_url']=trim($db->clean($_REQUEST['video_url']));
+      $params['slug']=$db->rp_createSlug($_REQUEST['name']);
+      $params['image_path']=trim($db->clean($_REQUEST['image_path']));
+      $params['old_image_path']=trim($db->clean($_REQUEST['old_image_path']));
+      $params['meta_descr']=$db->clean($_REQUEST['meta_descr']);
+      $params['description']=$db->clean(htmlentities($_REQUEST['description']));
+      $params['add_info']=$db->clean(htmlentities($_REQUEST['add_info']));
+      $params['advantage']=$db->clean(htmlentities($_REQUEST['advantage']));
+      $params['brochure']=  $db->clean(htmlentities($_REQUEST['brochure']));
+      if(empty($params['brochure'])) {
+         unset($params['brochure']);
+      }
       if($mode=='a')
       {
-          $reply=$product_obj->insert($params,"",$_FILES);
+         $reply=$product_obj->insert($params,"",$_FILES);
          if($reply['ack']==1)
          {
             $success_msg[]=$reply['ack_msg'];
@@ -78,7 +76,7 @@
       }
       else if($mode=='d')
       {
-   
+
          $reply=$product_obj->delete(array("key"=>"id","value"=>$params['id']));
          if($reply['ack']==1)
          {
@@ -96,7 +94,7 @@
       else if($mode=='ac')
       {
          //
-           $params['status']=$_REQUEST['status'];
+         $params['status']=$_REQUEST['status'];
          $reply=$product_obj->active(array("key"=>"id","value"=>$params['id'],"status"=>$params['status']));
          if($reply['ack']==1)
          {
@@ -111,7 +109,6 @@
                $db->rp_location("product_manage.php");
          }
       }
-   
    }
    
    if($mode=="e")
@@ -132,6 +129,7 @@
             $error_msg[]=$reply['ack_msg'];
          }
    }
+
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -232,7 +230,7 @@
                                        <span class="caption-subject bold uppercase"> <i class="fa fa-plus"></i> &nbsp; Detail</span>
                                     </div>
                                     <div class="actions">
-                                       <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;">
+                                       <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:void(0);">
                                        </a>
                                     </div>
                                  </div>
@@ -246,31 +244,13 @@
                                              if(mysqli_num_rows($cat_r)>0){
                                                 while($cat_d = mysqli_fetch_array($cat_r)){
                                                 ?>
-                                          <option value="<?php echo $cat_d['id']; ?>" <?php if($cat_d['id']==$cid){?> selected <?php } ?>><?php echo $cat_d['name']; ?></option>
-                                          <?php
+                                                   <option value="<?php echo $cat_d['id']; ?>" <?php echo $cat_d['id']== $cid ? "selected" : ""; ?>><?php echo $cat_d['name']; ?></option>
+                                                <?php
+                                                }
                                              }
-                                             }
-                                             ?>
+                                          ?>
                                        </select>
                                     </div>
-                                    <!-- <div class="form-group">
-                                       <label for="sid">Sub Category <code>*</code></label>
-                                       <select class="form-control" name="sid" id="sid" >
-                                          <option value="">Select Sub Category</option>
-                                          <?php
-                                             if($cid!="" && $cid>0){
-                                                $scat_r = $db->rp_getData("sub_category","*","isDelete=0 AND cid=".$cid);
-                                                if(mysqli_num_rows($scat_r)>0){
-                                                   while($scat_d = mysqli_fetch_array($scat_r)){
-                                                   ?>
-                                          <option value="<?php echo $scat_d['id']; ?>" <?php if($scat_d['id']==$sid){?> selected <?php } ?>><?php echo $scat_d['name']; ?></option>
-                                          <?php
-                                             }
-                                             }
-                                             }
-                                             ?>
-                                       </select>
-                                    </div> -->
                                     <div class="form-group">
                                        <label for="name">Product Name <code>*</code></label>
                                        <input class="form-control " value="<?php echo $name;  ?>" name="name" id="name" type="text"  data-validation="required,length"   data-validation-length="min3" data-validation-error-msg="Enter atleast 3 Characters." >
@@ -380,7 +360,7 @@
       <?php include('footer.php'); ?>
       <?php include('include_js.php');?>
       <script src="js/ckeditor/ckeditor.js" type="text/javascript"></script>
-      <script src="js/banner_html5imageupload.js?v1.3.4"></script>
+      <!-- <script src="js/banner_html5imageupload.js?v1.3.4"></script> -->
       <script src="js/jquery.numeric.min.js"></script>
       <!-- START PAGELEVEL JS -->
       <!-- BEGIN PAGE LEVEL PLUGINS -->

@@ -6,7 +6,7 @@ $where = "isDelete=0 AND isActive=1";
 $where_p = "isDelete=0 AND display_order>0 AND isActive=1 ";
 
 /*------For product-------*/
-$product_a = $db->rp_getData("product", "*", $where_p, "display_order ASC", 0, 6);
+$product_a = $db->rp_getData("product", "*", $where_p, "display_order ASC", 0);
 $category_r = $db->rp_getData("category", "*", $where);
 $category_id_array = $value = array();
 if (!empty($category_r)) {
