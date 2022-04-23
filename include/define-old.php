@@ -13,7 +13,7 @@ if(ENVIORNMENT_FLAG == "1") {
 	define("DB_PASS", "");
 	define("DB_NAME", "flowtop_db");
 	define("DB_HOST", "localhost");
-	define("SITEURL","http://localhost/katdoorcloser/katdoorcloser/");
+	define("SITEURL","https://f9fe-43-241-145-20.ngrok.io/katdoorcloser/katdoorcloser/");
 	define("MAIL_FROM_NAME","Chanakya Engineering Products");
 	define("MAIL_FROM","dixitbhojani0@gmail.com"); 
 	define("ADMIN_EMAIL","dixitbhojani0@gmail.com");

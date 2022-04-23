@@ -1,6 +1,4 @@
 <?php include("connect.php"); ?>
-<!DOCTYPE html>
-<html lang="en">
 <?php
 	if(!isset($_GET['id']) || empty($_GET['id'])) {
 		// 301 Moved Permanently
@@ -22,9 +20,20 @@
 			exit();
 	    }
 	    $product_d = mysqli_fetch_assoc($product);
+	    if(isset($product_d['cid']) && !empty($product_d['cid'])) {
+		    $where_r = "isDelete=0 AND isActive=1 AND id != '" . $id . "' AND cid = '".$product_d['cid']."'";
+	    	$relatedProductRows = $db->rp_getData("product", "*", $where_r, 0);
+	    	if (!empty($relatedProductRows)) {
+			    $relatedProductData = mysqli_fetch_all($relatedProductRows);
+			}
+	    } else {
+	    	$relatedProductData = array();
+	    }
 	}
 
-    ?>
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title><?= @$product_d["name"] ?> in Rajkot, India from Chanakya Engineering Products</title>
@@ -33,6 +42,8 @@
 	<link href="<?= SITEURL ?>css/style.css" rel="stylesheet">
 	<link href="<?= SITEURL ?>css/responsive.css" rel="stylesheet">
 	<link href="<?= SITEURL ?>admin/css/toastr.css" rel="stylesheet">
+	<link href="<?= SITEURL ?>css/jquery.easy_slides.css" rel="stylesheet" type="text/css" />
+    <script src="<?= SITEURL ?>js/easy_slides.js"></script>
 
 	<link rel="shortcut icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
 	<link rel="icon" href="<?= SITEURL ?>images/favicon.png" type="image/x-icon">
@@ -100,7 +111,7 @@
                                         <?php } ?>
 										</br>
 
-										<div class="social-share my-3 mx-5"><h3 style="margin-left: 2.5rem!important;">Share this product on social media</h3> </br>
+										<div class="social-share"><h3 style="margin-left: 2.5rem!important;">Share this product on social media</h3> </br>
 											<ul class="social-icons" style="display: flex; justify-content:center;">
 												<li><a href="https://api.whatsapp.com/send?text=http://www.katdoorcloser.com/product-details/<?php echo $id?>" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
 												<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.katdoorcloser.com/product-details/<?php echo $id?>" target="_blank"><span class="fab fa-facebook-f"></span></a></li>
@@ -179,6 +190,26 @@
 							</div>
 						</div>
 						<!--End Product Info Tabs-->
+
+						<div>
+							<h4 class="pb-2">Related Products</h4>
+							<?php if(!empty($relatedProductData)) { ?>
+
+						        <div class="slider slider_four_in_line">
+						        	<?php 
+						        		foreach ($relatedProductData as $key => $productData) { ?>
+						        			<div>
+							        			<a href="<?= SITEURL.'product-details/'.@$productData[0]?>" class="" title="<?= @$productData[4] ?>">
+							        				<img src="<?= SITEURL . PRODUCT . @$productData[11] ?>" alt="">
+							        			</a>
+							        		</div>
+						        		<?php }
+						        	?>
+						            <div class="next_button"></div>
+						            <div class="prev_button"></div>
+						        </div>
+						    <?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -191,6 +222,11 @@
 	<!--End pagewrapper-->
 
 	<script type="text/javascript">
+		EasySlides('.slider_four_in_line',
+        {
+            'autoplay': true,
+            // 'show': 0
+        })
 		/*------productform validation start-------*/
 		$(function() {
 			$.validator.addMethod("regex", function(value, element, regexp) {

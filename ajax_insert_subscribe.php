@@ -21,7 +21,7 @@
         $insert=$db->rp_insert("contact_us",$values,$rows,0);
         if($insert)
         {
-            $filename=SITEURL.BROUCHER."final-brochure.pdf";
+            // $filename=SITEURL.BROUCHER."final-brochure.pdf";
 
             // mail send start //////////////////////////////////////////////////
             try {
@@ -64,7 +64,9 @@
             ///////////// mail send end////////////////////////////////
             
             
-            $reply=array("ack"=>1,"developer_msg"=>" Detail insert successfully!!","ack_msg"=>"E-Catalouge Download Successfully......","file_path"=>$filename,"file_name"=>"E-Catalouge-".SITENAME);
+            // $reply=array("ack"=>1,"developer_msg"=>" Detail insert successfully!!","ack_msg"=>"E-Catalouge Download Successfully......","file_path"=>$filename,"file_name"=>"E-Catalouge-".SITENAME);
+                // echo json_encode($reply);
+            $reply=array("ack"=>1,"developer_msg"=>" Detail insert successfully!!","ack_msg"=>"E-Catalouge Download Successfully......");
                 echo json_encode($reply);
         }
         else

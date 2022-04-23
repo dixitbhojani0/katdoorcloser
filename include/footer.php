@@ -152,7 +152,7 @@
 					if(jsonData.ack==1)
 					{
 						toastr.success("You have subscribed successfully.");
-						ForceDownload(jsonData.file_path, jsonData.file_name);
+						// ForceDownload(jsonData.file_path, jsonData.file_name);
 						$('#sub-email').val('');
 					}
 					else
